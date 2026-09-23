@@ -171,6 +171,30 @@
   --muted: #475569;
   --dim: #64748b;
 
+  /* Kontras teks aksen di tema terang (amber/teal asli terlalu muda di atas putih) */
+  --amber: #b45309;
+  --amber-2: #92400e;
+  --amber-soft: rgba(180, 83, 9, 0.10);
+  --amber-line: rgba(180, 83, 9, 0.35);
+  --amber-glow: rgba(180, 83, 9, 0.25);
+
+  --teal: #0f766e;
+  --teal-soft: rgba(15, 118, 110, 0.10);
+  --teal-line: rgba(15, 118, 110, 0.35);
+  --teal-glow: rgba(15, 118, 110, 0.25);
+
+  --green: #15803d;
+  --green-soft: rgba(21, 128, 61, 0.10);
+  --green-line: rgba(21, 128, 61, 0.35);
+
+  --red: #b91c1c;
+  --red-soft: rgba(185, 28, 28, 0.08);
+  --red-line: rgba(185, 28, 28, 0.35);
+
+  --blue: #1d4ed8;
+  --blue-soft: rgba(29, 78, 216, 0.08);
+  --blue-line: rgba(29, 78, 216, 0.35);
+
   --grad-deep: linear-gradient(180deg, #f5f7fb, #eef2f8);
   --grad-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4));
 

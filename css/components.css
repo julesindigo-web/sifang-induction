@@ -202,7 +202,7 @@
   text-transform: uppercase;
 }
 
-.tag.cond { background: var(--blue-soft); color: #9db4ff; border-color: var(--blue-line); }
+.tag.cond { background: var(--blue-soft); color: var(--blue); border-color: var(--blue-line); }
 .tag.danger { background: var(--red-soft); color: var(--red); border-color: var(--red-line); }
 .tag.ok { background: var(--green-soft); color: var(--green); border-color: var(--green-line); }
 .tag.info { background: var(--teal-soft); color: var(--teal); border-color: var(--teal-line); }
@@ -248,7 +248,7 @@
 
 .badge.blue {
   border-color: var(--blue-line);
-  color: #9db4ff;
+  color: var(--blue);
   background: var(--blue-soft);
 }
 
@@ -532,6 +532,9 @@ ul.checks li b { color: var(--text); }
 
 [data-theme="light"] .footnote { color: #7a5e10; background: rgba(251, 191, 36, 0.10); }
 
+.footnote b { color: var(--amber); }
+[data-theme="light"] .footnote b { color: #92400e; }
+
 /* ---------- COVER SPECIFIC ---------- */
 .cover {
   min-height: calc(100vh - var(--top-h) - var(--bot-h));
@@ -704,6 +707,22 @@ ul.checks li b { color: var(--text); }
 .mitem.active {
   border-color: var(--amber);
   background: var(--amber-soft);
+}
+
+/* ---------- FOCUS VISIBILITY (aksesibilitas keyboard) ---------- */
+.navbtn:focus-visible,
+.iconbtn:focus-visible,
+.mitem:focus-visible,
+.badge:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+  border-color: var(--amber);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .badge, .mitem, .navbtn, .iconbtn { transition: none !important; }
+  .slide.active { animation: none !important; }
 }
 
 /* ---------- MODULE GROUP LABEL ---------- */

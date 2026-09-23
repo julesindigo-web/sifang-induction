@@ -66,9 +66,11 @@ const SLIDES_DATA = [
           </p>
           <div class="badges">
             <span class="badge gold">★ ZERO HARM</span>
+            <span class="badge teal">K3L SEIMBANG</span>
             <span class="badge teal">SMKP MINERBA</span>
             <span class="badge">ISO 45001:2018</span>
             <span class="badge">ISO 14001:2015</span>
+            <span class="badge">PP 22/2021 • PERMEN 33/2021</span>
             <span class="badge blue">${State.get('user.name') ? `👋 ${State.get('user.name')}` : 'PESERTA INDUKSI'}</span>
           </div>
           <div class="hint">Tekan <b>Lanjut</b> atau gunakan tombol panah keyboard untuk memulai ▸</div>
@@ -104,14 +106,44 @@ const SLIDES_DATA = [
             <article class="card m"><div class="ico">${Icons.get('clipboard', { class: 'ico-svg' })}</div><h3>10 · Studi Kasus</h3><p>Pelajaran dari insiden nyata di industri nikel — agar tidak terulang di site kita.</p></article>
             <article class="card g"><div class="ico">${Icons.get('check', { class: 'ico-svg' })}</div><h3>11 · Evaluasi & Komitmen</h3><p>Pre-test, post-test, tanda tangan komitmen, dan penerbitan sertifikat induksi.</p></article>
           </div>
+          <div class="footnote" style="margin-top:16px">Edisi <b>K3L Seimbang</b>: seluruh blok kini terintegrasi keselamatan + lingkungan (PP 22/2021 & Permen 33/2021) — fondasi, risiko laterit, air/reklamasi, tabel B3 & budaya penghargaan. Total <b>82 slide interaktif</b>.</div>
         </div>
       `;
     },
   },
 
   /* ============================================================
-     3 · TUJUAN & RUANG LINGKUP
-     ============================================================ */
+     3 · INFORMASI UMUM - Ground Rules
+      ============================================================ */
+  {
+    type: 'cards',
+    mod: 'PEMBUKA',
+    title: 'Informasi Umum & Tata Tertib',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Pembuka — Ground Rules</div>
+          <h2>Informasi <em>Umum</em> — Tata Tertib Induksi</h2>
+          <p class="lead">Agar induksi berjalan efektif, setiap peserta wajib mematuhi tata tertib berikut selama & setelah induksi.</p>
+          <div class="cards stagger">
+            <article class="card b"><div class="ico">${Icons.get('shield', { class: 'ico-svg' })}</div><h3>Prosedur Darurat</h3><p>Hafalkan <b>jalur evakuasi & Muster Point</b> ruangan induksi. Saat alarm: hentikan materi, ikuti instruktur ke titik kumpul.</p></article>
+            <article class="card g"><div class="ico">${Icons.get('check', { class: 'ico-svg' })}</div><h3>Tepat Waktu</h3><p><b><i>On time.</i></b> Keterlambatan berarti mengulang sesi. Hormati waktu instruktur dan peserta lain.</p></article>
+            <article class="card"><div class="ico">${Icons.get('mute', { class: 'ico-svg' })}</div><h3>Mode Senyap</h3><p>Atur ponsel pada <b>mode senyap atau getar</b>. Jawab telepon di luar ruangan, bukan saat materi berlangsung.</p></article>
+            <article class="card t"><div class="ico">${Icons.get('eye', { class: 'ico-svg' })}</div><h3>Tetap Fokus</h3><p><b><i>Stay focused.</i></b> Arahkan pandangan ke instruktur dan catat poin kritis. Hindari percakapan di luar konteks materi.</p></article>
+            <article class="card r"><div class="ico">${Icons.get('hand', { class: 'ico-svg' })}</div><h3>Partisipasi Aktif</h3><p><b><i>Participate.</i></b> Ajukan pertanyaan, jawab kuis, dan kerjakan simulasi. Sikap proaktif dapat menyelamatkan nyawa.</p></article>
+            <article class="card"><div class="ico">${Icons.get('mic', { class: 'ico-svg' })}</div><h3>Dengarkan dengan Seksama</h3><p><b><i>Listen.</i></b> Jangan memotong pembicaraan. Saat satu orang berbicara, peserta lain mendengarkan.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>Nikmati Proses</h3><p><b><i>Enjoy the training.</i></b> Induksi bukan formalitas — ini investasi agar dapat pulang dengan selamat setiap hari.</p></article>
+            <article class="card g"><div class="ico">${Icons.get('clipboard', { class: 'ico-svg' })}</div><h3>Aturan Keluar/Masuk</h3><p>Izin ke instruktur bila perlu ke toilet. Kembali segera & jangan meninggalkan sesi evaluasi.</p></article>
+          </div>
+          <div class="footnote">Disunting dari PDF Induksi Keselamatan p.03 — diselaraskan untuk <b>PT Sifang Mining Indonesia</b> (bukan Auxin). Sumber: House Rules TMS Project diadaptasi.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     4 · TUJUAN & RUANG LINGKUP
+      ============================================================ */
   {
     type: 'two',
     mod: 'PEMBUKA',
@@ -150,8 +182,97 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     4 · STATS / COMMITMENT INTRO
-     ============================================================ */
+     5 · PENGETAHUAN K3 & LAMBANG K3 (dari PDF p.05)
+      ============================================================ */
+  {
+    type: 'cards',
+    mod: 'PEMBUKA',
+    title: 'Pengetahuan K3 & Lambang K3',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Pembuka — Dasar K3</div>
+          <h2>Apa itu <em>K3</em>? Mengapa Utama?</h2>
+          <div class="two">
+            <div class="panelbox ok">
+              <h3><i></i>1. Apakah K3?</h3>
+              <p style="color:var(--muted); font-size:13.5px; line-height:1.7"><b style="color:var(--text)">Keselamatan & Kesehatan Kerja</b> adalah segala kegiatan untuk <b>menjamin dan melindungi</b> tenaga kerja melalui upaya <b>pencegahan kecelakaan & penyakit akibat kerja</b>.</p>
+              <h3 style="margin-top:16px"><i></i>2. Mengapa K3 Paling Utama?</h3>
+              <p style="color:var(--muted); font-size:13.5px; line-height:1.7">Agar <b>bebas risiko</b> kecelakaan, cedera, kecacatan, kematian, dan kerusakan harta benda — dengan hasil maksimal. <b>Produksi tidak sepadan dengan nyawa.</b></p>
+            </div>
+            <div class="panelbox">
+              <h3><i></i>Lambang K3 — Makna (Permenaker)</h3>
+              <ul>
+                <li><b style="color:var(--green)">Roda Gigi:</b> bekerja dengan kesegaran jasmani & rohani</li>
+                <li><b style="color:var(--green)">Warna Hijau:</b> selamat, sehat, sejahtera</li>
+                <li><b style="color:var(--green)">Warna Putih:</b> bersih & suci</li>
+                <li><b>Palang (+):</b> bebas dari kecelakaan & sakit akibat kerja</li>
+                <li><b>11 Gerigi Roda:</b> 11 bab dalam <b>UU No. 1 Tahun 1970</b></li>
+              </ul>
+            </div>
+          </div>
+          <div class="cards stagger" style="margin-top:18px">
+            <article class="card b"><div class="ico">${Icons.get('shield', { class: 'ico-svg' })}</div><h3>K3 Bukan Beban</h3><p>K3 adalah <b>investasi produktivitas</b>: zero harm = zero downtime = reputasi & keberlanjutan operasi nikel open pit.</p></article>
+            <article class="card t"><div class="ico">${Icons.get('refresh', { class: 'ico-svg' })}</div><h3>11 Bab UU No. 1 Tahun 1970</h3><p>Syarat K3, pengawasan, pembinaan, P2K3, kecelakaan, dan sanksi — semuanya terangkum dalam 11 gerigi roda.</p></article>
+            <article class="card g"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>Budaya TMS → SMI</h3><p>PDF TMS menggunakan filosofi sama. <b>PT Sifang Mining Indonesia</b> mengadopsi makna lambang identik — diselaraskan untuk site nikel open pit SMI.</p></article>
+          </div>
+          <div class="footnote">Sumber: Induksi Keselamatan PDF p.05 — definisi & lambang K3. Dipertahankan untuk SMI, bukan Auxin.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     5B · FONDASI K3L SEIMBANG (PDF Panduan K3L Seimbang Bab 1)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'PEMBUKA',
+    title: 'Fondasi K3L Seimbang',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker k-teal">Fondasi K3L Seimbang — Core Value SMI</div>
+          <h2>Dua Janji <em>Seimbang</em> — Selamat & Berkelanjutan</h2>
+          <p class="lead">K3L bukan sekadar aturan administratif, melainkan <b style="color:var(--text)">nilai inti (core value)</b> yang mendefinisikan identitas operasional PT. Sifang Mining Indonesia. Keselamatan & lingkungan adalah <b style="color:var(--text)">simbiosis</b> — bukan trade-off.</p>
+          <div class="two">
+            <div class="panelbox ok">
+              <h3><i></i>Janji 1 — Pulang Selamat</h3>
+              <ul>
+                <li>Setiap orang yang masuk area kerja <b>wajib pulang selamat & sehat</b> setiap hari.</li>
+                <li>Keselamatan operasional yang prima adalah <b>prasyarat</b> perlindungan lingkungan yang baik.</li>
+                <li>Contoh: disiplin APD & LOTO mencegah cedera <b>dan</b> mencegah tumpahan.</li>
+              </ul>
+            </div>
+            <div class="panelbox">
+              <h3><i></i>Janji 2 — Operasi Berkelanjutan</h3>
+              <ul>
+                <li>Operasi nikel laterit (pit, crushing, stockpile, <b>HPAL</b>) hanya lestari bila lingkungan dijaga.</li>
+                <li>Satu insiden tumpahan B3 dapat berubah menjadi <b>krisis lingkungan</b> yang mahal & merusak reputasi.</li>
+                <li>Setiap tindakan individu (pakai respirator, kenali longsor) = kontribusi keberlanjutan.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="bigquote" style="margin-top:18px;">
+            “Keselamatan diutamakan, lingkungan selalu diperhatikan, produksi mengikuti secara otomatis. Tidak ada target produksi yang membenarkan pelanggaran K3L.”
+            <small>— Filosofi Fondasi K3L Seimbang • Panduan Induksi Terpadu Nikel</small>
+          </div>
+          <div class="k3l-duo">
+            <div class="k3l-pill safety"><b>SAFETY</b><span>Zero Harm • LSR • SWA • LOTO • APD</span></div>
+            <div class="k3l-plus">+</div>
+            <div class="k3l-pill env"><b>ENVIRONMENT</b><span>Zero Spill • TPS B3 • Reklamasi • Air Bersih</span></div>
+            <div class="k3l-plus">=</div>
+            <div class="k3l-pill balanced"><b>K3L SEIMBANG</b><span>Produksi Aman & Berkelanjutan</span></div>
+          </div>
+          <div class="footnote">Sumber: <b>Membangun Fondasi K3L Seimbang</b> Bab 1 — Pulang Selamat + Operasi Berkelanjutan. Anda bukan objek prosedur, melainkan <b>subjek aktif</b> siklus perbaikan berkelanjutan.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     6 · STATS / COMMITMENT INTRO
+      ============================================================ */
   {
     type: 'stats',
     mod: 'PEMBUKA',
@@ -176,8 +297,8 @@ const SLIDES_DATA = [
               <div class="lbl">Life-Saving Rules</div>
             </div>
             <div class="stat">
-              <div class="num" data-target="42">0</div>
-              <div class="lbl">Modul Induksi</div>
+              <div class="num" data-target="82">0</div>
+              <div class="lbl">Slide Interaktif</div>
             </div>
           </div>
           <div class="bigquote" style="margin-top:32px;">
@@ -196,7 +317,7 @@ const SLIDES_DATA = [
   {
     type: 'pretest',
     mod: 'EVAL',
-    title: 'Pre-Test',
+    title: 'Pre-test',
     render() { return '<div id="quizContainer"></div>'; },
     afterRender() { Quiz.renderPretest(); },
   },
@@ -222,8 +343,40 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     6 · DASAR HUKUM
-     ============================================================ */
+     6B · RISIKO SPESIFIK NIKEL LATERIT (PDF K3L Seimbang Bab 1 & 3)
+      ============================================================ */
+  {
+    type: 'cards',
+    mod: 'PROFIL',
+    title: 'Risiko Spesifik Nikel Laterit',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Profil & Kebijakan — Konteks Nikel Laterit</div>
+          <h2>Risiko <em>Dominan</em> Tambang Nikel Laterit</h2>
+          <p class="lead">Aktivitas open pit, crushing plant, stockpile & <b>HPAL</b> membawa risiko unik. Setiap pekerja — apa pun jabatannya — wajib memahami empat risiko dominan ini sebelum terpapar.</p>
+          <div class="cards stagger">
+            <article class="card r"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>1 · Kegagalan Lereng / Longsoran</h3><p>Laterit (limonit & saprolit) berkekuatan seperti <b>tanah</b>, bukan batuan. Hujan tropis menurunkan kuat geser drastis → longsoran, jatuhan batu, runtuhnya bench. Kenali retakan, gelembung & mata air baru.</p></article>
+            <article class="card"><div class="ico">${Icons.get('mask', { class: 'ico-svg' })}</div><h3>2 · Debu Logam Berat & Silika</h3><p>Galian, hauling, stockpile & grinding menghasilkan debu <b>Ni, Co, Cr + silika respirabel</b> yang dapat melebihi NAB. Risiko: silikosis, gangguan napas kronis, sensitisasi kulit. Kendali: water spraying, ventilasi + respirator N95/P100 fit-tested.</p></article>
+            <article class="card t"><div class="ico">${Icons.get('drop', { class: 'ico-svg' })}</div><h3>3 · Air Asam Tambang & Limpasan</h3><p>Limpasan pit & stockpile dapat membawa logam & keasaman ke ekosistem lokal. Satu tumpahan kimia = krisis lingkungan. Patuhi drainase, jangan buang apa pun ke selokan, laporkan air berubah warna/berminyak/berbau.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('factory', { class: 'ico-svg' })}</div><h3>4 · HPAL, Tailing & Interaksi HE</h3><p>HPAL menghasilkan tailing bervolume besar + residu kimia. <b>TSF = exclusion zone</b>. Ditambah interaksi LV vs HE (blind spot) dan kelelahan shift malam. Semua butuh izin, radio & SWA.</p></article>
+          </div>
+          <div class="panelbox warn" style="margin-top:16px">
+            <h3><i></i>Risiko Halus tapi Sama Penting</h3>
+            <ul>
+              <li><b>Kebisingan tinggi</b> crushing/smelter, <b>radiasi alami</b> mineral tertentu & <b>beban fisik berat</b> — gunakan ear protection ganda, pantau pajanan & rotasi tugas.</li>
+              <li>Anda adalah <b>subjek aktif</b> SMKP/SMK3 — bukan objek. Setiap pengamatan (debu tebal, rembesan aneh) wajib dilapor sebagai kontribusi perbaikan berkelanjutan.</li>
+            </ul>
+          </div>
+          <div class="footnote">Sumber: <b>Fondasi K3L Seimbang</b> Bab 1 & 3 — risiko laterit tropis + paparan Ni/Co melebihi ambang batas. Detail teknis di modul Geoteknik, Kesehatan, TSF & Lingkungan.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     7 · DASAR HUKUM (diperkaya dari PDF p.09)
+      ============================================================ */
   {
     type: 'cards',
     mod: 'PROFIL',
@@ -233,49 +386,129 @@ const SLIDES_DATA = [
         <div class="inner">
           <div class="kicker">Profil & Kebijakan</div>
           <h2>Dasar Hukum & <em>Standar K3L</em></h2>
-          <p class="lead">Seluruh aturan di site ini berlandaskan regulasi nasional dan standar internasional berikut.</p>
+          <p class="lead">Seluruh aturan di site ini berlandaskan regulasi nasional dan standar internasional. <b>Diperkaya</b> dengan regulasi spesifik dari PDF Induksi Keselamatan TMS (diselaraskan untuk SMI).</p>
           <div class="cards stagger">
-            <article class="card"><div class="ico">${Icons.get('scroll', { class: 'ico-svg' })}</div><h3>UU No. 1 Tahun 1970</h3><p>Undang-Undang Keselamatan Kerja: kewajiban melindungi setiap pekerja dan orang di tempat kerja.</p></article>
-            <article class="card b"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>UU No. 3/2020 & PP 96/2021</h3><p>Rezim pertambangan minerba: kewajiban penerapan kaidah teknik pertambangan yang baik, termasuk K3 dan KO pertambangan.</p></article>
-            <article class="card"><div class="ico">${Icons.get('doc', { class: 'ico-svg' })}</div><h3>Kepmen ESDM 1827.K/30/MEM/2018</h3><p>Pedoman pelaksanaan kaidah pertambangan yang baik — memuat <b>SMKP Minerba</b> (Sistem Manajemen Keselamatan Pertambangan) yang wajib diterapkan dan diaudit.</p></article>
-            <article class="card g"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>PP 50/2012 & ISO 45001:2018</h3><p>Sistem Manajemen K3 (SMK3) dan standar internasional K3: partisipasi pekerja, identifikasi bahaya, perbaikan berkelanjutan.</p></article>
-            <article class="card t"><div class="ico">${Icons.get('globe', { class: 'ico-svg' })}</div><h3>ISO 14001:2015 & IMSBC Code</h3><p>Manajemen lingkungan; serta kode IMO untuk keamanan kargo curah (nikel ore) pada pengapalan — bahaya likuefaksi.</p></article>
+            <article class="card"><div class="ico">${Icons.get('scroll', { class: 'ico-svg' })}</div><h3>UU No. 1 Tahun 1970</h3><p>Undang-Undang Keselamatan Kerja: kewajiban melindungi setiap pekerja dan orang di tempat kerja. Fondasi 11 Bab K3.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>PERMEN ESDM No. 26/2018</h3><p>Prinsip & pelaksanaan kaidah pertambangan yang baik + pengawasan K3 pertambangan. <b>Tambahan dari PDF p.09</b>.</p></article>
+            <article class="card"><div class="ico">${Icons.get('doc', { class: 'ico-svg' })}</div><h3>Kepmen ESDM 1827.K/30/MEM/2018</h3><p>Pedoman kaidah tambang yang baik — memuat <b>SMKP Minerba</b> wajib diaudit. Inti dari repo lama & PDF.</p></article>
+            <article class="card g"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>Kepdirjen Minerba 185/2019</h3><p>Petunjuk teknis pelaksanaan SMKP Minerba — <b>tambahan dari PDF p.09</b>. Standar operasional pengawasan & pelaporan.</p></article>
+            <article class="card"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>UU No. 3/2020 & PP 96/2021</h3><p>Rezim Minerba: kewajiban penerapan kaidah teknik baik, termasuk K3 & KO pertambangan (tetap dipertahankan).</p></article>
+            <article class="card t"><div class="ico">${Icons.get('globe', { class: 'ico-svg' })}</div><h3>PP 50/2012, ISO 45001:2018, ISO 14001:2015</h3><p>SMK3 + ISO K3 & Lingkungan. Partisipasi, perbaikan berkelanjutan, aspek lingkungan.</p></article>
+            <article class="card g"><div class="ico">${Icons.get('drop', { class: 'ico-svg' })}</div><h3>PP No. 22 Tahun 2021 (PLH)</h3><p><b>Baru — Fondasi K3L Seimbang.</b> Dari persetujuan pasif ke <b>penyelenggaraan proaktif</b>: baku mutu udara ambien, air limbah & <b>TPS B3 berizin + pemantauan ketat</b>.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('refresh', { class: 'ico-svg' })}</div><h3>Permen ESDM No. 33/2021</h3><p><b>Baru — Integrasi K3 + PLH.</b> Menegaskan keselamatan & lingkungan sebagai <b>dua pilar tak terpisahkan</b> pada usaha minerba. Dasar filosofi K3L Seimbang.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('truck', { class: 'ico-svg' })}</div><h3>UU 32/2009 PPLH + IMSBC Code</h3><p>Perlindungan & pengelolaan lingkungan hidup + kode IMO kargo curah nikel ore Grup A (likuefaksi). Dari PDF p.09 & repo.</p></article>
           </div>
-          <div class="footnote">Kepatuhan bukan pilihan: pelanggaran aturan K3 dapat berakibat sanksi disiplin, hukum, dan yang terpenting — cedera atau kematian.</div>
+          <div class="panelbox" style="margin-top:16px">
+            <h3><i></i>Tabel Regulasi → Implikasi Praktis (K3L Seimbang)</h3>
+            <div class="reg-table">
+              <div class="reg-row reg-head"><span>Dasar Hukum</span><span>Deskripsi</span><span>Implikasi bagi Pekerja</span></div>
+              <div class="reg-row"><span><b>UU No. 1 Tahun 1970</b></span><span>Keselamatan Kerja</span><span>Hak atas lingkungan aman & sehat</span></div>
+              <div class="reg-row"><span><b>Kepmen 1827/2018</b></span><span>Kaidah Teknik (KT-TB)</span><span>Standar desain tambang, HE & TSF wajib dipatuhi</span></div>
+              <div class="reg-row"><span><b>PP 22/2021</b></span><span>Perlindungan LH</span><span>Jaga udara/air/limbah; buang B3 hanya di TPS berizin</span></div>
+              <div class="reg-row"><span><b>Permen 33/2021</b></span><span>Integrasi K3+PLH</span><span>SWA berlaku untuk bahaya <b>dan</b> dampak lingkungan</span></div>
+              <div class="reg-row"><span><b>Permen 26/2018</b></span><span>Sanksi Administratif</span><span>Teguran → SP → skorsing → terminasi/deportasi</span></div>
+            </div>
+            <p style="margin:10px 0 0; color:var(--muted); font-size:12px; line-height:1.6">Pelanggaran regulasi = sanksi administratif perusahaan (denda/pencabutan izin) <b>dan</b> dapat menjerat individu dengan <b>tanggung jawab pidana (KUHP)</b>. Materi ini bukan opini perusahaan — melainkan implementasi kewajiban hukum.</p>
+          </div>
+          <div class="footnote">Sinkronisasi: PDF TMS menambahkan Permen 26/2018 & Kepdirjen 185/2019; <b>PDF K3L Seimbang</b> menambahkan <b>PP 22/2021 & Permen 33/2021</b>. Kini lengkap untuk audit SMI, brand tetap <b>PT Sifang</b>.</div>
         </div>
       `;
     },
   },
 
   /* ============================================================
-     7 · KEBIJAKAN K3L
-     ============================================================ */
+     8 · KEBIJAKAN K3L + NILAI PERUSAHAAN (dari PDF p.06)
+      ============================================================ */
   {
-    type: 'checks',
+    type: 'two',
     mod: 'PROFIL',
-    title: 'Kebijakan K3L',
+    title: 'Kebijakan & Nilai Perusahaan',
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Profil & Kebijakan</div>
-          <h2>Kebijakan <em>K3L</em> Perusahaan</h2>
-          <ul class="checks cols">
-            <li><b>Zero Harm:</b> tidak ada pekerjaan yang layak dibayar dengan cedera, kematian, atau kerusakan lingkungan.</li>
-            <li><b>Kepatuhan hukum:</b> memenuhi seluruh peraturan K3, lingkungan, dan pertambangan yang berlaku.</li>
-            <li><b>Kepemimpinan:</b> setiap pemimpin bertanggung jawab atas keselamatan timnya; keselamatan dievaluasi setara produksi.</li>
-            <li><b>Partisipasi pekerja:</b> setiap orang wajib terlibat dalam identifikasi bahaya, pelaporan, dan perbaikan.</li>
-            <li><b>Pengendalian risiko:</b> pekerjaan berisiko tinggi hanya dilakukan dengan izin, kompetensi, dan pengendalian yang valid.</li>
-            <li><b>Perlindungan lingkungan:</b> mencegah pencemaran, mengelola limbah, dan menjaga keanekaragaman hayati.</li>
-            <li><b>Perbaikan berkelanjutan:</b> audit, inspeksi, investigasi, dan pembelajaran dari setiap insiden.</li>
-          </ul>
+          <div class="kicker">Profil & Kebijakan — Diselaraskan SMI</div>
+          <h2>Kebijakan <em>K3L</em> & Nilai Perusahaan</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>8 Komitmen Mutu-K3-LH (dari PDF p.06, adaptasi SMI)</h3>
+              <ul>
+                <li><b>Good Mining Practice (GMP):</b> cegah kerusakan aset & henti produksi; operasi aman-efektif-efisien.</li>
+                <li><b>Kepatuhan regulasi:</b> Mutu, K3, Lingkungan sesuai peraturan & persyaratan lain.</li>
+                <li><b>Perlindungan pekerja:</b> adakan kondisi aman, cegah tindakan tidak aman.</li>
+                <li><b>Pengelolaan 5R & aman-nyaman-efisien:</b> ciptakan tempat kerja aman untuk semua.</li>
+                <li><b>Pemeliharaan sarana:</b> standar pemeliharaan, perawatan, kelayakan, inspeksi prasarana & kompetensi teknisi.</li>
+                <li><b>Kelayakan instalasi:</b> evaluasi kajian teknis pertambangan.</li>
+                <li><b>Pembinaan pekerja & mitra & masyarakat:</b> program pengembangan & pemberdayaan.</li>
+                <li><b>SDM, teknologi digital & partisipasi:</b> sumber daya + kerangka kerja + konsultasi pekerja.</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>5 Nilai Perusahaan</h3>
+              <ul>
+                <li><b>1. Leadership:</b> Integritas — Tanggung jawab</li>
+                <li><b>2. Perilaku Baik:</b> Sikap positif, toleransi, tenggang rasa, sopan santun</li>
+                <li><b>3. Kompetensi:</b> kemampuan diri, pengetahuan, cepat & dapat diandalkan</li>
+                <li><b>4. Kualitas:</b> prestasi, keunggulan, perbaikan terus, inovatif</li>
+                <li><b>5. Komitmen:</b> integritas & etika, sinergi, partisipasi membangun</li>
+              </ul>
+              <p style="margin-top:12px; color:var(--muted); font-size:11px; line-height:1.5">Dok: STD-SO-SMI-001 (adaptasi dari STD-SO-AUXIN-001 Oct-25). Berlaku untuk PT Sifang Mining Indonesia. Diketahui Presiden Direktur — diselaraskan dari PDF 19 Okt 2025 tanpa mengubah logo SMI.</p>
+            </div>
+          </div>
+          <div class="footnote">Sebelumnya repo hanya 7 poin kebijakan. Kini <b>8 komitmen + 5 nilai</b> lengkap per PDF p.06, tetapi brand tetap <b>PT Sifang</b> (tidak diganti ke Auxin) sesuai permintaan.</div>
         </div>
       `;
     },
   },
 
   /* ============================================================
-     8 · LIFE-SAVING RULES
-     ============================================================ */
+     9 · STRUKTUR ORGANISASI SMI (adaptasi dari PDF p.08)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'PROFIL',
+    title: 'Struktur Organisasi SMI',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Profil & Kebijakan — Adaptasi SMI</div>
+          <h2>Struktur <em>Organisasi K3L</em> — PT Sifang Mining Indonesia</h2>
+          <p class="lead">Diselaraskan dari PDF p.08 (STD-SO-AUXIN-001) — diadaptasi untuk <b>PT Sifang Mining Indonesia</b>. Nama jabatan dipertahankan, identitas perusahaan tetap SMI.</p>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Manajemen Puncak</h3>
+              <ul>
+                <li><b>Presiden Direktur</b> — Penanggung jawab kebijakan K3L dan persetujuan akhir.</li>
+                <li><b>Asisten Presiden Direktur</b> — Koordinasi strategis.</li>
+                <li><b>Manajer Umum (<i>General Manager</i>)</b> — Pengendali operasional site.</li>
+                <li><b>PJO (Penanggung Jawab Operasional)</b> — Otoritas K3 tambang dan pelaporan kepada KTT.</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Pengawas & Pelaksana</h3>
+              <ul>
+                <li><b>Spv Operation / Senior Geologist / Spv MPE / Surveyor</b> — Pengelolaan pit, geoteknik & mine plan</li>
+                <li><b>Spv HRGA + Driver LV</b> — SDM, komisioning, transportasi</li>
+                <li><b>HSE Team</b> (Manager → Spv HSE) — Pengawasan K3, inspeksi, audit SMKP</li>
+              </ul>
+            </div>
+          </div>
+          <div class="panelbox" style="margin-top:16px">
+            <h3><i></i>Dokumen Kontrol — No. STD-SO-SMI-001 (adaptasi)</h3>
+            <ul>
+              <li><b>Tgl Terbit:</b> Okt-25 • <b>Revisi:</b> 0 • <b>Departemen:</b> HR&GA • <b>Mengetahui:</b> Presiden Direktur</li>
+              <li>Setiap perubahan struktur = wajib MOC & sosialisasi ulang (lihat modul SIMOPS & MOC).</li>
+              <li>Struktur Auxin di PDF dijadikan referensi; <b>logo & nama tetap SMI</b> sesuai instruksi.</li>
+            </ul>
+          </div>
+          <div class="footnote">Grafting: Struktur asli Auxin (Qi Renchao, Liu Changqing, Sun Xingbo, Fadly Maulana, dst) dipetakan ke struktur fungsional SMI tanpa mengganti brand.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     10 · LIFE-SAVING RULES
+      ============================================================ */
   {
     type: 'rules',
     mod: 'PROFIL',
@@ -312,8 +545,47 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     9 · STOP WORK AUTHORITY
-     ============================================================ */
+     11 · GOLDEN RULES & SPDK (dari PDF p.10-11)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'PROFIL',
+    title: 'Golden Rules & Disiplin SPDK',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Profil & Kebijakan — Adaptasi SMI</div>
+          <h2><em>Golden Rules</em> & SPDK — Komitmen Disiplin</h2>
+          <p class="lead">Dari PDF p.10-11: <b>Surat Pernyataan Disiplin Karyawan / Golden Rules</b> — adaptasi untuk <b>PT Sifang Mining Indonesia</b>. Pelanggaran = sanksi bertahap.</p>
+          <div class="two">
+            <div class="panelbox ok">
+              <h3><i></i>Komitmen Penerapan K3LH</h3>
+              <ul>
+                <li>Menandatangani <b>Surat Komitmen</b> keselamatan pertambangan & lingkungan hidup</li>
+                <li>Golden Rules = <b>Life-Saving Rules</b> dengan penegakan disiplin yang sama</li>
+                <li>Setiap pekerja berhak & wajib menegur pelanggaran Golden Rules</li>
+                <li>Dok: <b>SPDK (Surat Pernyataan Disiplin Karyawan)</b> — berlaku PT TMS → diadaptasi SMI</li>
+              </ul>
+            </div>
+            <div class="panelbox danger">
+              <h3><i></i>Penegakan Disiplin (13 Agu 2025 - referensi)</h3>
+              <ul>
+                <li><b>Teguran lisan</b> → pelanggaran ringan pertama</li>
+                <li><b>SP 1 / SP 2 / SP 3</b> → pelanggaran berulang / sedang</li>
+                <li><b>Skorsing & PHK</b> → pelanggaran berat Golden Rules (fit for work, bypass pengaman, dll)</li>
+                <li>Setiap sanksi terdokumentasi & ditandatangani pekerja & atasan</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Istilah <b>Golden Rules</b> di PDF TMS = <b>LSR</b> di SMI. Materi disatukan tanpa mengganti logo SMI.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     12 · STOP WORK AUTHORITY
+      ============================================================ */
   {
     type: 'flow',
     mod: 'PROFIL',
@@ -348,41 +620,69 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     10 · HAK & KEWAJIBAN
-     ============================================================ */
+     13 · HAK & KEWAJIBAN (UU 1/1970 Pasal 12 — dari PDF p.14)
+      ============================================================ */
   {
     type: 'two',
     mod: 'ATURAN',
-    title: 'Hak & Kewajiban',
+    title: 'Hak & Kewajiban (UU No. 1 Tahun 1970)',
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Aturan & Perilaku</div>
-          <h2>Hak & <em>Kewajiban</em> Anda</h2>
+          <div class="kicker">Aturan & Perilaku — Hak Hukum</div>
+          <h2>Hak & <em>Kewajiban</em> Anda — UU No. 1 Tahun 1970 BAB VIII Pasal 12</h2>
           <div class="two">
             <div class="panelbox ok">
               <h3><i></i>HAK Pekerja</h3>
               <ul>
-                <li>Mengetahui bahaya, risiko, APD, dan prosedur aman di area kerja.</li>
-                <li>Menolak pekerjaan tidak aman yang belum terkendali.</li>
-                <li>Melapor bahaya/insiden tanpa takut disalahkan.</li>
-                <li>Mendapat pelatihan, induksi, dan penyegaran.</li>
-                <li>Mendapat pertolongan medis dan pelindungan kesehatan.</li>
-                <li>Terlibat dalam konsultasi K3 (P2K3/safety committee).</li>
+                <li><b>Meminta pengurus</b> melaksanakan semua syarat K3 yang diwajibkan</li>
+                <li><b>Menyatakan keberatan</b> bekerja bila syarat K3 & APD diragukan (kecuali hal khusus yang masih dapat dipertanggungjawabkan pengawas)</li>
+                <li>Mengetahui bahaya, risiko, APD, prosedur aman</li>
+                <li>Menolak pekerjaan tidak aman yang belum terkendali</li>
+                <li>Melapor bahaya/insiden tanpa takut disalahkan — P2K3 / safety committee</li>
+                <li>Mendapat pelatihan, induksi, penyegaran & pertolongan medis</li>
               </ul>
             </div>
             <div class="panelbox warn">
-              <h3><i></i>KEWAJIBAN Pekerja</h3>
+              <h3><i></i>KEWAJIBAN Pekerja (Pasal 12)</h3>
               <ul>
-                <li>Mematuhi peraturan, SOP, JSA, permit, rambu, dan instruksi petugas.</li>
-                <li>Memakai dan merawat APD sesuai ketentuan.</li>
-                <li>Tidak merusak/menonaktifkan perangkat keselamatan.</li>
-                <li>Menegur rekan yang bekerja tidak aman.</li>
-                <li>Melaporkan setiap bahaya, near miss, cedera, dan tumpahan.</li>
-                <li>Mengikuti briefing, toolbox meeting, dan evaluasi kompetensi.</li>
+                <li><b>Memberikan keterangan benar</b> bila diminta pengawas / ahli K3</li>
+                <li><b>Memakai APD yang diwajibkan</b></li>
+                <li><b>Mentaati semua syarat K3</b> yang diwajibkan</li>
+                <li>Tidak merusak/menonaktifkan perangkat keselamatan</li>
+                <li>Menegur rekan tidak aman & melapor bahaya/near miss/tumpahan</li>
+                <li>Mengikuti briefing, toolbox meeting, P5M & evaluasi</li>
               </ul>
             </div>
           </div>
+          <div class="footnote" style="border-color:var(--green-line)">Sumber: UU No. 1 Tahun 1970 BAB VIII Pasal 12 — disadur dari PDF p.14. Berlaku di <b>PT Sifang Mining Indonesia</b>.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     14 · KEWAJIBAN PENGAWAS OPERASIONAL (PDF p.15)
+      ============================================================ */
+  {
+    type: 'checks',
+    mod: 'ATURAN',
+    title: 'Kewajiban Pengawas Operasional',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Aturan & Perilaku</div>
+          <h2>Kewajiban <em>Pengawas Operasional</em></h2>
+          <p class="lead">Bertanggung jawab kepada <b>Kepala Teknik Tambang (KTT)</b> untuk keselamatan semua pekerja di bawah pengawasannya. Sumber: Kepmen 1827/MEM/2018 Lampiran I — PDF p.15.</p>
+          <ul class="checks cols">
+            <li><b>Tanggung jawab penuh</b> keselamatan, kesehatan & kesejahteraan semua orang yang ditugaskan kepadanya</li>
+            <li><b>Melaksanakan inspeksi, pemeriksaan & pengujian</b> rutin sesuai jadwal SMKP</li>
+            <li><b>Membuat & menandatangani laporan</b> pemeriksaan & pengujian untuk KTT</li>
+            <li>Menghentikan pekerjaan tidak aman & melaporkan ke PJO/KTT</li>
+            <li>Memastikan setiap pekerja memahami JSA, SOP, IK & APD sebelum kerja</li>
+            <li>Menjadi teladan: tidak memerintahkan pelanggaran demi target produksi</li>
+          </ul>
+          <div class="footnote">PDF TMS menekankan akuntabilitas pengawas ke KTT — diadaptasi untuk struktur SMI.</div>
         </div>
       `;
     },
@@ -399,27 +699,29 @@ const SLIDES_DATA = [
       return `
         <div class="inner">
           <div class="kicker">Aturan & Perilaku</div>
-          <h2>Aturan Site & <em>Perilaku Wajib</em></h2>
+          <h2>Aturan Site dan <em>Perilaku Wajib</em></h2>
+          <p class="lead">Sepuluh aturan ini melindungi nyawa, lingkungan, dan keberlangsungan kerja Anda. Pelanggaran bukan sekadar teguran — berjenjang hingga pemutusan hubungan kerja dan proses hukum.</p>
           <ul class="checks cols">
-            <li><b>ID Badge</b> wajib dipakai dan terlihat; ikuti aturan akses & escort.</li>
-            <li><b>Narkoba & alkohol</b> dilarang total; tes acak diberlakukan.</li>
-            <li><b>Merokok/vape</b> hanya di designated smoking area.</li>
-            <li><b>HP</b> dilarang saat mengemudi, berjalan di area alat berat, atau kerja kritis.</li>
-            <li><b>Foto/video/drone</b> hanya dengan izin tertulis.</li>
-            <li><b>Kekerasan, pelecehan, bullying, diskriminasi</b> = pelanggaran berat.</li>
-            <li><b>Pencurian</b> ore/BBM/aset dan aktivitas ilegal = pemecatan & proses hukum.</li>
-            <li><b>Housekeeping:</b> jaga area kerja rapi dan bebas tumpahan.</li>
-            <li><b>Suap/gratifikasi</b> dan laporan palsu dilarang keras.</li>
-            <li><b>Hormati masyarakat lokal,</b> situs budaya, dan aturan komunitas.</li>
+            <li><b>Lencana identitas (<i>ID badge</i>)</b> wajib dipakai dan terlihat; ikuti aturan akses dan pendampingan (<i>escort</i>). Tanpa lencana valid, Anda dianggap tamu tanpa izin.</li>
+            <li><b>Narkoba dan alkohol</b> dilarang total; tes acak diberlakukan. Bekerja di bawah pengaruhnya termasuk pelanggaran <i>Life-Saving Rules</i>.</li>
+            <li><b>Merokok dan vape</b> hanya di area merokok khusus yang bertanda. Dekat BBM, B3, dan area mudah terbakar dilarang mutlak.</li>
+            <li><b>Ponsel</b> dilarang saat mengemudi, berjalan di area alat berat, atau melakukan pekerjaan kritis. Satu detik lengah dapat berarti tertabrak unit 100 ton.</li>
+            <li><b>Foto, video, dan drone</b> hanya dengan izin tertulis. Dokumentasi area kritis (pit aktif, plant, jetty, TSF) tanpa izin dapat membahayakan operasi.</li>
+            <li><b>Kekerasan, pelecehan, perundungan (<i>bullying</i>), dan diskriminasi</b> merupakan pelanggaran berat. Hormati setiap orang tanpa kecuali.</li>
+            <li><b>Pencurian</b> bijih, BBM, dan aset serta aktivitas ilegal berakibat pemecatan dan proses hukum. Termasuk mengambil sampel tanpa izin.</li>
+            <li><b>Kerapian area (<i>housekeeping</i>):</b> jaga area kerja tetap rapi dan bebas tumpahan. Tumpahan kecil yang dibiarkan menjadi selip, kebakaran, atau pencemaran.</li>
+            <li><b>Suap, gratifikasi,</b> dan laporan palsu dilarang keras. Menawarkan atau menerima imbalan untuk meloloskan pelanggaran akan diproses hukum.</li>
+            <li><b>Hormati masyarakat lokal,</b> situs budaya, dan aturan komunitas. Temuan situs budaya berarti hentikan kerja dan melapor — bukan memindahkan temuan.</li>
           </ul>
+          <div class="footnote">Contoh nyata: ponsel saat melintas di <i>haul road</i> membuat pejalan kaki tidak mendengar klakson mundur 3× — nyaris tertabrak <i>dump truck</i>. Aturan site ditulis dari pelajaran insiden, bukan untuk mempersulit.</div>
         </div>
       `;
     },
   },
 
   /* ============================================================
-     12 · PETA AREA
-     ============================================================ */
+     15 · PETA AREA + JETTY (PDF p.12-13)
+      ============================================================ */
   {
     type: 'cards',
     mod: 'ATURAN',
@@ -428,17 +730,133 @@ const SLIDES_DATA = [
       return `
         <div class="inner">
           <div class="kicker">Aturan & Perilaku</div>
-          <h2>Kenali <em>Area Site</em></h2>
-          <p class="lead">Peta site terkini, jalur evakuasi, dan lokasi fasilitas darurat dibagikan saat induksi lapangan dan dipasang di papan informasi setiap area.</p>
+          <h2>Kenali <em>Area Site</em> — SMI Nikel Open Pit</h2>
+          <p class="lead">Peta site terkini (scale 1:40 m UTI, Jetty CDS Slot) dibagikan saat induksi lapangan. Contoh Jetty SW1 ID 16 July 2026 dari PDF p.13 diadaptasi untuk SMI.</p>
           <div class="cards stagger">
-            <article class="card r"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>Pit & Disposal</h3><p>Area berisiko tinggi: alat berat, lereng, sump. Akses hanya dengan izin & komunikasi radio.</p></article>
-            <article class="card"><div class="ico">${Icons.get('truck', { class: 'ico-svg' })}</div><h3>Haul Road</h3><p>Jalur alat berat & LV. Patuhi right of way, batas kecepatan, dan jarak aman.</p></article>
-            <article class="card t"><div class="ico">${Icons.get('tools', { class: 'ico-svg' })}</div><h3>Workshop & Warehouse</h3><p>Bahaya mekanik, listrik, lifting, bahan kimia. APD spesifik wajib.</p></article>
-            <article class="card"><div class="ico">${Icons.get('flammable', { class: 'ico-svg' })}</div><h3>Fuel Farm & Gudang B3</h3><p>Area mudah terbakar: larangan api/HP, grounding, spill kit wajib tersedia.</p></article>
-            <article class="card b"><div class="ico">${Icons.get('factory', { class: 'ico-svg' })}</div><h3>Plant / Stockpile / Jetty<span class="tag cond">JIKA ADA</span></h3><p>Crusher, conveyor, smelter/HPAL, TSF, dan pengapalan — modul khusus berlaku.</p></article>
-            <article class="card g"><div class="ico">${Icons.get('shield', { class: 'ico-svg' })}</div><h3>Klinik, Camp & Muster Point</h3><p>Ketahui lokasi klinik, titik kumpul, APAR, eyewash, dan jalur evakuasi area Anda.</p></article>
+            <article class="card r"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>Pit & Disposal</h3><p>Area berisiko tinggi: alat berat, lereng, sump. Akses hanya dengan izin & komunikasi radio. Waspadai geoteknik laterit.</p></article>
+            <article class="card"><div class="ico">${Icons.get('truck', { class: 'ico-svg' })}</div><h3>Haul Road</h3><p>Jalur alat berat & LV. Patuhi right of way 8 level, batas kecepatan, & jarak 50 m / 3 detik.</p></article>
+            <article class="card t"><div class="ico">${Icons.get('tools', { class: 'ico-svg' })}</div><h3>Workshop & Warehouse</h3><p>Bahaya mekanik, listrik, lifting, bahan kimia. APD spesifik & isolasi LOTO wajib.</p></article>
+            <article class="card"><div class="ico">${Icons.get('flammable', { class: 'ico-svg' })}</div><h3>Fuel Farm & Gudang B3</h3><p>Area mudah terbakar: larangan api/HP, grounding, spill kit, bunding.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('factory', { class: 'ico-svg' })}</div><h3>Plant / Stockpile / Jetty</h3><p>Crusher, conveyor, smelter/HPAL, TSF, pengapalan CDS. <b>Jetty:</b> life jacket, likuefaksi Grup A (IMSBC).</p></article>
+            <article class="card g"><div class="ico">${Icons.get('shield', { class: 'ico-svg' })}</div><h3>Klinik, Camp & Muster Point</h3><p>Ketahui lokasi klinik, titik kumpul, APAR, eyewash, & jalur evakuasi area Anda. Jangan hapal dari memori — cek papan info.</p></article>
           </div>
-          <div class="footnote">Hari pertama Anda di area mana pun wajib didampingi: ikuti <b>induksi area spesifik</b> dari supervisor setempat sebelum bekerja.</div>
+          <div class="footnote">Perluasan: Peta Jetty CDS 1:40m dari PDF p.13 dimasukkan sebagai referensi layout pelabuhan SMI. Hari pertama wajib induksi area spesifik.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     16 · PERSYARATAN MASUK AREA TAMBANG (PDF p.16)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'ATURAN',
+    title: 'Persyaratan Masuk Area Tambang',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Aturan & Perilaku</div>
+          <h2><em>Persyaratan Masuk</em> Area Tambang</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Karyawan</h3>
+              <ul>
+                <li><b>Mengikuti induksi HSE</b> umum & area spesifik</li>
+                <li><b>Memiliki Mine Permit</b> (izin tetap area)</li>
+                <li><b>Lulus uji kelayakan</b> & mendapatkan stiker komisioning kendaraan/unit</li>
+                <li><b>Menggunakan APD wajib</b> yang ditetapkan</li>
+                <li><b>Fit untuk bekerja</b> — sehat, tidak di bawah pengaruh alkohol/obat</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Tamu / Visitor & Kendaraan</h3>
+              <ul>
+                <li><b>Tamu/Visitor:</b> induksi HSE Visitor + Mine Permit Visitor + APD wajib + stiker</li>
+                <li><b>Jika mengemudi:</b> wajib <b>KIMPER</b> yang valid</li>
+                <li><b>Kendaraan/Unit:</b> uji kelayakan, stiker, APD unit (APAR, P3K, cone, wheel chock, buggy whip)</li>
+                <li><b>Dalam keadaan sehat</b> & patuhi aturan perjalanan</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">PDF p.16 — kategori Karyawan / Tamu / Kendaraan diadaptasi untuk SMI. Tanpa induksi = tanpa akses (tetap berlaku).</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     17 · SIMPER / MINE PERMIT & ISOLATION (PDF p.17)
+      ============================================================ */
+  {
+    type: 'checks',
+    mod: 'ATURAN',
+    title: 'SIMPER / Mine Permit & Aturan Unit',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Aturan & Perilaku — Akses Unit</div>
+          <h2><em>SIMPER</em> & Mine Permit</h2>
+          <ul class="checks cols">
+            <li><b>Hanya dengan SIMPER/KIMPER & Mine Permit valid</b> boleh mengemudi/mengoperasikan unit</li>
+            <li><b>Sabuk pengaman:</b> pengemudi & semua penumpang wajib pakai — tanpa pengecualian</li>
+            <li><b>Dilarang HP</b> saat mengemudi/mengoperasikan unit; <b>dilarang merokok</b> di dalam unit</li>
+            <li><b>Dilarang menumpang di belakang</b> truk terbuka / bak / attachment</li>
+            <li><b>Ikuti aturan lalu lintas & keselamatan setiap saat</b> — termasuk hirarki prioritas kendaraan</li>
+            <li>Sertakan <b>stiker komisioning valid</b> di kaca/unit</li>
+          </ul>
+          <div class="footnote">PDF p.17 verbatim — diterjemahkan untuk SMI. SIMPER = Surat Izin Mengemudi Perusahaan.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     18 · PERAN PENGEMUDI/OPERATOR (PDF p.18)
+      ============================================================ */
+  {
+    type: 'cards',
+    mod: 'ATURAN',
+    title: 'Peran & Tanggung Jawab Pengemudi',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Aturan & Perilaku</div>
+          <h2>Peran <em>Pengemudi / Operator</em></h2>
+          <div class="cards stagger">
+                        <article class="card r"><div class="ico">${Icons.get('search', { class: 'ico-svg' })}</div><h3>Lapor 
+Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke atasan/SHE.</p></article>
+            <article class="card"><div class="ico">${Icons.get('shield', { class: 'ico-svg' })}</div><h3>Cek Stiker & P2H</h3><p>Pastikan <b>P2H</b> & cek masa berlaku <b>komisioning</b> sebelum unit dioperasikan.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('hand', { class: 'ico-svg' })}</div><h3>Patuh Aturan</h3><p>Matuhi semua <b>peraturan lalu lintas</b> berlaku di PT SMI.</p></article>
+            <article class="card t"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>Accident Report</h3><p><b>Laporkan segera kecelakaan</b> di jalan — jangan menunda.</p></article>
+            <article class="card g"><div class="ico">${Icons.get('refresh', { class: 'ico-svg' })}</div><h3>Fit To Work</h3><p>Pastikan <b>kondisi tubuh fit</b> sebelum bekerja.</p></article>
+            <article class="card"><div class="ico">${Icons.get('doc', { class: 'ico-svg' })}</div><h3>Jaga Komisioning</h3><p>Menjaga hasil <b>komisioning unit</b> & melapor masa berlakunya.</p></article>
+          </div>
+          <div class="footnote">PDF p.18 — 6 pilar tanggung jawab pengemudi TMS → SMI.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     19 · PERLENGKAPAN K3 UNIT (PDF p.19)
+      ============================================================ */
+  {
+    type: 'cards',
+    mod: 'ATURAN',
+    title: 'Perlengkapan K3 di Unit',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Aturan & Perilaku — Unit Safety</div>
+          <h2>Perlengkapan <em>K3 Wajib</em> di Unit</h2>
+          <div class="cards stagger">
+            <article class="card r"><div class="ico">${Icons.get('siren', { class: 'ico-svg' })}</div><h3>Kotak P3K & Isi</h3><p>Minimal <b>1 kotak P3K</b> sesuai standar per unit bergerak.</p></article>
+            <article class="card"><div class="ico">${Icons.get('stop', { class: 'ico-svg' })}</div><h3>Safety Cone</h3><p>Minimal <b>2 pcs</b> per unit bergerak.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('fire', { class: 'ico-svg' })}</div><h3>APAR 6 kg ABC</h3><p>Wajib tersedia <b>APAR 6 kg type ABC</b> pada setiap unit bergerak. <b>CATNO & Buggy Whip:</b> LV wajib buggy whip 4 m, DT hauling TOP 1 m.</p></article>
+            <article class="card t"><div class="ico">${Icons.get('tools', { class: 'ico-svg' })}</div><h3>Wheel Chock</h3><p>Wajib bagi unit beroda — cegah gerak liar saat parkir di lereng.</p></article>
+          </div>
+          <div class="footnote">PDF p.19 verbatim — detail jumlah & dimensi (4m/1m) dipertahankan untuk SMI.</div>
         </div>
       `;
     },
@@ -529,8 +947,8 @@ const SLIDES_DATA = [
           <div class="kicker">Manajemen Risiko</div>
           <h2>Manajemen <em>Risiko</em> di Lapangan</h2>
           <div class="cards stagger">
-            <article class="card"><div class="ico">${Icons.get('compass', { class: 'ico-svg' })}</div><h3>HIRADC</h3><p>Daftar bahaya & pengendalian resmi site. Pelajari HIRADC area Anda sebelum bekerja.</p></article>
-            <article class="card b"><div class="ico">${Icons.get('clipboard', { class: 'ico-svg' })}</div><h3>JSA (Job Safety Analysis)</h3><p>Uraian langkah kerja, bahaya, dan pengendalian per tugas. Dibaca & ditandatangani seluruh kru sebelum kerja.</p></article>
+            <article class="card"><div class="ico">${Icons.get('compass', { class: 'ico-svg' })}</div><h3>HIRADC / IBPR</h3><p><b>Identifikasi Bahaya & Penilaian Risiko</b> — alat kolaboratif, bukan milik manajer. Setiap pekerja berhak & diharapkan berpartisipasi, terutama tugas non-rutin/risiko tinggi. Pelajari IBPR area Anda.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('clipboard', { class: 'ico-svg' })}</div><h3>JSA + Aspek Lingkungan</h3><p>Pecah tugas → bahaya tiap langkah → nilai risiko → kontrol. Setiap tugas dinilai ganda: <b>potensi cedera + potensi dampak lingkungan</b> (tumpahan, debu, bising fauna). Dibaca & ditandatangani kru.</p></article>
             <article class="card t"><div class="ico">${Icons.get('hand', { class: 'ico-svg' })}</div><h3>Take 5 / SLAM</h3><p><b>S</b>top, <b>L</b>ihat, <b>A</b>nalisis, <b>M</b>anage: penilaian risiko dinamis 5 menit sebelum setiap tugas.</p></article>
             <article class="card g"><div class="ico">${Icons.get('mic', { class: 'ico-svg' })}</div><h3>Toolbox Meeting</h3><p>Briefing awal shift: tugas, cuaca, perubahan area, kesiapan orang & alat.</p></article>
           </div>
@@ -601,15 +1019,24 @@ const SLIDES_DATA = [
         <div class="inner">
           <div class="kicker">Manajemen Risiko</div>
           <h2>Izin Kerja <em>(Permit to Work)</em></h2>
+          <p class="lead">Izin kerja adalah pemeriksaan terakhir sebelum pekerjaan berbahaya dimulai. Izin memastikan bahaya telah dinilai, pengendali terpasang, dan semua pihak memahami perannya.</p>
           <ul class="checks cols">
-            <li><b>Hot Work</b> — pengelasan, cutting, grinding, pekerjaan berpercikan api.</li>
-            <li><b>Confined Space Entry</b> — tangki, hopper, sump, vessel, pipa.</li>
-            <li><b>Work at Height</b> — kerja ≥ 1,8 m tanpa pengaman permanen.</li>
-            <li><b>Excavation/Trenching</b> — galian dengan risiko utilitas & longsor.</li>
-            <li><b>Critical Lifting</b> — beban besar, tandem lift, area kritis.</li>
-            <li><b>Electrical Work / Isolation (LOTO)</b> — kerja listrik & isolasi energi.</li>
+            <li><b>Pekerjaan panas (<i>hot work</i>)</b> — pengelasan, pemotongan, dan gerinda yang menimbulkan percikan api. Wajib ada APAR dan penjaga api (<i>fire watch</i>).</li>
+            <li><b>Masuk ruang terbatas</b> — tangki, <i>hopper</i>, <i>sump</i>, bejana, dan pipa besar. Wajib ada uji gas, ventilasi, dan penjaga di luar.</li>
+            <li><b>Bekerja di ketinggian</b> — kerja ≥ 1,8 m tanpa pengaman permanen. Wajib ada tali pengaman ganda dan rencana penyelamatan.</li>
+            <li><b>Penggalian dan parit</b> — galian dengan risiko utilitas bawah tanah dan longsoran dinding. Wajib ada deteksi utilitas dan penahan dinding.</li>
+            <li><b>Pengangkatan kritis</b> — beban besar, angkat tandem, dan area kritis. Wajib ada rencana pengangkatan (<i>lifting plan</i>) dan juru isyarat.</li>
+            <li><b>Pekerjaan listrik dan isolasi (LOTO)</b> — kerja listrik dan isolasi energi. Wajib ada verifikasi tegangan nol dan kunci pribadi.</li>
           </ul>
-          <div class="footnote">Prinsip emas: <b>tidak ada pekerjaan berisiko tanpa permit yang valid.</b> Permit berhenti berlaku bila kondisi berubah, shift berganti tanpa serah terima, atau pekerjaan terhenti lama.</div>
+          <div class="panelbox warn" style="margin-top:16px">
+            <h3><i></i>Masa Berlaku, Perpanjangan, dan Penutupan</h3>
+            <ul>
+              <li>Izin berlaku <b>satu shift atau satu lokasi</b> saja; perpanjang dengan verifikasi ulang bila pekerjaan berlanjut.</li>
+              <li>Izin <b>gugur otomatis</b> bila kondisi berubah (hujan deras, alarm, bau gas), ganti shift tanpa serah terima, atau pekerjaan terhenti lama.</li>
+              <li>Tutup izin setelah selesai: area dibersihkan, peralatan dikembalikan, dan serah terima kepada pemilik area.</li>
+            </ul>
+          </div>
+          <div class="footnote">Prinsip emas: <b>tidak ada pekerjaan berisiko tanpa izin yang valid.</b> Contoh: mengelas braket di workshop tanpa izin panas — percikan menyambar tumpahan oli yang tidak terlihat — kebakaran bengkel. Izin memaksa pemeriksaan area terlebih dahulu.</div>
         </div>
       `;
     },
@@ -664,14 +1091,15 @@ const SLIDES_DATA = [
         <div class="inner">
           <div class="kicker">APD & Kesehatan</div>
           <h2>APD <em>Wajib</em> di Seluruh Area Site</h2>
+          <p class="lead">Lima APD dasar ini wajib dipakai sebelum memasuki area operasional. Periksa kelayakan setiap hari: retak, aus, kedaluwarsa, atau kontaminasi berarti diganti — bukan diperbaiki sendiri.</p>
           <div class="cards stagger">
-            <article class="card"><div class="ico">${Icons.get('helmet', { class: 'ico-svg' })}</div><h3>Helm Safety</h3><p>Sesuai standar (SNI/ANSI/EN); chinstrap terpasang bila diperlukan; ganti setelah benturan.</p></article>
-            <article class="card b"><div class="ico">${Icons.get('glass', { class: 'ico-svg' })}</div><h3>Kacamata Safety</h3><p>Wajib di seluruh area operasional; side shield untuk perlindungan samping.</p></article>
-            <article class="card t"><div class="ico">${Icons.get('boot', { class: 'ico-svg' })}</div><h3>Safety Boots</h3><p>Pelindung jari (steel/composite toe), sol anti-slip & tahan tusukan; wajib di area operasional.</p></article>
-            <article class="card g"><div class="ico">${Icons.get('vest', { class: 'ico-svg' })}</div><h3>High-Visibility</h3><p>Rompi/pakaian reflektif agar terlihat oleh operator alat berat, siang dan malam.</p></article>
-            <article class="card"><div class="ico">${Icons.get('glove', { class: 'ico-svg' })}</div><h3>Sarung Tangan</h3><p>Sesuai tugas: cut-resistant, chemical, anti-getaran, atau umum.</p></article>
+            <article class="card"><div class="ico">${Icons.get('helmet', { class: 'ico-svg' })}</div><h3>Helm Keselamatan</h3><p>Standar SNI, ANSI, atau EN; tali dagu (<i>chinstrap</i>) terpasang bila bekerja di ketinggian atau area berangin. <b>Ganti setelah benturan</b>, walau terlihat utuh — struktur dalam sudah rusak. Masa pakai umumnya 3–5 tahun.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('glass', { class: 'ico-svg' })}</div><h3>Kacamata Keselamatan</h3><p>Wajib di seluruh area operasional; pelindung samping (<i>side shield</i>) untuk percikan dari arah samping. Pilih lensa sesuai tugas: bening untuk umum, gelap untuk area terang, dan kedap debu untuk area berdebu.</p></article>
+            <article class="card t"><div class="ico">${Icons.get('boot', { class: 'ico-svg' })}</div><h3>Sepatu Keselamatan</h3><p>Pelindung jari baja atau komposit, sol antitergelincir dan tahan tusukan. Wajib di area operasional; pastikan ukuran pas — sepatu longgar menyebabkan tersandung di <i>haul road</i> tidak rata.</p></article>
+            <article class="card g"><div class="ico">${Icons.get('vest', { class: 'ico-svg' })}</div><h3>Pakaian Keterlihatan Tinggi</h3><p>Rompi atau pakaian reflektif agar terlihat operator alat berat, siang dan malam. Ganti bila reflektor pudar atau terkontaminasi oli — rompi kusam sama dengan tidak memakai rompi.</p></article>
+            <article class="card"><div class="ico">${Icons.get('glove', { class: 'ico-svg' })}</div><h3>Sarung Tangan</h3><p>Sesuai tugas: tahan sayatan untuk material tajam, tahan kimia (nitril/butil) untuk B3, antivibrasi untuk alat genggam, atau umum untuk material biasa. Periksa robekan sebelum dipakai.</p></article>
           </div>
-          <div class="footnote">APD adalah pertahanan terakhir. Jika APD saja tidak cukup untuk mengendalikan risiko, pekerjaan tidak boleh dimulai.</div>
+          <div class="footnote">APD adalah pertahanan terakhir dalam hierarki pengendalian. Jika APD saja tidak cukup mengendalikan risiko, pekerjaan tidak boleh dimulai — minta pengendalian rekayasa atau administratif tambahan.</div>
         </div>
       `;
     },
@@ -800,7 +1228,7 @@ const SLIDES_DATA = [
                 <li>Tanda: menguap terus, mata berat, sulit fokus, reaksi lambat, hampir tertidur.</li>
                 <li>Pengendalian: istirahat cukup, hidrasi, rotasi tugas, istirahat terjadwal, batas jam kerja.</li>
                 <li>Operator HE: wajib lapor dispatcher bila mengantuk — berhenti di tempat aman.</li>
-                <li>Rekan kerja wajib saling memantau (buddy system).</li>
+                <li>Rekan kerja wajib saling memantau melalui sistem pendamping (<i>buddy system</i>).</li>
               </ul>
             </div>
           </div>
@@ -822,7 +1250,7 @@ const SLIDES_DATA = [
           <div class="kicker">APD & Kesehatan</div>
           <h2>Bahaya <em>Kesehatan</em> Khas Nikel</h2>
           <div class="cards stagger">
-            <article class="card"><div class="ico">${Icons.get('mask', { class: 'ico-svg' })}</div><h3>Debu Tambang</h3><p>Debu laterit/ore, silika & debu batubara (jika ada smelter/PLTU). Risiko gangguan pernapasan jangka panjang. Kendali: penyiraman, ventilasi, respirator, medical surveillance.</p></article>
+            <article class="card"><div class="ico">${Icons.get('mask', { class: 'ico-svg' })}</div><h3>Debu Logam & Silika</h3><p>Debu <b>Ni, Co, Cr + silika respirabel</b> dari galian/hauling/stockpile/crushing dapat <b>melebihi NAB</b> (OSHA/MSHA memperketat PEL silika). Risiko: silikosis fatal, PPOK, sensitisasi. Kendali: <b>water spraying + dust collector/ventilasi</b> dulu, lalu <b>respirator N95/P100 fit-tested</b> — cek kebocoran & rawat benar.</p></article>
             <article class="card b"><div class="ico">${Icons.get('earp', { class: 'ico-svg' })}</div><h3>Kebisingan</h3><p>Alat berat, crusher, genset, furnace. Area ≥ 85 dBA = wajib pelindung telinga + program konservasi pendengaran (audiometri berkala).</p></article>
             <article class="card t"><div class="ico">${Icons.get('refresh', { class: 'ico-svg' })}</div><h3>Getaran</h3><p>Whole-body vibration (operator HE) & hand-arm (alat genggam). Kendali: rotasi, perawatan unit, kursi suspensi, istirahat.</p></article>
             <article class="card r"><div class="ico">${Icons.get('fire', { class: 'ico-svg' })}</div><h3>Heat Stress</h3><p>Iklim tropis + area panas (smelter). Kenali heat cramps → heat exhaustion → <b>heat stroke (darurat medis)</b>. Hidrasi elektrolit, work-rest cycle, area teduh.</p></article>
@@ -835,8 +1263,51 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     24 · TRAFFIC
-     ============================================================ */
+     24 · KESEHATAN UMUM — FATIGUE & HEAT STRESS DETAIL (PDF p.62-64)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'KESEHATAN',
+    title: 'Kesehatan Umum, Fatigue & Heat Stress',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Kesehatan — PDF p.62-64</div>
+          <h2>Kesehatan <em>Umum</em> — Fatigue & Heat Stress</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Kesehatan Umum (p.62)</h3>
+              <ul>
+                <li>Sakit / konsumsi obat → <b>lapor atasan/pengawas</b></li>
+                <li><b>Zero tolerance alkohol & obat terlarang</b>: di bawah pengaruh = dikeluarkan dari site TMS → berlaku di SMI</li>
+                <li>Dukung program <b>ALKOHOL & OBAT — ZERO TOLERANCE</b></li>
+              </ul>
+              <h3 style="margin-top:14px"><i></i>Fatigue (p.63)</h3>
+              <ul>
+                <li><b>Gejala:</b> sulit konsentrasi, mood berubah, sensitif suara/cahaya, sakit kepala, lelah ekstrem</li>
+                <li><b>Atasi:</b> tidur berkualitas, manajemen stres (meditasi/yoga), olahraga, rotasi, hidrasi, istirahat cukup</li>
+              </ul>
+            </div>
+            <div class="panelbox danger">
+              <h3><i></i>Heat Stress (p.64)</h3>
+              <ul>
+                <li>Serangkaian kondisi <b>tekanan panas berlebihan</b> di lingkungan kerja</li>
+                <li><b>Awali hari dengan minum air putih</b> cukup; hindari alkohol & kafein (dehidrasi)</li>
+                <li>Gunakan pakaian <b>cerah, ringan, tipis, katun</b> menyerap keringat; hindari sintetis</li>
+                <li><b>Konsumsi elektrolit</b> seimbang; work-rest cycle; area teduh (sumber p.64 lengkap)</li>
+                <li>Kenali heat cramps → exhaustion → stroke</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Diperkaya dari PDF p.62-64 — tiga topik yang sebelumnya ringkas di repo lama.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     25 · TRAFFIC (diperkaya PDF p.20-22)
+      ============================================================ */
   {
     type: 'checks',
     mod: 'AREA',
@@ -844,25 +1315,24 @@ const SLIDES_DATA = [
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Risiko Kritikal Area</div>
+          <div class="kicker">Risiko Kritikal Area — Dari PDF p.20</div>
           <h2>Keselamatan <em>Traffic & Haul Road</em></h2>
           <ul class="checks cols">
-            <li><b>Right of way:</b> alat berat (HE) &gt; light vehicle (LV) &gt; pejalan kaki; kendaraan menanjak diprioritaskan.</li>
-            <li><b>Batas kecepatan</b> sesuai rambu/TMP site (contoh umum: LV ± 40 km/j haul road, lebih rendah saat hujan/malam).</li>
-            <li><b>Seatbelt</b> wajib untuk semua penumpang; dilarang HP saat mengemudi.</li>
-            <li><b>Jarak aman</b> antar kendaraan (minimal ± 50 m di haul road atau sesuai TMP site).</li>
-            <li><b>Blind spot:</b> jangan pernah berada di zona buta HE; pastikan kontak mata/komunikasi dengan operator.</li>
-            <li><b>Radio & positive communication</b> wajib sebelum masuk/menyilang jalur operasional.</li>
-            <li><b>Pre-start check</b> harian: rem, ban, lampu, wiper, klakson, radio, APAR, seatbelt.</li>
-            <li><b>Parkir aman:</b> tanah datar, parking brake, wheel chock, hindari tepi lereng/sump.</li>
-            <li><b>Pejalan kaki:</b> hanya di jalur pedestrian; menyeberang di titik yang ditetapkan.</li>
+            <li><b>Hirarki prioritas 8 level:</b> 1. Ambulance sirene → 2. Pemadam → 3. Pengangkut bahan peledak → 4. LV escort → 5. HE bermuatan → 6. HE kosong → 7. Truck bermuatan/kosong → 8. LV/Bus/Manhaul (PDF p.20)</li>
+            <li><b>Batas kecepatan</b> sesuai Rencana Manajemen Lalu Lintas (TMP): kendaraan ringan ± 40 km/jam di <i>haul road</i>, lebih rendah saat hujan atau malam hari. Hak utama jalan: alat berat &gt; kendaraan ringan &gt; pejalan kaki; kendaraan menanjak diprioritaskan.</li>
+            <li><b>Sabuk pengaman (<i>seatbelt</i>)</b> wajib bagi seluruh penumpang; dilarang menggunakan ponsel saat mengemudi; dilarang menumpang di bak terbuka.</li>
+            <li><b>Titik buta (<i>blind spot</i>):</b> jangan pernah berada di zona buta alat berat; kontak mata dan komunikasi positif wajib dilakukan.</li>
+            <li><b>Radio dan komunikasi positif</b> wajib digunakan sebelum memasuki atau melintasi jalur operasional.</li>
+            <li><b>Pemeriksaan awal (<i>pre-start check</i>)</b> harian: rem, ban, lampu, wiper, klakson, radio, APAR, dan sabuk pengaman.</li>
+            <li><b>Parkir aman:</b> di tanah datar, rem parkir aktif, ganjal roda (<i>wheel chock</i>) terpasang, hindari tepi lereng dan <i>sump</i>.</li>
+            <li><b>Pejalan kaki:</b> hanya melalui jalur pejalan kaki; menyeberang di titik yang telah ditetapkan.</li>
           </ul>
           <div class="panelbox danger" style="margin-top:16px">
             <h3><i></i>Wet Weather Protocol — KHUSUS LATERIT</h3>
             <ul>
-              <li>Jalan laterit menjadi <b>sangat licin</b> saat hujan; traksi dapat hilang mendadak.</li>
-              <li>Kurangi kecepatan, nyalakan lampu, perbesar jarak aman.</li>
-              <li>Bila traksi hilang / jalan rusak berat: <b>STOP</b> di tempat aman, lapor dispatcher. SWA berlaku penuh.</li>
+              <li>Jalan laterit <b>sangat licin</b> saat hujan; traksi hilang mendadak</li>
+              <li>Kurangi kecepatan, nyalakan lampu, perbesar jarak aman</li>
+              <li>Traksi hilang / jalan rusak berat: <b>STOP</b> di tempat aman, lapor dispatcher. SWA penuh</li>
             </ul>
           </div>
         </div>
@@ -871,8 +1341,356 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     25 · ALAT BERAT
-     ============================================================ */
+     25 · ISYARAT KLAKSON & JARAK AMAN (PDF p.21-22)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'AREA',
+    title: 'Isyarat Klakson & Jarak Aman',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Risiko Kritikal Area — PDF p.21-22</div>
+          <h2><em>Klakson</em> & Jarak Aman Beriringan</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Isyarat Klakson (PDF p.21)</h3>
+              <ul>
+                <li><b>1× klakson:</b> akan menyalakan mesin</li>
+                <li><b>2× klakson:</b> akan bergerak maju</li>
+                <li><b>3× klakson:</b> akan bergerak mundur</li>
+                <li><b>Klakson panjang:</b> keadaan darurat</li>
+                <li>Bunyikan saat <b>memberi peringatan</b> ke orang/kendaraan lain</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Jarak Aman 3 Detik (PDF p.22)</h3>
+              <ul>
+                <li>Pengemudi hanya memiliki <b>3 detik</b> untuk merespons kondisi di depan saat beriringan.</li>
+                <li>Pada kecepatan <b>40 km/jam dibutuhkan ± 50 meter</b> jarak aman.</li>
+                <li>Jarak aman berfungsi sebagai pengendalian untuk kondisi tidak terduga.</li>
+                <li>Saat jalan basah, jarak aman harus diperbesar secara signifikan.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Tambahan baru dari PDF — sebelumnya repo hanya sebut 50 m umum; kini lengkap dengan kode klakson & rumus 3 detik.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     26 · KATEGORI & JENIS KECELAKAAN (PDF p.23-24)
+      ============================================================ */
+  {
+    type: 'cards',
+    mod: 'RISIKO',
+    title: 'Kategori Kecelakaan Tambang',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — PDF p.23-24</div>
+          <h2>Kategori & <em>Jenis Kecelakaan</em></h2>
+          <p class="lead">Definisi: kejadian tidak diinginkan & tidak direncanakan dalam kegiatan tambang (terbuka/bawah tanah) yang benar-benar terjadi, ada bukti, & diakibatkan usaha tambang.</p>
+          <div class="cards stagger">
+            <article class="card r"><div class="ico">💀</div><h3>Fatality</h3><p>Kematian akibat kecelakaan tambang.</p></article>
+            <article class="card"><div class="ico">🤕</div><h3>LTI — Lost Time Injury</h3><p>Cedera dengan kehilangan waktu kerja.</p></article>
+            <article class="card b"><div class="ico">🦺</div><h3>RWI — Restricted Work</h3><p>Keterbatasan kerja karena cedera.</p></article>
+            <article class="card t"><div class="ico">🏥</div><h3>MTI — Medical Treatment</h3><p>Perlu penanganan medis lanjutan.</p></article>
+            <article class="card g"><div class="ico">🩹</div><h3>FAI — First Aid</h3><p>Pertolongan pertama saja.</p></article>
+            <article class="card"><div class="ico">🏚️</div><h3>PD — Property Damage</h3><p>Kerusakan properti/aset.</p></article>
+            <article class="card r"><div class="ico">⚡</div><h3>NM — Near Miss</h3><p>Hampir celaka — <b>wajib lapor</b>, pembelajaran terbaik.</p></article>
+          </div>
+          <div class="footnote">LTI contoh dari PDF p.24 — dipetakan untuk SMI. Lapor semua kategori, bukan hanya fatality.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     27 · PENYEBAB KECELAKAAN 88/10/2 (PDF p.25)
+      ============================================================ */
+  {
+    type: 'cards',
+    mod: 'RISIKO',
+    title: 'Penyebab Kecelakaan 88/10/2',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — Heinrich Ratio</div>
+          <h2>Penyebab <em>Kecelakaan</em> — Data PDF p.25</h2>
+          <div class="cards stagger">
+            <article class="card r"><div class="ico">${Icons.get('tools', { class: 'ico-svg' })}</div><h3>88% — Tindakan Tidak Aman</h3><p>Perilaku pekerja menyimpang dari prosedur: shortcut, tidak pakai APD, meledek rekan, dll.</p></article>
+            <article class="card"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>10% — Kondisi Tidak Aman</h3><p>Lingkungan tidak standar: lantai licin, alat rusak, pencahayaan buruk, tumpukan tidak rapi.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>2% — Di Luar Kemampuan</h3><p>Nasib / force majeure — tetap investigasi untuk mitigasi.</p></article>
+          </div>
+          <div class="panelbox warn" style="margin-top:18px">
+            <h3><i></i>Implikasi</h3>
+            <ul>
+              <li>88% bisa dicegah dengan <b>disiplin prosedur + SWA</b> — repo lama sebut 80% generik, kini akurat 88% dari PDF.</li>
+              <li>Fokus: <b>perilaku + kondisi</b> sebelum menyalahkan nasib.</li>
+            </ul>
+          </div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     28 · BAHAYA vs RISIKO & STUDI KASUS (PDF p.26-27)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'RISIKO',
+    title: 'Bahaya vs Risiko',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — PDF p.26</div>
+          <h2><em>Bahaya</em> vs <em>Risiko</em> — Definisi Dasar</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Bahaya (Hazard)</h3>
+              <p style="color:var(--muted); font-size:13.5px; line-height:1.7">Suatu kondisi/situasi berpotensi menyebabkan kecelakaan, cedera, kerusakan, dampak negatif. Sifat: <b>fisik</b> (benda tajam, listrik), <b>kimia</b>, <b>biologis</b> (virus), <b>psikologis</b> (stres, kekerasan).</p>
+              <div style="margin-top:12px; padding:10px; border:1px dashed var(--line-2); border-radius:10px; background:var(--surface)">
+                <p style="margin:0; font-size:12.5px; color:var(--amber); text-align:center"><b>Studi Kasus Gambar (p.27):</b> High Pressure Air + Heavy Equipment — Temukan 5 bahaya pada foto pit!</p>
+              </div>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Risiko (Risk)</h3>
+              <p style="color:var(--muted); font-size:13.5px; line-height:1.7">Ukuran <b>kemungkinan × keparahan</b> bahaya. Risiko = probabilitas bahaya menjadi insiden nyata. Dikendalikan via hirarki pengendalian.</p>
+              <ul>
+                <li><b>Risiko tinggi</b> = kemungkinan besar + keparahan fatal → butuh eliminasi/isolation</li>
+                <li><b>Risiko rendah</b> = jarang + ringan → kontrol administratif + APD</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">PDF p.26-27 — konsep dasar yang belum eksplisit di repo lama.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     29 · KONDISI & TINDAKAN TIDAK AMAN (PDF p.28-31)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'RISIKO',
+    title: 'Kondisi & Tindakan Tidak Aman',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — PDF p.28-31</div>
+          <h2>Kondisi & <em>Tindakan Tidak Aman</em></h2>
+          <div class="two">
+            <div class="panelbox danger">
+              <h3><i></i>Kondisi Tidak Aman (Unsafe Condition)</h3>
+              <ul>
+                <li><b>Alat rusak:</b> kabel terkelupas, mesin bocor, APD tidak standar</li>
+                <li><b>Housekeeping buruk:</b> lantai licin, material berantakan, pencahayaan kurang (PDF p.29 contoh foto)</li>
+                <li><b>Lingkungan:</b> curah hujan, lereng retak, sump tidak stabil</li>
+              </ul>
+              <p style="margin-top:10px; color:var(--muted); font-size:12px">Tanggung jawab <b>bersama</b>: pekerja + manajemen harus ciptakan lingkungan aman (PDF p.32 penegasan).</p>
+            </div>
+            <div class="panelbox">
+              <h3><i></i>Tindakan Tidak Aman (Unsafe Act)</h3>
+              <ul>
+                <li><b>Bekerja tanpa APD</b> (PDF p.31 foto contoh)</li>
+                <li><b>Menumpang alat kerja</b> / riding bak</li>
+                <li>Bekerja di bawah pengaruh alkohol/obat</li>
+                <li>Mengambil jalan pintas, melanggar prosedur, mengganggu rekan</li>
+                <li>Definisi PDF p.30: perilaku menyimpang dari prosedur → dapat sebabkan insiden</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Pesan kunci PDF p.32: <b>"Keselamatan adalah tanggung jawab bersama."</b> — kini eksplisit di SMI.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     30 · AKTIVITAS RISIKO TINGGI (PDF p.33)
+      ============================================================ */
+  {
+    type: 'checks',
+    mod: 'RISIKO',
+    title: 'Aktivitas Risiko Tinggi Area Tambang',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — PDF p.33</div>
+          <h2>Aktivitas <em>Risiko Tinggi</em> di Area Tambang</h2>
+          <ul class="checks cols">
+            <li><b>Pembukaan lahan, pengeboran, peledakan</b> (jika ada)</li>
+            <li><b>Interaksi pejalan kaki</b> dengan kendaraan ringan & alat berat</li>
+            <li><b>Akses kendaraan ringan & alat berat</b> di pit</li>
+            <li><b>Kegiatan penambangan:</b> Loading, Hauling, Dumping</li>
+            <li><b>Pengoperasian LV, truk ringan, manhaul</b></li>
+            <li><b>Kegiatan perbaikan alat</b> di workshop</li>
+            <li><b>Pengisolasian (LOTO)</b> & energized work</li>
+            <li><b>Bekerja di dekat dinding/lereng</b> & sump</li>
+            <li><b>Bekerja shift malam</b> — penerangan & fatigue</li>
+            <li><b>Bekerja di dekat & di atas air</b> (jetty/TSF) & di ketinggian</li>
+          </ul>
+          <div class="footnote">Daftar komprehensif dari PDF p.33 — repo lama tersebar di beberapa modul, kini terkonsolidasi.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     31 · HIRARKI & MITIGASI (PDF p.34-35)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'RISIKO',
+    title: 'Hirarki Pengendalian & Mitigasi',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — PDF p.34-35</div>
+          <h2>Hirarki & <em>Mitigasi Risiko</em></h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Hirarki Pengendalian (5 Tingkat)</h3>
+              <ol style="margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.7">
+                <li><b>Eliminasi:</b> hilangkan bahaya total dari sumber</li>
+                <li><b>Substitusi:</b> ganti dengan lebih aman</li>
+                <li><b>Rekayasa:</b> isolasi fisik, guard, ventilasi</li>
+                <li><b>Administratif:</b> SOP, JSEA, permit, rambu, pelatihan</li>
+                <li><b>APD:</b> perlindungan terakhir setelah kontrol di atas</li>
+              </ol>
+              <p style="margin-top:10px; color:var(--amber); font-size:12px">Tujuan: cegah kecelakaan & lindungi kesehatan pekerja.</p>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Upaya Mitigasi SMI (dari PDF p.35)</h3>
+              <ul>
+                <li><b>APD/PPE</b> + <b>Rambu/Sign</b> + <b>Safety Data Sheet</b></li>
+                <li><b>P5M / Safety Talk</b> rutin</li>
+                <li><b>Isolasi LOTO</b> + <b>Izin Bekerja PTW</b></li>
+                <li><b>Laporan Bahaya</b> + <b>JSEA, SOP, IK</b></li>
+                <li><b>Inspeksi/Audit</b> + <b>Pelatihan & Kesadaran</b></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">PDF p.34-35 menambahkan daftar mitigasi konkret yang belum eksplisit di repo lama.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     32 · P5M SAFETY TALK (PDF p.37)
+      ============================================================ */
+  {
+    type: 'checks',
+    mod: 'RISIKO',
+    title: 'P5M & Safety Talk',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — PDF p.37</div>
+          <h2><em>P5M</em> — Pembicaraan 5 Menit</h2>
+          <p class="lead">Rutin harian termasuk Toolbox Meeting, namun <b>P5M spesifik</b> dari PDF kini ditambahkan.</p>
+          <ul class="checks cols">
+            <li><b>Singkatan:</b> Pembicaraan 5 Menit — kegiatan rutin K3 sebelum kerja</li>
+            <li><b>Tujuan:</b> tingkatkan kesadaran potensi bahaya & budaya keselamatan kuat</li>
+            <li><b>Isi:</b> isu K3 aktual area, cuaca, perubahan kondisi, tugas hari ini</li>
+            <li><b>Peserta:</b> seluruh kru termasuk kontraktor & tamu yang akan masuk pit</li>
+            <li><b>Dokumentasi:</b> daftar hadir + poin bahaya + pengendalian disepakati</li>
+          </ul>
+          <div class="footnote">PDF p.37 — P5M membedakan dari Toolbox harian yang lebih panjang. Kini ada slide khusus.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     33 · JSEA / SOP / IK (PDF p.39-42)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'RISIKO',
+    title: 'JSEA — SOP — IK',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — PDF p.39-42</div>
+          <h2><em>JSEA, SOP, IK</em> — Pengertian & Perbedaan</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>JSEA</h3>
+              <p style="color:var(--muted); font-size:13px"><b>Job Safety & Environmental Analysis:</b> proses sistematis identifikasi bahaya, nilai risiko, kendalikan, & pantau dampak lingkungan. Fokus: perencanaan & evaluasi pekerjaan.</p>
+              <h3 style="margin-top:12px"><i></i>SOP</h3>
+              <p style="color:var(--muted); font-size:13px"><b>Standar Operasional Prosedur:</b> langkah terperinci bagaimana tugas harus dilakukan. Konsistensi, efisiensi, kualitas.</p>
+              <h3 style="margin-top:12px"><i></i>IK</h3>
+              <p style="color:var(--muted); font-size:13px"><b>Instruksi Kerja:</b> petunjuk spesifik pelaksanaan tugas + tanda tangan. Memastikan pekerja pahami langkah aman.</p>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Perbedaan Kunci</h3>
+              <table style="width:100%; font-size:12.5px; color:var(--muted); border-collapse:collapse; margin-top:8px">
+                <tr style="border-bottom:1px solid var(--line)"><th style="text-align:left; padding:6px; color:var(--amber)">Fitur</th><th style="padding:6px">JSEA</th><th style="padding:6px">SOP</th><th style="padding:6px">IK</th></tr>
+                <tr style="border-bottom:1px solid var(--line)"><td style="padding:6px">Fokus</td><td style="padding:6px">Risiko</td><td style="padding:6px">Langkah terperinci</td><td style="padding:6px">Pelaksanaan tugas</td></tr>
+                <tr style="border-bottom:1px solid var(--line)"><td style="padding:6px">Detail</td><td style="padding:6px">Umum</td><td style="padding:6px">Spesifik</td><td style="padding:6px">Sangat spesifik</td></tr>
+                <tr><td style="padding:6px">Pakai</td><td style="padding:6px">Perencanaan</td><td style="padding:6px">Rutin</td><td style="padding:6px">Harian</td></tr>
+              </table>
+              <p style="margin-top:12px; color:var(--amber); font-size:11.5px">Sumber PDF p.42 — tabel ini belum ada di repo lama.</p>
+            </div>
+          </div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     34 · TRAINING & RAMBU & SDS (PDF p.43-47)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'RISIKO',
+    title: 'Training, Rambu & SDS',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Manajemen Risiko — PDF p.43-47</div>
+          <h2><em>Training, Rambu & Bahan Kimia</em></h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Training & Awareness (p.43)</h3>
+              <ul>
+                <li><b>Induksi Keselamatan:</b> lingkungan, bahaya, darurat, APD</li>
+                <li><b>Pelatihan keterampilan:</b> peralatan, mesin, proses kerja</li>
+                <li>Tujuan: tingkatkan pengetahuan & bangun kesadaran K3</li>
+              </ul>
+              <h3 style="margin-top:14px"><i></i>Kontrol Bahan Kimia (p.47)</h3>
+              <ul>
+                <li>Semua bahan kimia <b>harus didaftar & punya SDS</b> (LDK)</li>
+                <li><b>How to Read SDS:</b> 16 bagian — identifikasi, bahaya, komposisi, P3K, kebakaran, penyimpanan, toksikologi</li>
+                <li>SDS tersedia di lokasi bahan kimia, penanganan sesuai instruksi</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Rambu / Sign Pertambangan (p.44-45)</h3>
+              <ul>
+                <li><b>Larangan:</b> dilarang merokok, masuk tanpa izin, pakai HP saat mengemudi</li>
+                <li><b>Peringatan:</b> bahaya jatuh, longsor, listrik</li>
+                <li><b>Lalu lintas:</b> petunjuk kendaraan & pejalan kaki</li>
+                <li><b>Keselamatan:</b> jalur evakuasi, muster, APAR</li>
+                <li><b>STOP:</b> tanda berhenti mutlak (PDF p.45 contoh STOP P MH STOR)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">PDF p.43-47 — tiga topik ringkas yang belum terpisah di repo lama; kini digabung satu slide.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     35 · ALAT BERAT
+      ============================================================ */
   {
     type: 'cards',
     mod: 'AREA',
@@ -910,16 +1728,16 @@ const SLIDES_DATA = [
         <div class="inner">
           <div class="kicker">Risiko Kritikal Area</div>
           <h2>Geoteknik & <em>Open Pit Laterit</em></h2>
-          <p class="lead">Laterit yang jenuh air berperilaku seperti lumpur cair. Ini bahaya nomor satu di pit nikel.</p>
+          <p class="lead">Laterit (saprolit & limonit) berkekuatan seperti <b>tanah</b> — bukan batuan padat. Hujan tropis menurunkan <b>kuat geser</b> signifikan. Jenuh air = lumpur cair yang menelan alat. Ini bahaya nomor satu pit nikel.</p>
           <ul class="checks danger cols">
             <li><b>Highwall/lowwall:</b> dilarang bekerja/parkir di bawah material menggantung atau lereng tanpa inspeksi geotek.</li>
-            <li><b>Tanda bahaya longsor:</b> retakan (tension crack) di crest, rembesan air, suara tanah, amblasan.</li>
+            <li><b>Tanda awal kegagalan (wajib hafal):</b> retakan crest (tension crack), <b>gelembung/pergerakan material</b>, perubahan bentuk lereng, <b>mata air baru</b>, rembesan, suara tanah, amblasan.</li>
             <li><b>Mudflow/liquefaction:</b> material basah dapat mengalir menelan alat — hormati jarak aman dari toe lereng & disposal.</li>
             <li><b>Pit sump:</b> dilarang parkir/dumping dekat tepi sump yang tidak stabil; waspadai pompa & pipa.</li>
             <li><b>Trigger hujan:</b> setelah hujan deras, area rawan ditutup sampai inspeksi geoteknik menyatakan aman.</li>
             <li><b>Barricade & rambu</b> geoteknik = larangan mutlak; dilarang memindahkan tanpa otorisasi.</li>
             <li><b>Scaling</b> hanya oleh personel berkompeten dengan metode & pengawasan yang disetujui.</li>
-            <li>Lihat retakan atau aliran lumpur? <b>STOP WORK → lapor dispatcher/geotek segera.</b></li>
+            <li>Lihat retakan/gelembung/mata air baru atau aliran lumpur? <b>Amankan area + STOP WORK → lapor dispatcher/geoteknik segera</b> — meski belum ada tanda longsor seketika. Anda diberi wewenang penuh.</li>
           </ul>
         </div>
       `;
@@ -927,8 +1745,8 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     27 · LOTO
-     ============================================================ */
+     27 · LOTO (diperkaya PDF p.46 warna & kepemilikan)
+      ============================================================ */
   {
     type: 'flow',
     mod: 'KERJA',
@@ -936,7 +1754,7 @@ const SLIDES_DATA = [
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Pekerjaan Berbahaya</div>
+          <div class="kicker">Pekerjaan Berbahaya — PDF p.46</div>
           <h2><em>LOTO</em> — Lock Out Tag Out</h2>
           <div class="flow">
             <div class="step">1 · PERSIAPAN</div><div class="arr">➜</div>
@@ -948,10 +1766,11 @@ const SLIDES_DATA = [
             <div class="step">7 · BEKERJA & PELEPASAN</div>
           </div>
           <ul class="checks cols" style="margin-top:22px">
-            <li>Sumber energi: <b>listrik, mekanik, hidrolik, pneumatik, gravitasi, panas, kimia, energi tersimpan</b> (akumulator, pegas, beban, tekanan).</li>
-            <li><b>One person – one lock – one key.</b> Group LOTO memakai lockbox/hasp dengan prosedur jelas.</li>
-            <li>Dilarang melepas lock/tag orang lain tanpa prosedur otorisasi khusus.</li>
-            <li>Verifikasi nol energi: coba start, ukur tegangan/tekanan/suhu, pastikan tidak ada gerakan.</li>
+            <li><b>Hanya pemilik tag yang boleh pasang & lepas</b>; gembok + hasp/jaw + <b>tag merah-hitam-putih</b> "DANGER DO NOT OPERATE — This lock/tag may only be removed by [Nama]" (PDF p.46).</li>
+            <li>Sumber energi: listrik, mekanik, hidrolik, pneumatik, gravitasi, panas, kimia, tersimpan.</li>
+            <li><b>Konteks nikel:</b> buang <b>energi tersimpan hidrolik HE</b> & tekanan sisa <b>pipa slurry nikel</b> sebelum kerja — fluid injection & semburan slurry fatal.</li>
+            <li><b>One person – one lock – one key.</b> Group LOTO pakai lockbox/hasp jelas.</li>
+            <li>Verifikasi nol energi: coba start, ukur tegangan/tekanan/suhu. <b>Praktik langsung</b> LOTO panel/katup hidrolik adalah bagian wajib pelatihan, bukan sekadar slide.</li>
           </ul>
         </div>
       `;
@@ -1089,8 +1908,8 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     32 · LIFTING
-     ============================================================ */
+     32 · LIFTING (diperkaya PDF p.48)
+      ============================================================ */
   {
     type: 'checks',
     mod: 'KERJA',
@@ -1098,17 +1917,16 @@ const SLIDES_DATA = [
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Pekerjaan Berbahaya</div>
+          <div class="kicker">Pekerjaan Berbahaya — PDF p.48</div>
           <h2><em>Lifting</em> & Rigging</h2>
           <ul class="checks cols">
-            <li>Operator crane/forklift, rigger, dan signaler wajib <b>kompeten & berwenang</b>.</li>
-            <li>Patuhi <b>load chart</b>; dilarang overload; ketahui berat beban sebelum angkat.</li>
-            <li>Inspeksi lifting gear (sling, shackle, hook, chain block) — <b>tag & singkirkan</b> yang rusak.</li>
-            <li><b>Exclusion zone:</b> dilarang berada di bawah beban tergantung atau jalur swing.</li>
-            <li>Gunakan <b>tagline</b>; satu komando signaler; komunikasi radio bila pandangan terhalang.</li>
-            <li><b>Critical lift</b> (beban besar/tandem/bentuk tak stabil) wajib lifting plan terotorisasi.</li>
-            <li>Outrigger penuh pada ground stabil; waspadai jarak <b>jaringan listrik</b>.</li>
-            <li>Berhenti saat angin kencang/petir.</li>
+            <li><b>Orang bersertifikat + signalman</b> wajib; operator harus punya <b>lisensi/SIO</b> — jangan gunakan alat rusak</li>
+            <li>Patuhi <b>load chart & SWL</b> (Safe Working Load); jangan overload; ketahui berat beban sebelum angkat</li>
+            <li>Inspeksi <b>lifting gear</b> (sling, shackle, hook, chain block) — <b>tag & singkirkan</b> rusak + cek masa sertifikasi masih berlaku</li>
+            <li><b>Radius bahaya:</b> jangan pernah berjalan di bawah alat angkat operasi; exclusion zone ketat</li>
+            <li>Gunakan <b>tagline</b>; satu komando signaler; radio bila pandangan terhalang; waspadai jaringan listrik</li>
+            <li><b>Critical lift</b> (beban besar/tandem/bentuk tak stabil) wajib <b>lifting plan</b> terotorisasi</li>
+            <li>Outrigger penuh pada ground stabil; berhenti saat angin kencang/petir</li>
           </ul>
         </div>
       `;
@@ -1116,8 +1934,154 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     33 · GALIAN
-     ============================================================ */
+     33 · MANUAL HANDLING (PDF p.49-51) — 3 poin
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'KERJA',
+    title: 'Manual Handling — Bahaya',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Pekerjaan Berbahaya — PDF p.49</div>
+          <h2><em>Manual Handling</em> — Bahaya & Dampak</h2>
+          <div class="two">
+            <div class="panelbox danger">
+              <h3><i></i>Definisi</h3>
+              <p style="color:var(--muted); font-size:13px; line-height:1.65">Aktivitas memindahkan beban secara manual (angkat, turun, dorong, tarik, bawa, tahan) dalam rentang waktu tertentu.</p>
+              <h3 style="margin-top:14px"><i></i>Bahaya</h3>
+              <ul>
+                <li><b>Cedera punggung</b> & otot-sendi</li>
+                <li><b>Hernia</b></li>
+                <li><b>Gangguan muskuloskeletal</b></li>
+              </ul>
+            </div>
+            <div class="panelbox">
+              <h3><i></i>Konteks SMI</h3>
+              <p style="color:var(--muted); font-size:13.5px">Walaupun ada alat berat, banyak tugas ringan tetap manual: pindah sample ore, angkat filter, dorong drum. Semua = manual handling → butuh penilaian risiko.</p>
+              <div style="margin-top:14px; padding:10px; background:var(--amber-soft); border:1px solid var(--amber-line); border-radius:10px">
+                <p style="margin:0; font-size:12.5px; color:var(--amber)"><b>Ingat:</b> terlihat sederhana, tapi penyebab utama hernia & sakit punggung kronis di tambang.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     34 · MANUAL HANDLING — Kontrol & Teknik Benar (PDF p.50-51)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'KERJA',
+    title: 'Manual Handling — Kontrol',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Pekerjaan Berbahaya — PDF p.50-51</div>
+          <h2><em>Manual Handling</em> — Kontrol & Teknik Benar</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Pengendalian</h3>
+              <ul>
+                <li><b>Penilaian risiko:</b> identifikasi tugas, berat, jarak, posisi tubuh</li>
+                <li><b>Perbaikan ergonomi:</b> meja/kursi sesuai tinggi, pencahayaan baik, area lapang</li>
+                <li>Gunakan alat bantu: troli, hoist, forklift bila beban &gt; batas manual</li>
+                <li>Rotasi tugas &amp; istirahat</li>
+              </ul>
+            </div>
+            <div class="panelbox ok">
+              <h3><i></i>Teknik Angkat Benar — STOP & THINK</h3>
+              <ul>
+                <li><b>Jaga punggung lurus</b>; gunakan <b>kekuatan kaki</b>, bukan punggung</li>
+                <li><b>Dekatkan beban ke tubuh</b>; pegang dengan kedua tangan</li>
+                <li><b>Hindari memutar tubuh</b> saat mengangkat</li>
+                <li>Steps: Position feet → Get firm grip → Adopt posture → Lift with legs → Move feet → Put down</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Sumber: PDF p.51 diagram "Stop & Think Position the feet / Get a firm grip / Move the feet". Setiap situasi beda — nilai risiko spesifik.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     35 · BENDA JATUH & KETINGGIAN TAMBAHAN (PDF p.53-54)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'KERJA',
+    title: 'Benda Jatuh & Ketinggian — Tambahan',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Pekerjaan Berbahaya — PDF p.53-54</div>
+          <h2><em>Benda Jatuh</em> & Trauma Gantung</h2>
+          <div class="two">
+            <div class="panelbox danger">
+              <h3><i></i>Benda Jatuh — Statis vs Dinamis</h3>
+              <ul>
+                <li><b>Statis:</b> benda jatuh karena gravitasi tanpa gaya tambahan (batu menggantung, material lepas)</li>
+                <li><b>Dinamis:</b> jatuh karena gaya (tabrakan, tersangkut mesin, tumpukan roboh, alat lepas)</li>
+                <li><b>Hati-hati kejatuhan batu/tanah</b> di lokasi pit — lakukan penilaian sebelum masuk</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Ketinggian — Trauma Suspensi (PDF p.54)</h3>
+              <ul>
+                <li>Jatuh tanpa pelindung atau akibat peralatan yang salah dapat menyebabkan <b>cedera parah hingga fatal</b>.</li>
+                <li>Tergantung terlalu lama pada <i>harness</i> setelah jatuh menghambat sirkulasi kaki → sesak napas, hilang kesadaran, hingga gagal ginjal (<b>trauma suspensi</b>). Korban harus dievakuasi dalam hitungan menit.</li>
+                <li>Waspadai <b>bahaya sekunder saat penyelamatan</b> — rencana penyelamatan (<i>rescue plan</i>) wajib disiapkan sebelum pekerjaan dimulai, bukan saat kejadian.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     36 · TEMPAT MEROKOK & KONTROL LISTRIK DETAIL (PDF p.52,55)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'KERJA',
+    title: 'Kontrol Listrik & Tempat Merokok',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Pekerjaan Berbahaya — PDF p.52 & 55</div>
+          <h2>Kontrol <em>Listrik Detail</em> & Area Merokok</h2>
+          <div class="two">
+            <div class="panelbox danger">
+              <h3><i></i>Listrik — Detail PDF p.52</h3>
+              <ul>
+                <li>Semua <b>pintu panel tetap tertutup & terkunci</b></li>
+                <li>Hanya <b>petugas listrik berizin</b> boleh akses panel induk; pasang sign bahaya</li>
+                <li>Semua peralatan listrik harus <b>diuji & tagging valid</b></li>
+                <li><b>Sengatan = darurat</b> — laporkan segera, korban didampingi</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Tempat Merokok — PDF p.55</h3>
+              <ul>
+                <li><b>Hanya di area bertanda "Area Merokok"</b></li>
+                <li>Dilarang: kamar tidur, kantin, ruang terbatas, dekat bahan mudah terbakar/meledak</li>
+                <li>Dilarang: <b>Fuel Storage/BBM, Gudang B3</b></li>
+                <li>Pelanggaran = SPDK / Golden Rules</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     37 · GALIAN
+      ============================================================ */
   {
     type: 'checks',
     mod: 'KERJA',
@@ -1168,6 +2132,39 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
+     34B · TABEL LIMBAH B3 NIKEL (K3L Seimbang Bab 4 + PP 22/2021)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'FASILITAS',
+    title: 'Tabel Limbah B3 Site Nikel',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Fasilitas & Lingkungan — TPS B3 Berizin</div>
+          <h2>Tabel <em>Limbah B3</em> — Kenali & Buang Benar</h2>
+          <p class="lead">Limbah B3 <b>dilarang dibuang sembarangan, dibakar terbuka atau dikubur</b>. Hanya di <b>TPS B3 berizin</b>. Pelanggaran = sanksi berat perusahaan & individu.</p>
+          <div class="panelbox" style="margin-top:6px">
+            <div class="waste-table">
+              <div class="waste-row waste-head"><span>Jenis</span><span>Contoh di Site Nikel</span><span>Prosedur Benar</span></div>
+              <div class="waste-row"><span><b>Minyak & Fluida</b></span><span>Oli bekas HE, minyak rem/transmisi</span><span>Wadah tertutup → TPS B3. Jangan ke drainase/tanah</span></div>
+              <div class="waste-row"><span><b>Kimia</b></span><span>Kemasan reagen flotasi/hidrometalurgi, elektrolit smelter</span><span>Pisahkan per jenis → pihak berwenang</span></div>
+              <div class="waste-row"><span><b>Elektrik/Elektronik</b></span><span>Aki bekas kendaraan & peralatan</span><span>TPS B3 khusus elektronik</span></div>
+              <div class="waste-row"><span><b>Tailing HPAL</b></span><span>Sisa High Pressure Acid Leaching</span><span>Permanen di <b>TSF</b> standar keselamatan</span></div>
+              <div class="waste-row"><span><b>Domestik</b></span><span>Sisa makanan, plastik, kertas kantor/kantin</span><span>Tempat umum → vendor fasilitas umum</span></div>
+            </div>
+            <ul style="margin:12px 0 0">
+              <li>Operator HE: kenali <b>bocor oli/BBM</b> → bersihkan segera cegah kontaminasi tanah/air.</li>
+              <li>Staf lab: prosedur khusus reagen kimia. Semua pekerja: hafalkan lokasi <b>TPS B3</b> site Anda.</li>
+            </ul>
+          </div>
+          <div class="footnote">Sumber: <b>Fondasi K3L Seimbang</b> Bab 4 + PP 22/2021 (izin & pemantauan TPS B3 ketat). Operator & lab = garda depan.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
      35 · PLANT & CONVEYOR
      ============================================================ */
   {
@@ -1207,7 +2204,7 @@ const SLIDES_DATA = [
           <div class="cards stagger">
             <article class="card r"><div class="ico">${Icons.get('fire', { class: 'ico-svg' })}</div><h3>Smelter / RKEF</h3><ul><li>Molten metal & slag: <b>dilarang ada air/genangan</b> di area tapping/slag (ledakan uap).</li><li>Radiant heat: APD tahan panas, work-rest, hidrasi.</li><li>Coal yard: spontaneous combustion & debu mudah terbakar.</li><li>Gas CO/SO₂: detektor gas & ventilasi.</li></ul></article>
             <article class="card"><div class="ico">${Icons.get('dropper', { class: 'ico-svg' })}</div><h3>HPAL / Hydrometallurgy</h3><ul><li>Asam sulfat pekat + sistem <b>bertekanan tinggi</b> (autoclave, pipa).</li><li>Oxygen enrichment: material kompatibel, bebas oli/grease.</li><li>Shower/eyewash, SCBA/escape set, alarm gas.</li></ul></article>
-            <article class="card b"><div class="ico">${Icons.get('drop', { class: 'ico-svg' })}</div><h3>TSF (Tailings)</h3><ul><li>Akses terbatas; dilarang berenang/memancing.</li><li>Bahaya liquefaction & kegagalan bendungan; kenali tanda rembesan/retakan.</li><li>Kenali <b>Emergency Action Plan</b> & jalur evakuasi hilir.</li></ul></article>
+            <article class="card b"><div class="ico">${Icons.get('drop', { class: 'ico-svg' })}</div><h3>TSF (Tailings)</h3><ul><li><b>Exclusion zone sangat berbahaya</b> — akses dibatasi ketat; dilarang berenang/memancing.</li><li>Kegagalan dipicu <b>banjir bandang/cuaca ekstrem</b> atau kesalahan operasi → bencana lingkungan & kemanusiaan.</li><li>Kenali <b>rembesan/cairan aneh</b> → lapor K3L/ERT segera. Ikuti <b>latihan evakuasi tailing berkala</b> ke titik kumpul aman.</li><li>Kenali <b>Emergency Action Plan</b> & jalur evakuasi hilir.</li></ul></article>
             <article class="card t"><div class="ico">${Icons.get('ship', { class: 'ico-svg' })}</div><h3>Jetty & Barge (DSO)</h3><ul><li><b>Life jacket</b> wajib; kenali snap-back zone mooring line.</li><li>Nikel ore = kargo Grup A (IMSBC): bahaya <b>likuefaksi</b> bila kadar air melebihi TML.</li><li>Man overboard: alarm, life ring, rescue boat.</li><li>Batas cuaca: gelombang/angin/arus.</li></ul></article>
           </div>
         </div>
@@ -1241,58 +2238,189 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     38 · LINGKUNGAN
-     ============================================================ */
+     38 · LINGKUNGAN (diperkaya PDF p.66-67)
+      ============================================================ */
   {
-    type: 'checks',
+    type: 'two',
     mod: 'FASILITAS',
     title: 'Perlindungan Lingkungan',
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Fasilitas & Lingkungan</div>
+          <div class="kicker">Fasilitas & Lingkungan — PDF p.66-67</div>
           <h2>Perlindungan <em>Lingkungan</em></h2>
-          <ul class="checks cols">
-            <li><b>Zero uncontrolled spill:</b> cegah & laporkan tumpahan BBM/oli/kimia sekecil apa pun.</li>
-            <li>Pilah sampah: domestik, scrap, dan <b>limbah B3</b> ke wadah berlabel.</li>
-            <li>Dilarang membuang limbah/oli ke tanah, drainase, atau badan air.</li>
-            <li>Hormati <b>settling pond & sistem drainase</b> site; jangan mengubah aliran air tanpa izin.</li>
-            <li>Kendalikan erosi & sedimentasi sesuai rencana pengelolaan lingkungan.</li>
-            <li><b>Satwa & flora dilindungi:</b> dilarang berburu, menangkap, memetik, atau mengganggu.</li>
-            <li>Temuan benda/situs budaya = hentikan kerja area setempat & lapor.</li>
-            <li>Keluhan masyarakat terkait debu/bising/air diteruskan ke fungsi lingkungan.</li>
-          </ul>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Prinsip & Regulasi</h3>
+              <ul>
+                <li><b>UU 32/2009 PPLH</b> + <b>UU 1/2004 Minerba</b>: keberlanjutan & lindungi lingkungan; sanksi hukum & reputasi bila tidak patuh (p.66)</li>
+                <li><b>Zero uncontrolled spill:</b> cegah & laporkan tumpahan BBM/oli/kimia sekecil apa pun</li>
+                <li>Hormati <b>settling pond & drainase</b>; jangan ubah aliran air tanpa izin; kendalikan erosi</li>
+                <li><b>Satwa & flora dilindungi:</b> larang berburu/memetik; situs budaya = stop kerja & lapor</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Pengelolaan Sampah (p.67)</h3>
+              <ul>
+                <li><b>Setiap orang tanggung jawab kebersihan lingkungan</b></li>
+                <li><b>Pisahkan sampah:</b> <b>PLASTIC</b> (anorganik) vs <b>ORGANIC</b> (organik) — sesuai poster PDF</li>
+                <li>Pilah: domestik, scrap, <b>limbah B3</b> ke wadah berlabel</li>
+                <li>Dilarang buang limbah/oli ke tanah/drainase/badan air; keluhan debu/bising/air → fungsi lingkungan</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Diperkaya dari PDF p.66-67 — regulasi + poster PLASTIC/ORGANIC yang belum ada di repo lama.</div>
         </div>
       `;
     },
   },
 
   /* ============================================================
-     39 · TANGGAP DARURAT
-     ============================================================ */
+     38B · AIR, REKLAMASI & SIKLUS HIDUP (K3L Seimbang Bab 4)
+      ============================================================ */
   {
-    type: 'cards',
+    type: 'two',
+    mod: 'FASILITAS',
+    title: 'Air, Reklamasi & Siklus Hidup',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker k-teal">Lingkungan — Tata Kelola Air & Lahan</div>
+          <h2>Air, <em>Reklamasi</em> & Siklus Hidup Tambang</h2>
+          <p class="lead">Lingkungan bukan domain ahli saja — melainkan <b>tanggung jawab bersama</b> setiap pekerja. Dua pilar yang wajib Anda kuasai: manajemen air & reklamasi progresif.</p>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>Manajemen Air & Drainase</h3>
+              <ul>
+                <li><b>Jangan buang</b> sampah, minyak atau bahan kimia apa pun ke drainase, selokan atau badan air konsesi.</li>
+                <li>Waspadai tanda pencemaran: <b>air berubah warna, lapisan minyak, bau tidak sedap</b> → lapor K3L segera.</li>
+                <li>Laporkan <b>rembesan keruh</b> dari timbunan — indikasi erosi/pelepasan logam berat.</li>
+                <li><b>Bersihkan kabin</b> dari tanah/lumpur sebelum keluar pit — cegah polusi perjalanan.</li>
+              </ul>
+            </div>
+            <div class="panelbox ok">
+              <h3><i></i>Reklamasi Progresif — Topsoil vs Subsoil</h3>
+              <ul>
+                <li>Reklamasi dilakukan <b>seiring penambangan</b>, bukan di akhir operasi (kewajiban hukum & etis).</li>
+                <li><b>Topsoil subur</b> dipisahkan & disimpan dari <b>subsoil</b> — untuk menutup lereng reklamasi agar bisa ditanami kembali.</li>
+                <li>Anda membantu dengan: <b>tidak merusak area reklamasi</b> & melaporkan kerusakan vegetasi muda.</li>
+                <li>Tempatkan diri dalam <b>siklus hidup tambang</b>: eksploitasi → pemulihan.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Sumber: <b>Fondasi K3L Seimbang</b> Bab 4 — drainase, reklamasi progresif & topsoil. PP 22/2021 mengatur baku mutu air & izin TPS B3.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     39 · 5R & INSPEKSI RUTIN (PDF p.65 & p.56)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'FASILITAS',
+    title: '5R & Inspeksi Rutin',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Fasilitas & Lingkungan — PDF p.65, p.56</div>
+          <h2><em>5R</em> & Inspeksi Rutin</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>5R — Budaya Kerja (p.65)</h3>
+              <ul>
+                <li><b>1. Ringkas:</b> hapus barang tak perlu</li>
+                <li><b>2. Rapi:</b> letak pada tempat ditentukan</li>
+                <li><b>3. Resik:</b> bersihkan rutin, hapus debu/sampah</li>
+                <li><b>4. Rawat:</b> pertahankan bersih & rapi (RAWAT-RESIK-RAPIH-RAJIN)</li>
+                <li><b>5. Rajin (Shitsuke):</b> disiplin berkelanjutan</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Inspeksi Rutin — Contoh (p.56)</h3>
+              <ul>
+                <li><b>Alat berat:</b> ban, rem, hidrolik, komponen (excavator, dozer, dump truck)</li>
+                <li><b>Listrik:</b> kabel, sambungan, panel</li>
+                <li><b>Pompa, pipa & saluran:</b> bocor, korosi, kerusakan</li>
+                <li>Interval: harian, mingguan, bulanan — checklist terdokumentasi</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">PDF p.65 (5R) & p.56 (inspeksi) — 2 topik yang belum ada slide khusus di repo lama.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     41 · TANGGAP DARURAT (diperkaya PDF p.57-58)
+      ============================================================ */
+  {
+    type: 'two',
     mod: 'DARURAT',
     title: 'Tanggap Darurat',
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Darurat & Medis</div>
+          <div class="kicker">Darurat & Medis — PDF p.57-58</div>
           <h2><em>Tanggap Darurat</em> & Evakuasi</h2>
-          <div class="cards stagger">
-            <article class="card r"><div class="ico">${Icons.get('siren', { class: 'ico-svg' })}</div><h3>Saat Alarm Berbunyi</h3><p>Hentikan pekerjaan dengan aman → matikan peralatan bila memungkinkan → menuju <b>muster point</b> lewat jalur evakuasi → lapor untuk headcount → tunggu instruksi. Jangan kembali sebelum ALL CLEAR.</p></article>
-            <article class="card"><div class="ico">${Icons.get('user', { class: 'ico-svg' })}</div><h3>Organisasi Darurat</h3><p>Kenali peran: Incident Commander, <b>ERT</b> (Emergency Response Team), kontrol room, klinik, security, muster officer. Nomor darurat site dipasang di setiap area & kendaraan.</p></article>
-            <article class="card b"><div class="ico">${Icons.get('list', { class: 'ico-svg' })}</div><h3>Skenario Utama Site</h3><ul><li>Kebakaran unit/plant/area vegetasi</li><li>Kecelakaan alat berat / korban terjepit</li><li>Longsor & mudflow; banjir pit</li><li>Tumpahan/paparan bahan kimia</li><li>Man overboard (jetty)</li><li>Heat stroke & medical emergency</li><li>Gempa, badai, petir</li></ul></article>
-            <article class="card t"><div class="ico">${Icons.get('flag', { class: 'ico-svg' })}</div><h3>Prinsip Evakuasi</h3><p>Evakuasi menyilang arah angin untuk risiko gas/asap; shelter-in-place bila diperintahkan; drill darurat wajib diikuti seluruh personel tanpa kecuali.</p></article>
+          <div class="two">
+            <div class="panelbox danger">
+              <h3><i></i>Bila Mengetahui Darurat (p.57)</h3>
+              <ul>
+                <li><b>Jangan panik — teriakkan “EMERGENCY” 3×</b></li>
+                <li>Jika terjadi kebakaran dan Anda mampu: gunakan APAR; bila tidak, segera evakuasi.</li>
+                <li><b>Peringatkan orang di sekitar</b> dan minta bantuan.</li>
+                <li><b>Format radio 7 poin:</b> Nama Anda → Jenis keadaan darurat → Lokasi → Orang/alat yang terlibat → Jenis kerusakan/cedera → Bantuan yang diperlukan → Pastikan <b>konfirmasi</b> sebelum menutup radio.</li>
+                <li>Tunggu konfirmasi — jangan putus komunikasi</li>
+              </ul>
+            </div>
+            <div class="panelbox">
+              <h3><i></i>Evakuasi dan Titik Kumpul (p.58)</h3>
+              <ul>
+                <li><b>Jangan panik, tetap tenang</b></li>
+                <li><b>Muster Point</b> terdekat sesuai rambu — ikuti jalur evakuasi</li>
+                <li><b>Jangan meninggalkan Muster Point</b> sampai <b>Tim Emergency / Warden menyatakan "Kondisi Aman"</b></li>
+                <li>Headcount oleh muster officer; laporkan orang hilang</li>
+                <li>Skenario: kebakaran, alat berat, longsor/mudflow, tumpahan kimia, man overboard, heat stroke, gempa</li>
+              </ul>
+            </div>
           </div>
+          <div class="footnote">Diperkaya dari PDF p.57-58 — teriak 3× & format radio 7 poin yang belum eksplisit di repo lama.</div>
         </div>
       `;
     },
   },
 
   /* ============================================================
-     40 · SIRENE DEMO (Interactive)
-     ============================================================ */
+     40 · GEMPA BUMI SOP (PDF p.61)
+      ============================================================ */
+  {
+    type: 'checks',
+    mod: 'DARURAT',
+    title: 'Jika Terjadi Gempa',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Darurat & Medis — PDF p.61</div>
+          <h2>Jika Terjadi <em>Gempa</em></h2>
+          <ul class="checks cols">
+            <li><b>Notifikasi rekan kerja</b> segera</li>
+            <li>Jika di dalam ruangan: <b>pergi cepat (tidak berlari) & tenang</b> ke luar; perhatikan benda jatuh & lantai tersandung</li>
+            <li>Jika tidak dapat keluar tepat waktu: <b>berlindung di bawah meja kuat</b></li>
+            <li>Pergi ke <b>titik kumpul terdekat</b></li>
+            <li>Setelah gempa: waspadai <b>aftershock & longsoran</b> pit — SWA berlaku</li>
+          </ul>
+          <div class="footnote">SOP gempa belum ada di repo lama — ditambahkan dari PDF p.61 untuk kesiapan wilayah seismik.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     41 · SIRENE DEMO (Interactive)
+      ============================================================ */
   {
     type: 'sireneDemo',
     mod: 'DARURAT',
@@ -1328,26 +2456,83 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     41 · P3K & MEDIS
-     ============================================================ */
+     42 · P3K & MEDIS + JIKA CEDERA (diperkaya PDF p.59)
+      ============================================================ */
   {
-    type: 'checks',
+    type: 'two',
     mod: 'DARURAT',
-    title: 'P3K & Medis',
+    title: 'P3K & Jika Terjadi Cedera',
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Darurat & Medis</div>
-          <h2><em>P3K</em> & Layanan Medis</h2>
-          <ul class="checks cols">
-            <li>Ketahui lokasi <b>klinik, P3K kit, AED (jika ada), stretcher, eyewash & shower</b> di area Anda.</li>
-            <li>Prinsip: <b>aman diri → aman lingkungan → aman korban</b>. Jangan jadi korban kedua.</li>
-            <li><b>Jangan memindahkan korban</b> dugaan cedera tulang belakang kecuali ada bahaya mendesak (api/air).</li>
-            <li>Kontak asam/kimia: bilas air mengalir ≥ 15 menit sambil melepas pakaian terkontaminasi.</li>
-            <li>Heat stroke (bingung, kulit panas, tidak sadar) = <b>darurat</b>: dinginkan & panggil medis segera.</li>
-            <li><b>Semua cedera — sekecil apa pun — wajib dilaporkan</b> dan dicatat, termasuk first aid case.</li>
-            <li>Prosedur medevac: klinik → rumah sakit rujukan sesuai rencana darurat site.</li>
-          </ul>
+          <div class="kicker">Darurat & Medis — PDF p.59</div>
+          <h2><em>P3K</em> & Jika Terjadi Cedera</h2>
+          <div class="two">
+            <div class="panelbox">
+              <h3><i></i>P3K Umum</h3>
+              <ul>
+                <li>Ketahui lokasi <b>klinik, P3K kit, AED, stretcher, eyewash & shower</b></li>
+                <li>Prinsip: <b>aman diri → aman lingkungan → aman korban</b>; jangan jadi korban kedua</li>
+                <li>Kontak asam/kimia: bilas ≥ 15 menit</li>
+                <li>Heat stroke = darurat: dinginkan & panggil medis</li>
+                <li><b>Semua cedera wajib lapor</b> termasuk first aid</li>
+              </ul>
+            </div>
+            <div class="panelbox danger">
+              <h3><i></i>Jika Terjadi Cedera Personil (p.59)</h3>
+              <ul>
+                <li><b>Wajib hentikan aktivitas</b></li>
+                <li>P3K oleh personel terlatih → bawa ke klinik/RS</li>
+                <li>Isi & laporkan <b>laporan insiden</b></li>
+                <li><b>Cedera serius:</b> bunyikan alarm via telepon/radio, hubungi <b>ERT & ambulans/Emergency LV</b></li>
+                <li><b>JANGAN pindahkan korban parah</b> kecuali ada bahaya mendesak</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Diperkaya dari PDF p.59 — alur cedera serius & ERT yang belum detail di repo lama.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
+     43 · JIKA TERJADI KEBAKARAN CARRA/PASS (PDF p.60)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'DARURAT',
+    title: 'Jika Terjadi Kebakaran',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker">Darurat & Medis — PDF p.60</div>
+          <h2>Jika Terjadi <em>Kebakaran — C.A.R.R.A & PASS</em></h2>
+          <div class="two">
+            <div class="panelbox danger">
+              <h3><i></i>C.A.R.R.A (p.60)</h3>
+              <ul>
+                <li><b>C</b> — Cabut pin pengaman? / <b>A</b> — Bunyikan alarm / Lapor ERT</li>
+                <li>Lakukan <b>pemadaman dengan APAR jika mampu</b></li>
+                <li><b>Evakuasi area</b> → tunggu di Muster Point terdekat</li>
+              </ul>
+              <h3 style="margin-top:14px"><i></i>PASS APAR</h3>
+              <ul>
+                <li><b>P</b>ull — Cabut pin</li>
+                <li><b>A</b>im — Arahkan ke sumber api</li>
+                <li><b>S</b>queeze — Remas pemicu</li>
+                <li><b>S</b>weep — Ratakan ke seluruh sumber api</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Prinsip</h3>
+              <ul>
+                <li>Api kecil & Anda terlatih → coba padamkan</li>
+                <li>Api membesar → <b>evakuasi, jangan heroik</b>; tunggu ERT</li>
+                <li>Kenali kelas api & APAR sesuai (A/B/C/D/listrik — jangan air untuk logam/listrik)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Sumber PDF p.60 — akronim C.A.R.R.A & PASS yang belum ada di repo lama.</div>
         </div>
       `;
     },
@@ -1398,6 +2583,45 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
+     42B · BUDAYA: PENGHARGAAN & PELAPORAN 24 JAM (K3L Seimbang Bab 6)
+      ============================================================ */
+  {
+    type: 'two',
+    mod: 'DARURAT',
+    title: 'Penghargaan & Pelaporan 24 Jam',
+    render() {
+      return `
+        <div class="inner">
+          <div class="kicker k-teal">Budaya K3L — Sanksi Adil & Apresiasi</div>
+          <h2>Dari <em>SWA</em> hingga Penghargaan</h2>
+          <p class="lead">Sanksi konsisten menunjukkan aturan berlaku untuk semua. <b>Penghargaan terbuka</b> menunjukkan perilaku apa yang dihargai. Keduanya membangun budaya matang jangka panjang.</p>
+          <div class="two">
+            <div class="panelbox ok">
+              <h3><i></i>Penghargaan Positif</h3>
+              <ul>
+                <li><b>Juru Kampanye Keselamatan</b> — pelapor bahaya/near miss terbanyak.</li>
+                <li><b>Inisiatif Lingkungan</b> — penghemat sumber daya / penurun jejak karbon.</li>
+                <li>Pengakuan publik + insentif — menciptakan <b>motivasi intrinsik</b> meniru perilaku baik.</li>
+                <li>SWA diproses <b>tanpa menyalahkan</b> — pahami akar masalah, bukan menghukum.</li>
+              </ul>
+            </div>
+            <div class="panelbox warn">
+              <h3><i></i>Pelaporan Jujur 24 Jam — Tanpa Menyalahkan</h3>
+              <ul>
+                <li><b>Definisi insiden luas:</b> LTI/Fatality <b>+</b> near miss <b>+</b> spill lingkungan kecil — semua wajib lapor.</li>
+                <li><b>Alur:</b> amankan lokasi bila mampu → first aid → lapor atasan + K3L <b>dalam 24 jam</b>.</li>
+                <li>Tujuan: <b>belajar, bukan mencari pelaku</b>. Transparansi = investigasi efektif & cegah terulang.</li>
+                <li>Skenario SWA: alat tak layak, kerja tanpa izin/JSA, potensi tumpahan B3 — <b>hentikan tanpa takut</b>.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Sumber: <b>Fondasi K3L Seimbang</b> Bab 6 — SWA tanpa syarat, sanksi bertingkat konsisten, penghargaan & budaya no-blame. Konsistensi sanksi + apresiasi = kepemilikan kolektif.</div>
+        </div>
+      `;
+    },
+  },
+
+  /* ============================================================
      43 · CAMP & TRANSPORTASI
      ============================================================ */
   {
@@ -1421,12 +2645,12 @@ const SLIDES_DATA = [
               </ul>
             </div>
             <div class="panelbox warn">
-              <h3><i></i>Journey Management</h3>
+              <h3><i></i>Manajemen Perjalanan</h3>
               <ul>
-                <li>Perjalanan site hanya dengan kendaraan terinspeksi & pengemudi berwenang.</li>
-                <li>Seatbelt wajib; larangan HP; rencana rute + check-in/check-out.</li>
-                <li>Perjalanan laut: <b>life jacket</b>, perhatikan cuaca; perjalanan malam dibatasi sesuai aturan site.</li>
-                <li>Kendaraan dilengkapi P3K, APAR, dan alat komunikasi.</li>
+                <li>Perjalanan di site hanya menggunakan kendaraan yang telah diinspeksi dan pengemudi yang berwenang.</li>
+                <li>Sabuk pengaman wajib digunakan; dilarang menggunakan ponsel; susun rencana rute serta lapor berangkat dan tiba (<i>check-in/check-out</i>).</li>
+                <li>Perjalanan laut: <b>jaket pelampung (<i>life jacket</i>)</b> wajib digunakan dan cuaca harus diperhatikan; perjalanan malam dibatasi sesuai aturan site.</li>
+                <li>Kendaraan dilengkapi kotak P3K, APAR, dan alat komunikasi.</li>
               </ul>
             </div>
           </div>
@@ -1436,26 +2660,40 @@ const SLIDES_DATA = [
   },
 
   /* ============================================================
-     44 · KEAMANAN & ETIKA
-     ============================================================ */
+     45 · KEAMANAN & ETIKA (diperkaya PDF p.68 BRIMOB)
+      ============================================================ */
   {
-    type: 'checks',
+    type: 'two',
     mod: 'PENUNJANG',
     title: 'Keamanan & Etika',
     render() {
       return `
         <div class="inner">
-          <div class="kicker">Penunjang</div>
+          <div class="kicker">Penunjang — PDF p.68 adaptasi SMI</div>
           <h2>Keamanan, <em>Komunitas</em> & Etika</h2>
-          <ul class="checks cols">
-            <li>Patuhi akses & badge system; laporkan orang tak dikenal ke security.</li>
-            <li>Dilarang pencurian ore/aset, penambangan ilegal, dan penyelundupan.</li>
-            <li>Hormati masyarakat sekitar: budaya, adat, situs sakral, dan mata pencaharian.</li>
-            <li>Tidak ada kekerasan, pelecehan seksual, bullying, dan diskriminasi dalam bentuk apa pun.</li>
-            <li>Anti suap & gratifikasi; tolak dan laporkan setiap penawaran tidak sah.</li>
-            <li><b>Whistleblowing:</b> saluran pelaporan pelanggaran dijamin kerahasiaan & perlindungannya.</li>
-            <li>Media sosial: dilarang menyebarkan informasi rahasia site atau foto area kritis tanpa izin.</li>
-          </ul>
+          <div class="two">
+            <div class="panelbox danger">
+              <h3><i></i>Pengelolaan Keamanan — PDF p.68</h3>
+              <ul>
+                <li><b>Aparat keamanan / BRIMOB</b> dioperasikan sesuai SOP pengamanan tambang SMI — hormati instruksi</li>
+                <li><b>Tidak ada perjudian</b> di area operasional SMI (judi = pelanggaran berat, langsung SP3/PHK)</li>
+                <li><b>Tidak ada intimidasi</b> di area operasional SMI — laporkan intimidasi ke HRGA/HSE</li>
+                <li>Patuhi akses & badge system; laporkan orang tak dikenal ke security</li>
+                <li>Dilarang pencurian ore/aset, penambangan ilegal, penyelundupan</li>
+              </ul>
+            </div>
+            <div class="panelbox">
+              <h3><i></i>Komunitas & Etika</h3>
+              <ul>
+                <li>Hormati masyarakat: budaya, adat, situs sakral, mata pencaharian</li>
+                <li>Tidak ada kekerasan, pelecehan seksual, bullying, diskriminasi</li>
+                <li>Anti suap & gratifikasi; tolak & lapor</li>
+                <li><b>Whistleblowing</b> dijamin kerahasiaan & perlindungan</li>
+                <li>Medsos: larang sebar informasi rahasia / foto area kritis tanpa izin</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footnote">Diperkaya dari PDF p.68 — 3 poin pengelolaan keamanan TMS kini eksplisit untuk SMI (Auxin → SMI mapping).</div>
         </div>
       `;
     },
@@ -1473,33 +2711,39 @@ const SLIDES_DATA = [
         {
           tag: 'INSIDEN FATAL',
           title: 'Longsor dinding pit saat hujan',
-          story: 'Seorang operator dump truck melanjutkan loading di area pit padahal hujan deras mulai turun dan rambu "Slippery / Geotech Watch" sudah terpasang. Lereng highwall mengalami mudflow dan menelan unit. Operator tidak sempat keluar.',
-          takeaway: 'Tanda bahaya di pit bukan pajangan. Setelah hujan, <b>STOP</b> dan tunggu inspeksi geoteknik — tidak ada ore yang senilai nyawa.',
+          story: 'Seorang operator truk jungkit (dump truck) melanjutkan pemuatan di area pit padahal hujan deras mulai turun dan rambu “Licin/Awas Geoteknik” sudah terpasang. Dinding pit (highwall) mengalami aliran lumpur (mudflow) dan menimbun unit. Operator tidak sempat keluar.',
+          takeaway: 'Tanda bahaya di pit bukan pajangan. Setelah hujan, <b>hentikan pekerjaan</b> dan tunggu inspeksi geoteknik — tidak ada bijih yang senilai nyawa.',
         },
         {
-          tag: 'NEAR MISS',
-          title: 'Tabrakan LV vs dump truck di persimpangan haul road',
-          story: 'Sebuah light vehicle menyeberang tanpa radio call di haul road aktif. Dump truck dengan muatan penuh melakukan hard brake; material tumpah dan nyaris menabrak LV. Tidak ada korban, namun keduanya berjarak &lt; 1 m saat berhenti.',
-          takeaway: 'Selalu <b>radio call + kontak mata</b> sebelum memasuki/menyeberangi haul road. Jangan asumsi operator HE "pasti melihat Anda".',
+          tag: 'HAMPIR CELAKA',
+          title: 'Tabrakan kendaraan ringan melawan truk jungkit di persimpangan jalan angkut',
+          story: 'Sebuah kendaraan ringan menyeberang tanpa panggilan radio di jalan angkut (haul road) yang aktif. Truk jungkit bermuatan penuh mengerem mendadak; material tumpah dan nyaris menabrak kendaraan ringan. Tidak ada korban, tetapi jarak keduanya kurang dari 1 m saat berhenti.',
+          takeaway: 'Selalu <b>panggil radio dan lakukan kontak mata</b> sebelum memasuki atau menyeberangi jalan angkut. Jangan menganggap operator alat berat “pasti melihat Anda”.',
         },
         {
-          tag: 'INCIDENT',
-          title: 'Heat stroke di area stockpile siang hari',
-          story: 'Pekerja contract mengalami pusing, kebingungan, dan kulit panas setelah 4 jam kerja di stockpile terbuka. Rekan kerja membawanya ke area teduh dan menghubungi klinik — diagnosa: heat stroke. Pemulihan total setelah rawat inap 3 hari.',
-          takeaway: '<b>Kenali tanda heat stroke</b>: bingung, kulit kering & panas, tidak berkeringat. Hidrasi, rotasi, dan buddy check menyelamatkan nyawa.',
+          tag: 'INSIDEN',
+          title: 'Heat stroke di area timbunan siang hari',
+          story: 'Seorang pekerja kontrak mengalami pusing, kebingungan, dan kulit panas setelah 4 jam bekerja di timbunan (stockpile) terbuka. Rekan kerja membawanya ke area teduh dan menghubungi klinik — diagnosis: heat stroke. Ia pulih total setelah 3 hari rawat inap.',
+          takeaway: '<b>Kenali tanda heat stroke</b>: bingung, kulit kering dan panas, serta tidak berkeringat. Hidrasi, rotasi tugas, dan saling memantau menyelamatkan nyawa.',
         },
         {
           tag: 'KECELAKAAN',
-          title: 'Tangan terjepit conveyor karena bypass interlock',
-          story: 'Untuk mempercepat pembersihan chute, seorang pekerja menonaktifkan interlock safety dan memasukkan tangan ke area moving part. Tangan kanan terjepit pulley; amputasi dua jari.',
-          takeaway: '<b>Jangan bypass safety devices.</b> LOTO wajib — tidak peduli seberapa "sederhana" tugasnya.',
+          title: 'Tangan terjepit konveyor karena melewati pengaman',
+          story: 'Untuk mempercepat pembersihan corong (chute), seorang pekerja menonaktifkan kunci pengaman (interlock) dan memasukkan tangan ke area bagian bergerak. Tangan kanan terjepit puli dan dua jari harus diamputasi.',
+          takeaway: '<b>Jangan melewati perangkat keselamatan.</b> LOTO wajib dilakukan — sesederhana apa pun tugasnya.',
+        },
+        {
+          tag: 'INSIDEN LINGKUNGAN',
+          title: 'Tumpahan oli 20 liter mencemari drainase',
+          story: 'Seorang operator melihat selang hidrolik bocor dan menetes ke tanah, tetapi menunda melapor karena “hanya tetesan”. Hujan sore membawa oli ke drainase dan kolam pengendap. Pembersihan memakan tiga hari, perusahaan menerima teguran, dan operator harus menjelaskan kelalaiannya.',
+          takeaway: 'Tumpahan kecil yang dibiarkan menjadi krisis lingkungan. <b>Pasang pembatas, gunakan spill kit, dan lapor dalam 24 jam</b> — sekecil apa pun tumpahan B3.',
         },
       ];
       return `
         <div class="inner">
           <div class="kicker">Studi Kasus</div>
           <h2>Pelajaran dari <em>Insiden Nyata</em></h2>
-          <p class="lead">Empat skenario industri nikel — dipelajari agar tidak terulang di site kita. Baca pelan-pelan, renungkan: "Apa yang akan saya lakukan?"</p>
+          <p class="lead">Lima skenario industri nikel — empat keselamatan dan satu lingkungan — dipelajari agar tidak terulang di site kita. Bacalah perlahan dan renungkan: “Apa yang akan saya lakukan?”</p>
           <div class="scenarios stagger">
             ${cases.map(c => `
               <div class="scenario">
@@ -1520,7 +2764,7 @@ const SLIDES_DATA = [
   {
     type: 'posttest',
     mod: 'EVAL',
-    title: 'Post-Test & Sertifikasi',
+    title: 'Post-test & Sertifikasi',
     render() { return '<div id="quizContainer"></div>'; },
     afterRender() { Quiz.renderPosttest(); },
   },
@@ -1545,9 +2789,9 @@ const SLIDES_DATA = [
           </div>
           <ul class="checks cols" style="margin-top:22px">
             <li>Saya akan memakai APD, mematuhi prosedur, dan menghormati setiap rambu.</li>
-            <li>Saya akan melapor setiap bahaya dan near miss — hari ini dan seterusnya.</li>
-            <li>Saya akan menggunakan Stop Work Authority tanpa ragu.</li>
-            <li>Saya akan pulang selamat — dan memastikan rekan saya juga demikian.</li>
+            <li>Saya akan melapor setiap bahaya, near miss & <b>spill lingkungan</b> dalam <b>24 jam</b> — hari ini dan seterusnya.</li>
+            <li>Saya akan menggunakan <b>Stop Work Authority</b> untuk bahaya keselamatan <b>dan</b> dampak lingkungan — tanpa ragu, tanpa takut retaliasi.</li>
+            <li>Saya akan menjaga drainase, TPS B3 & area reklamasi — <b>pulang selamat & operasi berkelanjutan</b>, dan memastikan rekan saya juga demikian.</li>
           </ul>
 
           <div class="two" style="margin-top:26px">

@@ -3,57 +3,57 @@
     {
       "q": "Apa yang harus Anda lakukan jika melihat retakan (tension crack) di tepi highwall?",
       "opts": [
-        "Lapor ke supervisor setelah shift selesai",
-        "STOP WORK, menjauh, dan lapor dispatcher/geoteknik segera",
-        "Foto untuk dokumentasi, lalu lanjut bekerja",
-        "Pindahkan rambu pengaman untuk akses alat"
+        "Melapor kepada supervisor setelah shift selesai",
+        "Hentikan pekerjaan (stop work), menjauh, dan segera lapor kepada dispatcher/geoteknik",
+        "Mengambil foto untuk dokumentasi, lalu melanjutkan pekerjaan",
+        "Memindahkan rambu pengaman untuk akses alat"
       ],
       "a": 1,
-      "fb": "Tanda bahaya geoteknik adalah situasi darurat. Langkah pertama selalu menjauh, lalu lapor."
+      "fb": "Tanda bahaya geoteknik adalah situasi darurat. Langkah pertama selalu menjauh, lalu melapor."
     },
     {
       "q": "Saat alarm darurat 3× panjang berbunyi, tindakan pertama Anda adalah…",
       "opts": [
         "Menunggu instruksi di tempat kerja",
-        "Lari ke parkiran untuk menyelamatkan kendaraan",
-        "Hentikan pekerjaan, amankan diri, menuju muster point lewat jalur evakuasi",
-        "Menelepon keluarga"
+        "Berlari ke parkir untuk menyelamatkan kendaraan",
+        "Menghentikan pekerjaan, mengamankan diri, dan menuju titik kumpul melalui jalur evakuasi",
+        "Menghubungi keluarga"
       ],
       "a": 2,
-      "fb": "Prosedur darurat standar: Stop → Aman → Muster Point lewat jalur evakuasi."
+      "fb": "Prosedur darurat standar: henti → aman → titik kumpul melalui jalur evakuasi."
     },
     {
-      "q": "APD mana yang WAJIB dipakai di seluruh area operasional site?",
+      "q": "APD mana yang wajib dipakai di seluruh area operasional site?",
       "opts": [
         "Hanya helm dan rompi",
-        "Helm, kacamata, sepatu safety, rompi, sarung tangan (sesuai tugas)",
+        "Helm, kacamata, sepatu keselamatan, rompi, dan sarung tangan (sesuai tugas)",
         "Bebas, sesuai selera pekerja",
         "Hanya saat ada inspektur"
       ],
       "a": 1,
-      "fb": "APD minimum: helm, kacamata, boots, rompi. Sarung tangan sesuai tugas."
+      "fb": "APD minimum: helm, kacamata, sepatu keselamatan, dan rompi. Sarung tangan menyesuaikan tugas."
     },
     {
-      "q": "Batas kecepatan umum light vehicle di haul road yang licin (laterit hujan) adalah…",
+      "q": "Batas kecepatan umum kendaraan ringan di jalan angkut yang licin (laterit hujan) adalah…",
       "opts": [
         "Sama seperti kondisi kering",
-        "Diturunkan signifikan dan jaga jarak aman lebih besar",
-        "Tidak ada batas, asal hati-hati",
-        "Naik sedikit karena visibility lebih jelas"
+        "Diturunkan secara signifikan dan jarak aman diperbesar",
+        "Tidak ada batas, asalkan berhati-hati",
+        "Dinaikkan sedikit karena jarak pandang lebih jelas"
       ],
       "a": 1,
-      "fb": "Laterit hujan kehilangan traksi drastis. Turunkan kecepatan + perbesar jarak aman atau STOP."
+      "fb": "Laterit yang basah kehilangan traksi secara drastis. Turunkan kecepatan dan perbesar jarak aman atau hentikan pekerjaan."
     },
     {
       "q": "Konsep Stop Work Authority (SWA) berarti…",
       "opts": [
         "Hanya manajer yang boleh menghentikan pekerjaan",
-        "Setiap orang berhak & wajib menghentikan kerja yang tidak aman, tanpa retaliasi",
+        "Setiap orang berhak dan wajib menghentikan pekerjaan yang tidak aman, tanpa retaliasi",
         "Hanya berlaku saat ada audit",
-        "Berhenti kerja = otomatis kena sanksi"
+        "Berhenti bekerja berarti otomatis dikenai sanksi"
       ],
       "a": 1,
-      "fb": "SWA adalah hak & kewajiban semua level. Perusahaan menjamin tidak ada retaliasi untuk pelapor yang beritikad baik."
+      "fb": "SWA adalah hak dan kewajiban seluruh level. Perusahaan menjamin tidak ada retaliasi bagi pelapor yang beritikad baik."
     }
   ],
   "posttest": {
@@ -76,7 +76,7 @@
           {
             "q": "LSR #5: LOTO sebelum maintenance. Prinsip utamanya…",
             "opts": [
-              "Isolasi & kunci seluruh sumber energi, verifikasi nol energi, baru bekerja",
+              "Isolasi dan kunci seluruh sumber energi, verifikasi nol energi, baru bekerja",
               "Matikan alat lalu langsung kerja cepat",
               "Boleh dilepas lock orang lain bila mendesak",
               "Cukup tag saja tanpa lock"
@@ -87,7 +87,7 @@
             "q": "LSR #6: Kerja di ketinggian. Fall protection wajib pada…",
             "opts": [
               "≥ 5 m saja",
-              "≥ 1,8 m dengan anchor tersertifikasi + harness",
+              "≥ 1,8 m dengan anchor tersertifikasi dan harness",
               "Hanya di atas tower",
               "Tidak wajib bila ada tangga"
             ],
@@ -134,7 +134,7 @@
             "q": "Saat terjadi tumpahan BBM kecil (~5 liter) di area workshop, tindakan BENAR…",
             "opts": [
               "Siram ke drainase agar cepat hilang",
-              "Pasang barricade, gunakan spill kit, lapor supervisor, bersihkan & dokumentasikan",
+              "Pasang barricade, gunakan spill kit, lapor supervisor, bersihkan dan dokumentasikan",
               "Biarkan menguap sendiri",
               "Tutup dengan tanah dan diamkan"
             ],
@@ -145,12 +145,12 @@
             "q": "Tanda heat stroke yang membedakannya dari kelelahan biasa…",
             "opts": [
               "Haus",
-              "Kulit panas & kering, kebingungan, penurunan kesadaran — DARURAT MEDIS",
+              "Kulit panas dan kering, kebingungan, penurunan kesadaran — DARURAT MEDIS",
               "Menguap",
               "Kaki pegal"
             ],
             "a": 1,
-            "fb": "Heat stroke = kegawatan. Dinginkan & panggil medis segera."
+            "fb": "Heat stroke = kegawatan. Dinginkan dan panggil medis segera."
           },
           {
             "q": "Yang termasuk gaya berat (gravity) dalam sumber energi LOTO…",
@@ -168,7 +168,7 @@
             "opts": [
               "Lanjut cepat supaya tidak tertinggal",
               "Tanya rekan, kalau iya ya lanjut",
-              "STOP WORK — minta klarifikasi & JSA baru dari supervisor",
+              "STOP WORK — minta klarifikasi dan JSA baru dari supervisor",
               "Lapor ke akhir shift"
             ],
             "a": 2,
@@ -219,12 +219,188 @@
             "q": "Jika Anda melihat rekanan bekerja tanpa helm, tindakan yang paling tepat…",
             "opts": [
               "Diam saja, urusannya dia",
-              "Menegur dengan hormat & mengingatkan aturan APD",
+              "Menegur dengan hormat dan mengingatkan aturan APD",
               "Foto untuk lapor HRD",
               "Minta dia bayar denda"
             ],
             "a": 1,
             "fb": "Budaya saling menegur (buddy care) adalah fondasi safety. Lakukan dengan hormat."
+          },
+          {
+            "q": "Isyarat klakson yang BENAR saat akan bergerak mundur adalah…",
+            "opts": [
+              "1× klakson",
+              "2× klakson",
+              "3× klakson",
+              "Klakson panjang"
+            ],
+            "a": 2,
+            "fb": "PDF p.21: 1× nyalakan mesin, 2× maju, 3× mundur, panjang = darurat."
+          },
+          {
+            "q": "Jarak aman beriringan pada kecepatan 40 km/jam menurut PDF adalah…",
+            "opts": [
+              "10 meter",
+              "25 meter",
+              "50 meter (reaksi 3 detik)",
+              "100 meter"
+            ],
+            "a": 2,
+            "fb": "PDF p.22: pada 40 km/jam dibutuhkan ± 50 m dengan kaidah 3 detik."
+          },
+          {
+            "q": "Proporsi penyebab kecelakaan versi PDF (Heinrich) adalah…",
+            "opts": [
+              "70% tindakan / 20% kondisi / 10% nasib",
+              "88% tindakan tidak aman / 10% kondisi tidak aman / 2% di luar kemampuan",
+              "50% / 30% / 20%",
+              "90% / 5% / 5%"
+            ],
+            "a": 1,
+            "fb": "PDF p.25: 88% tindakan, 10% kondisi, 2% nasib."
+          },
+          {
+            "q": "Perbedaan JSEA, SOP, IK yang BENAR…",
+            "opts": [
+              "Semua sama saja",
+              "JSEA=risiko, SOP=langkah terperinci, IK=petunjuk sangat spesifik",
+              "SOP=risiko, JSEA=langkah",
+              "IK=risiko, SOP=petunjuk"
+            ],
+            "a": 1,
+            "fb": "PDF p.42 tabel: JSEA umum-risiko, SOP spesifik, IK sangat spesifik."
+          },
+          {
+            "q": "Teknik manual handling yang BENAR…",
+            "opts": [
+              "Bungkukkan punggung dan angkat cepat",
+              "Punggung lurus, kekuatan kaki, beban dekat tubuh, hindari memutar",
+              "Tarik dengan punggung",
+              "Angkat satu tangan"
+            ],
+            "a": 1,
+            "fb": "PDF p.51: jaga punggung lurus, pakai kaki, dekatkan beban."
+          },
+          {
+            "q": "Saat mendengar 'EMERGENCY' 3×, Anda…",
+            "opts": [
+              "Lanjut kerja",
+              "Jangan panik, ingatkan sekitar, ikuti radio format 7 poin, evakuasi ke muster point",
+              "Lari panik",
+              "Tunggu di tempat"
+            ],
+            "a": 1,
+            "fb": "PDF p.57: teriak EMERGENCY 3× = darurat nyata."
+          },
+          {
+            "q": "5R yang BENAR adalah…",
+            "opts": [
+              "Ringkas, Rapi, Resik, Rawat, Rajin",
+              "Rapi, Rusak, Rugi, Ragu, Risau",
+              "Rawat, Rugi, Resik, Rapi, Ringkas",
+              "Rajin, Rajin, Rajin, Rajin, Rajin"
+            ],
+            "a": 0,
+            "fb": "PDF p.65: Ringkas, Rapi, Resik, Rawat, Rajin."
+          },
+          {
+            "q": "Larangan di area Fuel Storage menurut PDF adalah…",
+            "opts": [
+              "Boleh merokok",
+              "Dilarang merokok dan hanya di area bertanda khusus",
+              "Boleh merokok di dalam mobil",
+              "Boleh merokok dekat BBM"
+            ],
+            "a": 1,
+            "fb": "PDF p.55: merokok hanya di area bertanda; Fuel/BBM dilarang mutlak."
+          },
+          {
+            "q": "Filosofi Fondasi K3L Seimbang yang BENAR adalah…",
+            "opts": [
+              "Produksi dulu, K3L menyusul bila sempat",
+              "Keselamatan diutamakan, lingkungan selalu diperhatikan, produksi mengikuti otomatis",
+              "Lingkungan saja yang penting, keselamatan nomor dua",
+              "K3L hanya aturan administratif formalitas"
+            ],
+            "a": 1,
+            "fb": "K3L Seimbang Bab 1: dua janji Pulang Selamat dan Operasi Berkelanjutan; produksi mengikuti otomatis."
+          },
+          {
+            "q": "PP No. 22 Tahun 2021 mengatur…",
+            "opts": [
+              "Hanya keselamatan kerja",
+              "Penyelenggaraan perlindungan dan pengelolaan LH secara proaktif: baku mutu udara, air limbah dan TPS B3 berizin",
+              "Hanya sanksi administratif tambang",
+              "Kode pelayaran nikel"
+            ],
+            "a": 1,
+            "fb": "PP 22/2021: paradigma proaktif dan baku mutu dan TPS B3 ketat."
+          },
+          {
+            "q": "Permen ESDM No. 33 Tahun 2021 menegaskan…",
+            "opts": [
+              "K3 dan PLH adalah dua pilar tak terpisahkan pada usaha minerba",
+              "Lingkungan tidak terkait keselamatan",
+              "Hanya mengatur smelter",
+              "Hanya mengatur jam kerja"
+            ],
+            "a": 0,
+            "fb": "Permen 33/2021: integrasi K3+PLH — dasar K3L Seimbang."
+          },
+          {
+            "q": "Mengapa laterit (saprolit/limonit) sangat rawan longsor saat hujan tropis?",
+            "opts": [
+              "Karena kekuatannya seperti batuan granit",
+              "Karena berkekuatan seperti tanah; hujan menurunkan kuat geser signifikan hingga berperilaku lumpur cair",
+              "Karena tidak terpengaruh air",
+              "Karena selalu kering"
+            ],
+            "a": 1,
+            "fb": "K3L Seimbang Bab 3: laterit soil-like dan hujan tropis = longsor/mudflow."
+          },
+          {
+            "q": "Tanda AWAL kegagalan lereng yang wajib dilapor SEGERA adalah…",
+            "opts": [
+              "Retakan crest, gelembung/pergerakan material, perubahan bentuk dan mata air baru",
+              "Hanya jika sudah longsor besar",
+              "Tidak ada tanda, tiba-tiba saja",
+              "Hanya suara alat berat"
+            ],
+            "a": 0,
+            "fb": "Amankan area dan STOP WORK dan lapor geoteknik meski belum longsor."
+          },
+          {
+            "q": "Pengendalian debu Ni/Co/silika yang BENAR sesuai hierarki adalah…",
+            "opts": [
+              "Langsung bagi masker kain",
+              "Water spraying dan ventilasi/dust collector dulu, lalu respirator N95/P100 fit-tested dengan cek kebocoran",
+              "Biarkan saja, debu tidak berbahaya",
+              "Hanya minum air putih"
+            ],
+            "a": 1,
+            "fb": "Rekayasa dulu, APD terakhir; N95/P100 wajib fit test."
+          },
+          {
+            "q": "Pengelolaan limbah B3 yang BENAR menurut PP 22/2021 adalah…",
+            "opts": [
+              "Dibuang ke drainase agar cepat hilang",
+              "Dibakar terbuka atau dikubur",
+              "Disimpan tertutup dan dibuang hanya di TPS B3 berizin; tailing HPAL permanen di TSF standar",
+              "Dibiarkan menumpuk di workshop"
+            ],
+            "a": 2,
+            "fb": "B3: oli, reagen, aki, tailing — hanya TPS B3/TSF; pelanggaran = sanksi berat."
+          },
+          {
+            "q": "Alur pelaporan insiden K3L Seimbang yang BENAR adalah…",
+            "opts": [
+              "Sembunyikan agar tidak kena sanksi",
+              "Amankan lokasi bila mampu → first aid → lapor atasan dan K3L dalam 24 jam (cakup LTI, near miss dan spill kecil)",
+              "Lapor setelah 1 bulan",
+              "Hanya lapor bila fatality"
+            ],
+            "a": 1,
+            "fb": "Definisi luas dan 24 jam dan no-blame untuk belajar."
           }
         ]
       }

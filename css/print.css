@@ -49,12 +49,25 @@
   .bigquote,
   .footnote,
   .stats,
-  .hazard { color: #000 !important; }
+  .hazard,
+  .reg-table,
+  .reg-row,
+  .reg-row span,
+  .waste-table,
+  .waste-row,
+  .waste-row span,
+  .k3l-duo,
+  .k3l-pill,
+  .k3l-pill span,
+  .k3l-plus { color: #000 !important; }
 
   .card,
   .panelbox,
   .rule,
-  ul.checks li {
+  ul.checks li,
+  .reg-row,
+  .waste-row,
+  .k3l-pill {
     border: 1px solid #cbd5e1 !important;
     background: #f8fafc !important;
     box-shadow: none !important;

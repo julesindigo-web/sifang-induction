@@ -26,12 +26,12 @@ const Quiz = (() => {
       c.innerHTML = `
         <div class="inner">
           <div class="kicker k-teal">Evaluasi Awal</div>
-          <h2><em>Pre-Test</em> — Cek Pemahaman Awal</h2>
-          <p class="lead">5 pertanyaan singkat. Hasil tidak menggagalkan kelulusan — tetapi membantu kami memahami baseline pengetahuan Anda.</p>
+          <h2><em>Pre-test</em> — Cek Pemahaman Awal</h2>
+          <p class="lead">Lima pertanyaan singkat. Hasilnya tidak menggagalkan kelulusan, tetapi membantu memetakan pengetahuan awal Anda.</p>
           <div class="quiz" id="pretestList"></div>
           <div id="pretestSummary" class="quiz-summary" style="display:${submitted ? 'block' : 'none'}">
             <div class="score">${saved.score || 0}%</div>
-            <div class="verdict">Pre-test selesai — lanjut ke materi inti.</div>
+            <div class="verdict">Pre-test selesai — lanjutkan ke materi inti.</div>
             <button class="navbtn primary" id="pretestContinue" style="margin-top:14px">Lanjut ke Materi</button>
           </div>
         </div>
@@ -80,8 +80,8 @@ const Quiz = (() => {
       c.innerHTML = `
         <div class="inner">
           <div class="kicker">Evaluasi Akhir</div>
-          <h2><em>Post-Test</em> — Sertifikasi Induksi</h2>
-          <p class="lead">Dua bagian. <b style="color:var(--amber)">Life-Saving Rules</b> harus 100% benar. Pengetahuan umum ≥ ${d.posttest.passing}%.</p>
+          <h2><em>Post-test</em> — Sertifikasi Induksi</h2>
+          <p class="lead">Terdiri atas dua bagian. <b style="color:var(--amber)">Life-Saving Rules</b> harus dijawab benar 100%. Nilai pengetahuan umum minimal ${d.posttest.passing}%.</p>
 
           <h3 style="margin-top:24px; font-size:14px; color:var(--amber); letter-spacing:.1em; text-transform:uppercase;">Bagian A — Life-Saving Rules</h3>
           <div class="quiz" id="lsrList"></div>

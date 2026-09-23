@@ -13,6 +13,11 @@
   pointer-events: none;
 }
 
+.slide.cover .inner { text-align: center; }
+.slide.cover .badges { justify-content: center; }
+.slide.cover .kicker { justify-content: center; }
+.slide.cover .kicker::before { display: none; }
+
 /* ---------- STATS GRID (Animated counters) ---------- */
 .stats {
   display: grid;
@@ -110,12 +115,14 @@
   position: relative;
 }
 
-.rm-cell:hover { transform: scale(1.06); z-index: 2; }
-.rm-cell.l1 { background: #4ade80; }
-.rm-cell.l2 { background: #a3e635; }
-.rm-cell.l3 { background: #fbbf24; }
-.rm-cell.l4 { background: #fb923c; }
-.rm-cell.l5 { background: #f87171; }
+.rm-cell:hover { transform: scale(1.06); z-index: 2; box-shadow: var(--shadow-md); }
+.rm-cell:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.rm-cell.selected { outline: 3px solid var(--text); outline-offset: 1px; box-shadow: var(--shadow-md); transform: scale(1.04); }
+.rm-cell.l1 { background: linear-gradient(135deg, #4ade80, #22c55e); border: 1px solid rgba(0,0,0,0.18); }
+.rm-cell.l2 { background: linear-gradient(135deg, #a3e635, #65a30d); border: 1px solid rgba(0,0,0,0.18); }
+.rm-cell.l3 { background: linear-gradient(135deg, #fde047, #f59e0b); border: 1px solid rgba(0,0,0,0.20); }
+.rm-cell.l4 { background: linear-gradient(135deg, #fdba74, #ea580c); border: 1px solid rgba(0,0,0,0.20); color: rgba(0,0,0,0.78); }
+.rm-cell.l5 { background: linear-gradient(135deg, #fca5a5, #dc2626); border: 1px solid rgba(0,0,0,0.22); color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.35); }
 
 .rm-axis-y {
   display: flex;
@@ -666,6 +673,21 @@
   pointer-events: none;
 }
 
+.cert::after {
+  content: "K3L • ZERO HARM";
+  position: absolute;
+  right: -30px;
+  bottom: 12px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 92px;
+  letter-spacing: 0.04em;
+  color: rgba(180, 83, 9, 0.05);
+  transform: rotate(-12deg);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
 .cert-header {
   display: flex;
   align-items: center;
@@ -870,4 +892,192 @@
   font-weight: 800;
   font-size: 22px;
   color: var(--text);
+}
+
+/* ============================================================
+   K3L SEIMBANG — Premium visual system (Edisi Fondasi Seimbang)
+   Safety (amber/red) + Environment (teal/green) duality
+   ============================================================ */
+
+/* ---------- K3L Duo pills (Fondasi slide) ---------- */
+.k3l-duo {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.k3l-pill {
+  flex: 1 1 180px;
+  max-width: 300px;
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  text-align: center;
+  border: 1px solid var(--line);
+  background: var(--grad-panel);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid) var(--ease-out);
+}
+
+.k3l-pill b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  margin-bottom: 6px;
+}
+
+.k3l-pill span {
+  display: block;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.k3l-pill.safety {
+  border-color: var(--amber-line);
+  background: linear-gradient(180deg, var(--amber-soft), rgba(255,255,255,0.02));
+}
+.k3l-pill.safety b { color: var(--amber); }
+
+.k3l-pill.env {
+  border-color: var(--teal-line);
+  background: linear-gradient(180deg, var(--teal-soft), rgba(255,255,255,0.02));
+}
+.k3l-pill.env b { color: var(--teal); }
+
+.k3l-pill.balanced {
+  border-color: rgba(74, 222, 128, 0.4);
+  background: linear-gradient(135deg, rgba(251,191,36,0.14), rgba(45,212,191,0.14));
+  box-shadow: var(--shadow-glow-teal);
+}
+.k3l-pill.balanced b {
+  background: linear-gradient(90deg, var(--amber), var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.k3l-plus {
+  align-self: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--dim);
+  padding: 0 2px;
+}
+
+@media (hover: hover) {
+  .k3l-pill:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+}
+
+/* ---------- Regulation table (Dasar Hukum) ---------- */
+.reg-table {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.reg-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 1.4fr;
+  gap: 10px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  align-items: center;
+}
+
+.reg-row span:first-child { color: var(--text); }
+.reg-row.reg-head {
+  background: linear-gradient(135deg, rgba(251,191,36,0.16), rgba(45,212,191,0.12));
+  border-color: var(--line-2);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.reg-row:not(.reg-head), .waste-row:not(.waste-head) {
+  position: relative;
+  transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .reg-row:not(.reg-head):hover, .waste-row:not(.waste-head):hover {
+    transform: translateX(3px);
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+@media (max-width: 720px) {
+  .reg-row { grid-template-columns: 1fr; gap: 2px; }
+  .reg-row.reg-head { display: none; }
+}
+
+/* ---------- Waste table (Limbah B3) ---------- */
+.waste-table {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.waste-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 1.3fr;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  align-items: center;
+}
+
+.waste-row span:first-child { color: var(--text); }
+
+.waste-row.waste-head {
+  background: linear-gradient(135deg, rgba(248,113,113,0.14), rgba(251,191,36,0.12));
+  border-color: var(--line-2);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.waste-row:nth-child(even):not(.waste-head) {
+  background: rgba(255,255,255,0.02);
+}
+
+@media (max-width: 720px) {
+  .waste-row { grid-template-columns: 1fr; gap: 2px; }
+  .waste-row.waste-head { display: none; }
+}
+
+/* ---------- K3L tables: cegah luapan kata panjang ---------- */
+.reg-row span, .waste-row span, .k3l-pill span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* ---------- Print: keep new tables readable ---------- */
+@media print {
+  .k3l-duo { break-inside: avoid; }
+  .reg-row, .waste-row { break-inside: avoid; border-color: #cbd5e1; }
+  .k3l-pill { box-shadow: none; }
 }

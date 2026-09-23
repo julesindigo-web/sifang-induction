@@ -1,37 +1,44 @@
 # Induksi K3L — PT. Sifang Mining Indonesia
 
-> **Program Induksi Keselamatan, Kesehatan Kerja, dan Lingkungan (K3L)**
-> Pertambangan Nikel Open Pit • Edisi Interaktif Premium
+> **Program Induksi Keselamatan, Kesehatan Kerja, dan Lingkungan (K3L) Seimbang**
+> Pertambangan Nikel Open Pit • Edisi Interaktif Premium • Terpadu Keselamatan + Lingkungan
+>
+> Referensi inti edisi ini: **Membangun Fondasi K3L Seimbang — Panduan Induksi Terpadu untuk Keselamatan Operasional dan Perlindungan Lingkungan di Sektor Pertambangan Nikel** (filosofi Pulang Selamat + Operasi Berkelanjutan, regulasi PP 22/2021 & Permen 33/2021, risiko laterit, TSF/HPAL, air/reklamasi, tabel B3, LOTO aplikatif, budaya SWA–penghargaan–pelaporan 24 jam).
 
 Platform pembelajaran interaktif berbasis web untuk inducti HSE pekerja baru,
 kontraktor, dan tamu di area operasional pertambangan nikel open pit PT. Sifang
 Mining Indonesia.
 
 ![Stack](https://img.shields.io/badge/Stack-HTML%20%2F%20CSS%20%2F%20JS-2b3990)
-![Slides](https://img.shields.io/badge/Slides-50-fbbf24)
-![Quiz](https://img.shields.io/badge/Quiz-2dd4bf)
+![Slides](https://img.shields.io/badge/Slides-82-fbbf24)
+![Quiz](https://img.shields.io/badge/Quiz-LSR%20100%25%20%2B%20Umum%2080%25-2dd4bf)
 ![Certificate](https://img.shields.io/badge/Certificate-Auto%20Generated-fb923c)
+![K3L](https://img.shields.io/badge/K3L-Seimbang%20%7C%20PP%2022%2F2021%20%26%20Permen%2033%2F2021-4ade80)
 
 ---
 
 ## � Fitur Utama
 
 ### 🎓 Konten & Pembelajaran
-- **50 slide** materi induksi terstruktur dalam 11 modul
+- **82 slide** materi induksi terstruktur dalam 11 modul (+5 slide K3L Seimbang: Fondasi, Risiko Laterit, Air/Reklamasi, Tabel B3, Budaya Penghargaan)
+- **Fondasi K3L Seimbang**: Pulang Selamat + Operasi Berkelanjutan — produksi mengikuti otomatis; simbiosis safety–environment
+- **Tabel regulasi 5 pilar** (UU 1/1970, Kepmen 1827/2018, PP 22/2021, Permen 33/2021, Permen 26/2018) + sanksi pidana KUHP
+- **Risiko dominan laterit**: lereng soil-like, debu Ni/Co/Cr + silika (N95/P100), air asam tambang, HPAL/TSF exclusion zone
+- **Tata kelola lingkungan**: drainase, reklamasi progresif topsoil/subsoil, TPS B3 berizin (tabel 5 jenis limbah)
 - **Animasi transisi** slide dengan motion premium
 - **Animated SVG mining scene** sebagai cover backdrop
 - **Particle effects** (debu, percikan, ambient glow)
 - **Confetti celebration** saat lulus / sertifikat terbit
 - **Counter animasi** untuk statistik kunci
 
-### 🧠 Interaktif (Non-Static)
-- ✅ **Pre-Test** (5 soal) — baseline check
-- ✅ **Risk Matrix 5×5** interaktif (klik sel untuk contoh bahaya)
-- ✅ **APD Selector** — pilih APD sesuai tugas, sistem validasi
-- ✅ **Sirene Demo** — bunyikan pola alarm darurat via TTS
-- ✅ **Post-Test** 2 bagian: **LSR (wajib 100%)** + Pengetahuan Umum (≥80%)
-- ✅ **Digital Signature Pad** (canvas-based)
-- ✅ **Studi Kasus** industri nikel
+### 🧠 Interaktif (Nonstatis)
+- ✅ **Pre-test** (5 soal) — uji pengetahuan awal
+- ✅ **Matriks Risiko 5×5** interaktif (klik sel untuk contoh bahaya)
+- ✅ **Pemilih APD** — pilih APD sesuai tugas dan sistem akan memvalidasi (termasuk N95/P100, baju kimia, tali pengaman, dan jaket pelampung)
+- ✅ **Demo Sirene** — bunyikan pola alarm darurat via TTS
+- ✅ **Post-test** 2 bagian: **LSR (wajib 100%)** dan Pengetahuan Umum (≥80%, kini 26 soal termasuk K3L Seimbang, PP 22/2021, laterit, B3, dan pelaporan 24 jam)
+- ✅ **Panel Tanda Tangan Digital** (berbasis kanvas) — ikrar mencakup SWA lingkungan dan pelaporan 24 jam
+- ✅ **Studi Kasus** industri nikel (longsor hujan, kendaraan ringan melawan truk jungkit, heat stroke, melewati pengaman, dan tumpahan B3)
 
 ### 💼 Profesional
 - 🖋 **Tanda tangan digital** di canvas
@@ -40,7 +47,7 @@ Mining Indonesia.
 - � **Bookmark** slide untuk review ulang
 - 📝 **Notes** per slide (planned)
 - 🔍 **Full-text search** seluruh materi
-- 📖 **Glosarium K3L** 80+ istilah dengan pencarian
+- 📖 **Glosarium K3L** 100+ istilah dengan pencarian (baru: K3L Seimbang, PP 22/2021, Permen 33/2021, Air Asam Tambang, Topsoil/Subsoil, Reklamasi Progresif, TPS B3, N95/P100, PEL Silika, TSF Exclusion Zone, IBPR, Pelaporan 24 Jam)
 
 ### 🎨 Visual & UX
 - 🌗 **Dark/Light theme** toggle (data-theme)
@@ -82,7 +89,7 @@ Mining Indonesia.
 │   ├── progress.js          ← Progress tracking
 │   ├── theme.js             ← Dark/light mode
 │   ├── audio.js             ← TTS narration + sirene demo
-│   ├── slides-data.js       ← 50 slide definitions (data-driven)
+│   ├── slides-data.js       ← 82 slide definitions (data-driven, incl. 5 slide K3L Seimbang)
 │   ├── renderer.js          ← Dynamic DOM rendering
 │   ├── navigation.js        ← Slide navigation (keyboard + touch)
 │   ├── menu.js              ← TOC drawer
@@ -96,8 +103,8 @@ Mining Indonesia.
 │   └── app.js               ← Bootstrap & orchestration
 │
 └── data/
-    ├── quiz.json            ← Bank soal pretest + posttest
-    └── glossary.json        ← 80+ HSE terms
+    ├── quiz.json            ← Bank soal pretest (5) + posttest LSR (5, wajib 100%) + umum (26, ≥80%)
+    └── glossary.json        ← 100+ HSE terms (incl. K3L Seimbang, PP 22/2021, B3, TSF, IBPR)
 ```
 
 ---
@@ -149,37 +156,39 @@ Upload folder ini ke static host: **Netlify**, **Vercel**, **GitHub Pages**, **C
 
 | # | Modul | Topik Utama |
 |---|-------|-------------|
-| 1 | PEMBUKA | Cover, Agenda, Tujuan, Statistik |
-| 2 | PROFIL | Profil, Hukum, Kebijakan, LSR, SWA |
+| 1 | PEMBUKA | Cover (K3L Seimbang), Agenda 82 slide, Tujuan, **Fondasi Seimbang**, Statistik |
+| 2 | PROFIL | Profil, **Risiko Laterit**, Hukum (PP 22/2021 dan Permen 33/2021 serta tabel), Kebijakan, LSR, SWA |
 | 3 | ATURAN | Hak-Kewajiban, Aturan Site, Area, Rambu, Radio |
-| 4 | RISIKO | Manajemen Risiko, Risk Matrix, Permit, SIMOPS/MOC |
-| 5 | APD | APD Wajib, APD Spesifik, **APD Selector** |
-| 6 | KESEHATAN | Fit to Work, Bahaya Nikel |
-| 7 | AREA | Traffic, Alat Berat, Geoteknik |
-| 8 | KERJA | LOTO, Listrik, Ketinggian, Confined, Hot Work, Lifting, Galian |
-| 9 | FASILITAS | Kimia/B3, Plant, Smelter/HPAL/TSF/Jetty, Fuel, Lingkungan |
-| 10 | DARURAT | Tanggap Darurat, **Sirene Demo**, P3K, Pelaporan |
+| 4 | RISIKO | IBPR/HIRADC dan JSA lingkungan, Matriks Risiko, Izin Kerja, SIMOPS/MOC |
+| 5 | APD | APD Wajib, APD Spesifik (N95/P100 uji pas), **Pemilih APD** |
+| 6 | KESEHATAN | Siap Kerja, Bahaya Nikel (NAB silika, Ni/Co/Cr) |
+| 7 | AREA | Lalu Lintas, Alat Berat, Geoteknik (saprolit, gelembung, mata air baru) |
+| 8 | KERJA | LOTO (hidrolik/slurry dan demo), Listrik, Ketinggian, Ruang Terbatas, Pekerjaan Panas, Pengangkatan, Galian |
+| 9 | FASILITAS | Kimia/B3 dan **Tabel 5 Limbah**, Plant, Smelter/HPAL/TSF (zona larangan dan banjir)/Jetty, Fuel, Lingkungan dan **Air/Reklamasi Progresif** |
+| 10 | DARURAT | Tanggap Darurat, **Demo Sirene**, P3K, Pelaporan dan **Budaya Penghargaan serta 24 Jam** |
 | 11 | PENUNJANG | Camp, Keamanan, Etika |
-| 12 | KASUS | Studi Kasus Industri Nikel |
-| 13 | EVAL | **Pre-Test**, **Post-Test**, **TTD Digital**, **Sertifikat** |
+| 12 | KASUS | Studi Kasus Industri Nikel (5 skenario) |
+| 13 | EVAL | **Pre-test**, **Post-test (LSR 100% dan Umum 26 soal)**, **TTD Digital**, **Sertifikat** |
+
+> **Integrasi K3L Seimbang**: Fondasi (PEMBUKA) → Risiko Laterit (PROFIL) → IBPR/JSA lingkungan (RISIKO) → N95/P100 dan NAB (APD/KESEHATAN) → Geoteknik tropis (AREA) → LOTO hidrolik/slurry (KERJA) → Tabel B3 dan Air/Reklamasi serta zona larangan TSF (FASILITAS) → Penghargaan dan Pelaporan 24 jam (DARURAT).
 
 ---
 
 ## ✅ Alur Penggunaan
 
 ```
-Cover
+Cover (K3L Seimbang)
   ↓
-Materi (50 slide)
+Materi (82 slide: fondasi → risiko laterit → hukum PP 22/Permen 33 → teknis → lingkungan → darurat)
   ↓
-Pre-Test (baseline)
+Pre-test (uji awal)
   ↓
 Lanjut ke Materi Inti
   ↓
 ...
   ↓
-Post-Test
-  ├─ LULUS (LSR 100% + Umum ≥80%)
+Post-test
+  ├─ LULUS (LSR 100% dan Umum ≥80%)
   │     ↓
   │   Tanda Tangan Digital
   │     ↓
@@ -189,7 +198,7 @@ Post-Test
   │
   └─ BELUM LULUS
         ↓
-      Pelajari ulang & Remedial
+      Pelajari ulang dan remedial
 ```
 
 ---
