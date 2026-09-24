@@ -461,6 +461,9 @@ ul.checks li b { color: var(--text); }
 
 .flow .step:hover { transform: translateY(-2px); }
 
+.flow .step.step-ico { display: inline-flex; align-items: center; gap: 8px; }
+.flow .step.step-ico svg { flex: 0 0 auto; }
+
 .flow .step::after {
   content: "";
   position: absolute;

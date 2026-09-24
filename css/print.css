@@ -87,8 +87,13 @@
   /* Hide interactive elements when printing */
   .sig-canvas,
   .siren-demo,
+  .illus-ctl,
   .navbtn,
   .iconbtn { display: none !important; }
+
+  .illus,
+  .illus-stage svg { break-inside: avoid; border-color: #cbd5e1 !important; }
+  .illus-cap { color: #000 !important; }
 }
 
 /* Hide print-only elements on screen */

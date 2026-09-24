@@ -18,6 +18,39 @@
 .slide.cover .kicker { justify-content: center; }
 .slide.cover .kicker::before { display: none; }
 
+/* Trio ikon 3D melayang di cover */
+.hero-3d {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin: 18px auto 2px;
+  flex-wrap: wrap;
+}
+
+.hero-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-fig small {
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.hero-fig .halo { filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.4)); }
+
+/* Ikon 3D di pil K3L */
+.k3l-pill .pill-ico { display: block; margin-bottom: 6px; }
+.k3l-pill .pill-ico svg { filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35)); }
+
+/* Label tombol sirene ber-ikon */
+.sbtn-label { display: inline-flex; align-items: center; gap: 10px; }
+
 /* ---------- STATS GRID (Animated counters) ---------- */
 .stats {
   display: grid;
@@ -1073,6 +1106,126 @@
   overflow-wrap: anywhere;
   word-break: break-word;
   hyphens: auto;
+}
+
+/* ============================================================
+   ILLUS — Ilustrasi SVG interaktif (figure + stage + chips)
+   ============================================================ */
+.illus {
+  margin: 18px 0 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--grad-panel);
+  overflow: hidden;
+}
+
+.illus-stage {
+  padding: 10px 10px 0;
+}
+
+.illus-stage svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line);
+}
+
+.illus-cap {
+  padding: 10px 16px 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.illus-cap::before {
+  content: "Ilustrasi — ";
+  font-weight: 800;
+  color: var(--teal);
+}
+
+.illus-ctl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 16px 16px;
+}
+
+.illus-ctl .chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.illus-ctl .chip:hover {
+  border-color: var(--teal-line);
+  transform: translateY(-1px);
+}
+
+.illus-ctl .chip[aria-pressed="true"] {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: var(--teal);
+}
+
+/* --- Elemen gambar: garis, teks, isi --- */
+.illus-stage .ln { stroke: var(--line-strong); stroke-width: 2; fill: none; stroke-linecap: round; }
+.illus-stage .tx { fill: var(--text); font-size: 17px; font-weight: 700; font-family: var(--font-display); }
+.illus-stage .tx-s { fill: var(--muted); font-size: 13.5px; font-family: var(--font-body); }
+.illus-stage .t-red { fill: var(--red); font-weight: 700; }
+.illus-stage .t-grn { fill: var(--green); font-weight: 700; }
+.illus-stage .t-amb { fill: var(--amber); font-weight: 700; }
+.illus-stage .t-blu { fill: var(--blue); font-weight: 700; }
+.illus-stage .f-amb { fill: var(--amber); }
+.illus-stage .f-teal { fill: var(--teal); }
+.illus-stage .f-red { fill: var(--red); }
+.illus-stage .f-grn { fill: var(--green); }
+.illus-stage .f-blu { fill: var(--blue); }
+.illus-stage .f-tx { fill: var(--text); }
+.illus-stage .f-bg { fill: var(--bg-1); }
+.illus-stage .f-mut { fill: var(--dim); }
+.illus-stage .f-mut-soft { fill: var(--surface-2); }
+.illus-stage .f-amb-soft { fill: var(--amber-soft); }
+.illus-stage .f-teal-soft { fill: var(--teal-soft); }
+.illus-stage .f-red-soft { fill: var(--red-soft); }
+.illus-stage .f-grn-soft { fill: var(--green-soft); }
+.illus-stage .f-blu-soft { fill: var(--blue-soft); }
+.illus-stage .s-amb { stroke: var(--amber); stroke-width: 2.5; }
+.illus-stage .s-teal { stroke: var(--teal); stroke-width: 2.5; }
+.illus-stage .s-red { stroke: var(--red); stroke-width: 2.5; }
+.illus-stage .s-grn { stroke: var(--green); stroke-width: 2.5; }
+.illus-stage .s-blu { stroke: var(--blue); stroke-width: 2.5; }
+.illus-stage .s-ln { stroke: var(--line-strong); stroke-width: 2; }
+.illus-stage .s-tx { stroke: var(--text); stroke-width: 2.5; }
+
+/* --- Lapisan toggle: redup hingga dinyalakan --- */
+.illus-stage [data-illus-layer] { opacity: 0.13; transition: opacity var(--dur-mid) var(--ease-out); }
+.illus-stage [data-illus-layer].lit { opacity: 1; }
+
+/* --- Animasi gambar --- */
+.illus-stage .a-dash { animation: illus-dash 2.6s linear infinite; }
+@keyframes illus-dash { to { stroke-dashoffset: -48; } }
+.illus-stage .a-float { animation: illus-float 4s ease-in-out infinite alternate; }
+@keyframes illus-float { from { transform: translateY(-5px); } to { transform: translateY(6px); } }
+.illus-stage .a-blink { animation: illus-blink 1.6s ease-in-out infinite; }
+@keyframes illus-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+.illus-stage .a-pulse { animation: illus-pulse 2.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes illus-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+
+@media (max-width: 640px) {
+  .illus-cap { font-size: 12px; }
+  .illus-ctl .chip { font-size: 11.5px; padding: 7px 12px; }
 }
 
 /* ---------- Print: keep new tables readable ---------- */

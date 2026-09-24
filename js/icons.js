@@ -123,5 +123,39 @@ const Icons = (() => {
     return wrap(path, opts);
   }
 
-  return { get };
+  /* ============================================================
+     3D SET — Ikon berlapis premium (gradien + bayangan + kilau).
+     Token %% diganti ID unik per pemanggilan agar url(#id)
+     tidak bertabrakan saat ikon dipakai berulang di halaman.
+     viewBox 0 0 64 64. Murni dekoratif (aria-hidden).
+     ============================================================ */
+  const set3d = {
+    helmet: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient><linearGradient id="%%-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></linearGradient></defs><ellipse cx="32" cy="55" rx="21" ry="4" fill="rgba(0,0,0,0.35)"/><path d="M12 40 a20 20 0 0 1 40 0 z" fill="url(#%%-a)"/><rect x="8" y="40" width="48" height="7" rx="3.5" fill="url(#%%-b)"/><path d="M20 31 a20 20 0 0 1 8-13" stroke="#fffbeb" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.75"/><rect x="28" y="11" width="8" height="9" rx="2" fill="#92400e"/>`,
+    glasses: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f2fe"/><stop offset="1" stop-color="#0284c7"/></linearGradient></defs><ellipse cx="32" cy="55" rx="21" ry="4" fill="rgba(0,0,0,0.35)"/><rect x="8" y="22" width="22" height="19" rx="8" fill="url(#%%-a)"/><rect x="34" y="22" width="22" height="19" rx="8" fill="url(#%%-a)"/><rect x="28" y="26" width="8" height="5" rx="2.5" fill="#075985"/><path d="M8 27 L3 22 M56 27 L61 22" stroke="#075985" stroke-width="3" stroke-linecap="round"/><path d="M14 27 h7 M43 27 h7" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.85"/>`,
+    boots: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcd34d"/><stop offset="1" stop-color="#92400e"/></linearGradient></defs><ellipse cx="32" cy="55" rx="21" ry="4" fill="rgba(0,0,0,0.35)"/><path d="M22 8 h14 v17 l10 8 5 9 v6 H22 z" fill="url(#%%-a)"/><path d="M22 20 h14 M22 28 l14 2" stroke="#78350f" stroke-width="2.5" stroke-linecap="round"/><rect x="20" y="48" width="33" height="6" rx="3" fill="#1f2937"/><path d="M26 12 v10" stroke="#fffbeb" stroke-width="3" stroke-linecap="round" opacity="0.6"/>`,
+    vest: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9f99d"/><stop offset="1" stop-color="#4d7c0f"/></linearGradient></defs><ellipse cx="32" cy="55" rx="21" ry="4" fill="rgba(0,0,0,0.35)"/><path d="M20 12 L28 8 H36 L44 12 L48 22 L40 24 V52 H24 V24 L16 22 Z" fill="url(#%%-a)"/><rect x="24" y="32" width="16" height="5" fill="#e2e8f0"/><rect x="24" y="41" width="16" height="5" fill="#e2e8f0"/><path d="M24 14 V26" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.6"/>`,
+    glove: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdba74"/><stop offset="1" stop-color="#c2410c"/></linearGradient></defs><ellipse cx="32" cy="55" rx="20" ry="4" fill="rgba(0,0,0,0.35)"/><path d="M22 30 V15 a4 4 0 0 1 8 0 V27 M30 27 V10 a4 4 0 0 1 8 0 V27 M38 27 V13 a4 4 0 0 1 8 0 V32 c0 10-6 17-14 17 -8 0-12-6-12-13 V32" fill="url(#%%-a)"/><path d="M22 34 l-4 12" stroke="#7c2d12" stroke-width="3" stroke-linecap="round"/><rect x="20" y="44" width="26" height="8" rx="3" fill="#7c2d12"/>`,
+    mask: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#99f6e4"/><stop offset="1" stop-color="#0d9488"/></linearGradient></defs><ellipse cx="32" cy="55" rx="21" ry="4" fill="rgba(0,0,0,0.35)"/><path d="M18 26 a14 14 0 0 1 28 0 v6 a14 12 0 0 1-28 0 z" fill="url(#%%-a)"/><circle cx="32" cy="38" r="8" fill="#0f766e"/><circle cx="32" cy="38" r="4" fill="#99f6e4"/><path d="M18 28 L8 22 M46 28 L56 22" stroke="#115e59" stroke-width="3" stroke-linecap="round"/>`,
+    shield: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#93c5fd"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs><ellipse cx="32" cy="56" rx="19" ry="3.5" fill="rgba(0,0,0,0.35)"/><path d="M32 6 L50 13 V30 c0 12-8 20-18 24 C22 50 14 42 14 30 V13 Z" fill="url(#%%-a)"/><path d="M25 31 l5 5 9-11" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 17 L24 15 V29" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5"/>`,
+    leaf: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86efac"/><stop offset="1" stop-color="#15803d"/></linearGradient></defs><ellipse cx="32" cy="56" rx="18" ry="3.5" fill="rgba(0,0,0,0.35)"/><path d="M32 8 C48 16 52 36 32 54 C12 36 16 16 32 8 Z" fill="url(#%%-a)"/><path d="M32 15 V48 M32 25 L40 29 M32 33 L24 37 M32 41 L40 45" stroke="#14532d" stroke-width="2.5" stroke-linecap="round" fill="none"/>`,
+    award: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fde047"/><stop offset="1" stop-color="#b45309"/></linearGradient></defs><ellipse cx="32" cy="56" rx="19" ry="3.5" fill="rgba(0,0,0,0.35)"/><path d="M24 30 L17 52 L25 48 L32 54 L39 48 L47 52 L40 30 Z" fill="#dc2626"/><path d="M24 30 L17 52 L25 48 L25 30 Z" fill="#991b1b"/><circle cx="32" cy="22" r="14" fill="url(#%%-a)"/><polygon points="32,13 34.5,19.5 41.5,19.5 36,23.5 38,30 32,26 26,30 28,23.5 22.5,19.5 29.5,19.5" fill="#92400e"/>`,
+    siren: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fca5a5"/><stop offset="1" stop-color="#dc2626"/></linearGradient></defs><ellipse cx="32" cy="55" rx="20" ry="4" fill="rgba(0,0,0,0.35)"/><rect x="14" y="44" width="36" height="8" rx="3" fill="#7f1d1d"/><path d="M20 44 a12 12 0 0 1 24 0 z" fill="url(#%%-a)"/><circle cx="32" cy="37" r="5" fill="#fecaca"/><path d="M12 30 a24 24 0 0 1 6-12 M52 30 a24 24 0 0 0-6-12" stroke="#f87171" stroke-width="3" stroke-linecap="round" fill="none"/>`,
+    alert: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fde047"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><ellipse cx="32" cy="56" rx="19" ry="3.5" fill="rgba(0,0,0,0.35)"/><path d="M32 8 L56 50 H8 Z" fill="url(#%%-a)" stroke="#92400e" stroke-width="3" stroke-linejoin="round"/><rect x="30" y="22" width="4.5" height="14" rx="2" fill="#451a03"/><circle cx="32" cy="42" r="3" fill="#451a03"/>`,
+    fire: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f87171"/><stop offset="1" stop-color="#b91c1c"/></linearGradient><linearGradient id="%%-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdba74"/><stop offset="1" stop-color="#ea580c"/></linearGradient></defs><ellipse cx="32" cy="55" rx="18" ry="4" fill="rgba(0,0,0,0.35)"/><path d="M32 6 c4 10 14 14 14 28 a14 14 0 1 1-28 0 c0-6 3-9 6-12 -2 6 4 8 6 8 -3-8-1-16 2-24z" fill="url(#%%-a)"/><path d="M32 25 c2 6 8 8 8 15 a8 8 0 1 1-16 0 c0-3 2-5 3-7 -1 3 3 4 4 4 -2-4-1-8 1-12z" fill="url(#%%-b)"/>`,
+    lock: `<defs><linearGradient id="%%-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cbd5e1"/><stop offset="1" stop-color="#334155"/></linearGradient></defs><ellipse cx="32" cy="56" rx="19" ry="3.5" fill="rgba(0,0,0,0.35)"/><path d="M22 30 V20 a10 10 0 0 1 20 0 V30" stroke="#e2e8f0" stroke-width="7" fill="none" stroke-linecap="round"/><rect x="16" y="30" width="32" height="22" rx="6" fill="url(#%%-a)"/><circle cx="32" cy="39" r="4.5" fill="#fbbf24"/><rect x="30.5" y="39" width="3" height="7" rx="1.5" fill="#92400e"/>`,
+  };
+
+  let seq3d = 0;
+
+  function get3d(name, opts = {}) {
+    const raw = set3d[name];
+    if (!raw) return '';
+    seq3d += 1;
+    const body = raw.split('%%').join('u' + seq3d);
+    const size = opts.size || 40;
+    const cls = opts.class || '';
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="${size}" height="${size}" class="${cls}" aria-hidden="true" focusable="false">${body}</svg>`;
+  }
+
+  return { get, get3d };
 })();

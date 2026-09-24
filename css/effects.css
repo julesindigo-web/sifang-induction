@@ -181,3 +181,35 @@
   20%, 60% { transform: translateX(-6px); }
   40%, 80% { transform: translateX(6px); }
 }
+
+/* ============================================================
+   3D ICONS + MOTION UTILITIES (transform/opacity saja — murah)
+   Hormati prefers-reduced-motion via aturan global di base.css.
+   ============================================================ */
+.ico3d-svg { display: block; }
+
+.card .ico.is3d { background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02)); }
+.card .ico.is3d svg { width: 38px; height: 38px; }
+
+.anim-float { animation: a-float 3.6s ease-in-out infinite; }
+.anim-float-slow { animation: a-float 5.4s ease-in-out infinite; }
+.anim-bob { animation: a-bob 2.8s ease-in-out infinite; }
+.anim-pulse-soft { animation: a-pulse-soft 2.4s ease-in-out infinite; }
+.anim-swing { animation: a-swing 4.2s ease-in-out infinite; transform-origin: 50% 0%; }
+.anim-blink-soft { animation: a-blink-soft 1.8s ease-in-out infinite; }
+.anim-spin-slow { animation: rotate 7s linear infinite; }
+.anim-d1 { animation-delay: 0.5s; }
+.anim-d2 { animation-delay: 1s; }
+.anim-d3 { animation-delay: 1.5s; }
+
+@keyframes a-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes a-bob { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-4px) scale(1.04); } }
+@keyframes a-pulse-soft { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.85; } }
+@keyframes a-swing { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+@keyframes a-blink-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+/* Bintang cover berkelip + truk berjalan */
+.mining-scene .star-tw { animation: star-tw 2.8s ease-in-out infinite; }
+@keyframes star-tw { 0%, 100% { opacity: 0.75; } 50% { opacity: 0.12; } }
+.mining-scene .haul-move { animation: haul-move 9s ease-in-out infinite alternate; }
+@keyframes haul-move { from { transform: translateX(-26px); } to { transform: translateX(28px); } }

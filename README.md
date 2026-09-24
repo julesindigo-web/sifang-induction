@@ -39,6 +39,8 @@ Mining Indonesia.
 - ✅ **Post-test** 2 bagian: **LSR (wajib 100%)** dan Pengetahuan Umum (≥80%, kini 26 soal termasuk K3L Seimbang, PP 22/2021, laterit, B3, dan pelaporan 24 jam)
 - ✅ **Panel Tanda Tangan Digital** (berbasis kanvas) — ikrar mencakup SWA lingkungan dan pelaporan 24 jam
 - ✅ **Studi Kasus** industri nikel (longsor hujan, kendaraan ringan melawan truk jungkit, heat stroke, melewati pengaman, dan tumpahan B3)
+- ✅ **10 Ilustrasi Interaktif** inline SVG (tanpa internet): neraca K3L, 4 risiko laterit, respirator, zona buta & jarak 50 m, retakan lereng, LOTO, segitiga api & PASS, 5 wadah B3, topsoil & drainase, jalur evakuasi — tiap gambar punya tombol “Lihat …” yang menyalakan lapisannya
+- ✅ **13 Ikon 3D + Animasi Gerak** (`Icons.get3d()`): helm, APD, perisai, daun, sirene, api, gembok berlapis gradien — melayang/berdenyut di cover, pil K3L, kartu APD, dan tombol sirene; truk cover berjalan dan bintang berkelip
 
 ### 💼 Profesional
 - 🖋 **Tanda tangan digital** di canvas
@@ -82,7 +84,8 @@ Mining Indonesia.
 │   └── print.css            ← Print + certificate stylesheet
 │
 ├── js/
-│   ├── icons.js             ← 85+ SVG icon (custom mining/HSE themed)
+│   ├── icons.js             ← 85+ ikon 2D + 13 ikon 3D berlapis (helm, APD, perisai, daun, sirene, api, gembok …) via `Icons.get3d()`
+│   ├── illustrations.js     ← 10 ilustrasi SVG interaktif (neraca, risiko, respirator, jalan angkut, lereng, LOTO, APAR, B3, reklamasi, evakuasi)
 │   ├── storage.js           ← LocalStorage wrapper
 │   ├── state.js             ← Centralized app state
 │   ├── effects.js           ← Particles, confetti, counters, toast

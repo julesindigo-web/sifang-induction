@@ -33,13 +33,15 @@ const SLIDES_DATA = [
             <path d="M860 400 L900 360 L920 360 L920 400 Z" fill="#243757"/>
             <path d="M900 360 L940 340 L960 340 L960 400 L920 400 Z" fill="#1a2a44"/>
             <path d="M940 340 L990 320 L1010 320 L1010 400 L960 400 Z" fill="#243757"/>
-            <!-- Dump truck silhouette -->
+            <!-- Dump truck silhouette (berjalan perlahan) -->
+            <g class="haul-move">
             <g transform="translate(380 320)">
               <rect x="0" y="0" width="60" height="22" fill="#1e293b"/>
               <path d="M0 0 L60 0 L50 -18 L18 -18 L10 0 Z" fill="#1e293b"/>
               <rect x="5" y="-18" width="40" height="14" fill="#3b4863" rx="2"/>
               <circle cx="14" cy="24" r="6" fill="#0a1428" stroke="#475569"/>
               <circle cx="46" cy="24" r="6" fill="#0a1428" stroke="#475569"/>
+            </g>
             </g>
             <!-- Excavator silhouette -->
             <g transform="translate(620 310)">
@@ -52,7 +54,7 @@ const SLIDES_DATA = [
               <circle cx="24" cy="22" r="5" fill="#0a1428" stroke="#475569"/>
             </g>
             <!-- Stars -->
-            ${[120, 280, 460, 680, 920, 1180, 1320].map((x, i) => `<circle cx="${x}" cy="${60 + i * 12}" r="${0.8 + Math.random() * 1.2}" fill="#fbbf24" opacity="${0.3 + Math.random() * 0.5}"/>`).join('')}
+            ${[120, 280, 460, 680, 920, 1180, 1320].map((x, i) => `<circle class="star-tw" style="animation-delay:${(i * 0.45).toFixed(2)}s" cx="${x}" cy="${60 + i * 12}" r="${0.8 + Math.random() * 1.2}" fill="#fbbf24" opacity="${0.3 + Math.random() * 0.5}"/>`).join('')}
           </svg>
         </div>
         <div class="inner">
@@ -64,6 +66,11 @@ const SLIDES_DATA = [
             Selamat datang, Rekrutan Baru. Keselamatan Anda adalah prioritas utama kami.
             Ikuti seluruh materi ini hingga tuntas sebelum memasuki area site.
           </p>
+          <div class="hero-3d" aria-hidden="true">
+            <div class="hero-fig anim-float"><span class="halo">${Icons.get3d('helmet', { class: 'ico3d-svg', size: 46 })}</span><small>APD</small></div>
+            <div class="hero-fig anim-float-slow anim-d1"><span class="halo">${Icons.get3d('leaf', { class: 'ico3d-svg', size: 46 })}</span><small>Lingkungan</small></div>
+            <div class="hero-fig anim-float anim-d2"><span class="halo">${Icons.get3d('lock', { class: 'ico3d-svg', size: 46 })}</span><small>LOTO</small></div>
+          </div>
           <div class="badges">
             <span class="badge gold">★ ZERO HARM</span>
             <span class="badge teal">K3L SEIMBANG</span>
@@ -235,6 +242,7 @@ const SLIDES_DATA = [
           <div class="kicker k-teal">Fondasi K3L Seimbang — Core Value SMI</div>
           <h2>Dua Janji <em>Seimbang</em> — Selamat & Berkelanjutan</h2>
           <p class="lead">K3L bukan sekadar aturan administratif, melainkan <b style="color:var(--text)">nilai inti (core value)</b> yang mendefinisikan identitas operasional PT. Sifang Mining Indonesia. Keselamatan & lingkungan adalah <b style="color:var(--text)">simbiosis</b> — bukan trade-off.</p>
+          ${Illustrations.fondasi()}
           <div class="two">
             <div class="panelbox ok">
               <h3><i></i>Janji 1 — Pulang Selamat</h3>
@@ -258,11 +266,11 @@ const SLIDES_DATA = [
             <small>— Filosofi Fondasi K3L Seimbang • Panduan Induksi Terpadu Nikel</small>
           </div>
           <div class="k3l-duo">
-            <div class="k3l-pill safety"><b>SAFETY</b><span>Zero Harm • LSR • SWA • LOTO • APD</span></div>
+            <div class="k3l-pill safety"><span class="pill-ico anim-bob">${Icons.get3d('shield', { class: 'ico3d-svg', size: 34 })}</span><b>SAFETY</b><span>Zero Harm • LSR • SWA • LOTO • APD</span></div>
             <div class="k3l-plus">+</div>
-            <div class="k3l-pill env"><b>ENVIRONMENT</b><span>Zero Spill • TPS B3 • Reklamasi • Air Bersih</span></div>
+            <div class="k3l-pill env"><span class="pill-ico anim-bob anim-d1">${Icons.get3d('leaf', { class: 'ico3d-svg', size: 34 })}</span><b>ENVIRONMENT</b><span>Zero Spill • TPS B3 • Reklamasi • Air Bersih</span></div>
             <div class="k3l-plus">=</div>
-            <div class="k3l-pill balanced"><b>K3L SEIMBANG</b><span>Produksi Aman & Berkelanjutan</span></div>
+            <div class="k3l-pill balanced"><span class="pill-ico anim-pulse-soft">${Icons.get3d('award', { class: 'ico3d-svg', size: 34 })}</span><b>K3L SEIMBANG</b><span>Produksi Aman & Berkelanjutan</span></div>
           </div>
           <div class="footnote">Sumber: <b>Membangun Fondasi K3L Seimbang</b> Bab 1 — Pulang Selamat + Operasi Berkelanjutan. Anda bukan objek prosedur, melainkan <b>subjek aktif</b> siklus perbaikan berkelanjutan.</div>
         </div>
@@ -355,6 +363,7 @@ const SLIDES_DATA = [
           <div class="kicker">Profil & Kebijakan — Konteks Nikel Laterit</div>
           <h2>Risiko <em>Dominan</em> Tambang Nikel Laterit</h2>
           <p class="lead">Aktivitas open pit, crushing plant, stockpile & <b>HPAL</b> membawa risiko unik. Setiap pekerja — apa pun jabatannya — wajib memahami empat risiko dominan ini sebelum terpapar.</p>
+          ${Illustrations.risiko()}
           <div class="cards stagger">
             <article class="card r"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>1 · Kegagalan Lereng / Longsoran</h3><p>Laterit (limonit & saprolit) berkekuatan seperti <b>tanah</b>, bukan batuan. Hujan tropis menurunkan kuat geser drastis → longsoran, jatuhan batu, runtuhnya bench. Kenali retakan, gelembung & mata air baru.</p></article>
             <article class="card"><div class="ico">${Icons.get('mask', { class: 'ico-svg' })}</div><h3>2 · Debu Logam Berat & Silika</h3><p>Galian, hauling, stockpile & grinding menghasilkan debu <b>Ni, Co, Cr + silika respirabel</b> yang dapat melebihi NAB. Risiko: silikosis, gangguan napas kronis, sensitisasi kulit. Kendali: water spraying, ventilasi + respirator N95/P100 fit-tested.</p></article>
@@ -538,7 +547,7 @@ const SLIDES_DATA = [
                 <div><b>${r.t}</b><span>${r.d}</span></div>
               </div>`).join('')}
           </div>
-          <div class="footnote">⚠ Pelanggaran terhadap Life-Saving Rules dapat berakibat <b>pemutusan hubungan kerja</b> dan, yang lebih penting, <b>kematian</b>.</div>
+          <div class="footnote">Pelanggaran terhadap Life-Saving Rules dapat berakibat <b>pemutusan hubungan kerja</b> dan, yang lebih penting, <b>kematian</b>.</div>
         </div>
       `;
     },
@@ -597,13 +606,13 @@ const SLIDES_DATA = [
           <h2><em>Stop Work Authority</em> (SWA)</h2>
           <p class="lead">Setiap orang — dari level terendah hingga manajemen — memiliki <b>hak dan kewajiban</b> menghentikan pekerjaan yang dianggap tidak aman. Perusahaan menjamin <b>tidak ada retaliasi</b> bagi penghentian kerja yang beritikad baik.</p>
           <div class="flow">
-            <div class="step" style="border-color:var(--red-line); background:var(--red-soft); color:var(--red)">🛑 STOP</div>
+            <div class="step step-ico" style="border-color:var(--red-line); background:var(--red-soft); color:var(--red)">${Icons.get('stop', { class: 'ico-svg', size: 16 })}<span>STOP</span></div>
             <div class="arr">➜</div>
-            <div class="step" style="border-color:var(--amber-line); background:var(--amber-soft); color:var(--amber)">📢 LAPOR</div>
+            <div class="step step-ico" style="border-color:var(--amber-line); background:var(--amber-soft); color:var(--amber)">${Icons.get('mic', { class: 'ico-svg', size: 16 })}<span>LAPOR</span></div>
             <div class="arr">➜</div>
-            <div class="step" style="border-color:var(--blue-line); background:var(--blue-soft); color:#9db4ff">🔧 PERBAIKI</div>
+            <div class="step step-ico" style="border-color:var(--blue-line); background:var(--blue-soft); color:var(--blue)">${Icons.get('tools', { class: 'ico-svg', size: 16 })}<span>PERBAIKI</span></div>
             <div class="arr">➜</div>
-            <div class="step" style="border-color:var(--green-line); background:var(--green-soft); color:var(--green)">✅ LANJUT AMAN</div>
+            <div class="step step-ico" style="border-color:var(--green-line); background:var(--green-soft); color:var(--green)">${Icons.get('check', { class: 'ico-svg', size: 16 })}<span>LANJUT AMAN</span></div>
           </div>
           <h3 style="margin-top:30px; font-size:14px; color:var(--amber); letter-spacing:.1em; text-transform:uppercase;">Contoh Situasi Wajib SWA:</h3>
           <ul class="checks danger cols" style="margin-top:14px">
@@ -1093,11 +1102,11 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <h2>APD <em>Wajib</em> di Seluruh Area Site</h2>
           <p class="lead">Lima APD dasar ini wajib dipakai sebelum memasuki area operasional. Periksa kelayakan setiap hari: retak, aus, kedaluwarsa, atau kontaminasi berarti diganti — bukan diperbaiki sendiri.</p>
           <div class="cards stagger">
-            <article class="card"><div class="ico">${Icons.get('helmet', { class: 'ico-svg' })}</div><h3>Helm Keselamatan</h3><p>Standar SNI, ANSI, atau EN; tali dagu (<i>chinstrap</i>) terpasang bila bekerja di ketinggian atau area berangin. <b>Ganti setelah benturan</b>, walau terlihat utuh — struktur dalam sudah rusak. Masa pakai umumnya 3–5 tahun.</p></article>
-            <article class="card b"><div class="ico">${Icons.get('glass', { class: 'ico-svg' })}</div><h3>Kacamata Keselamatan</h3><p>Wajib di seluruh area operasional; pelindung samping (<i>side shield</i>) untuk percikan dari arah samping. Pilih lensa sesuai tugas: bening untuk umum, gelap untuk area terang, dan kedap debu untuk area berdebu.</p></article>
-            <article class="card t"><div class="ico">${Icons.get('boot', { class: 'ico-svg' })}</div><h3>Sepatu Keselamatan</h3><p>Pelindung jari baja atau komposit, sol antitergelincir dan tahan tusukan. Wajib di area operasional; pastikan ukuran pas — sepatu longgar menyebabkan tersandung di <i>haul road</i> tidak rata.</p></article>
-            <article class="card g"><div class="ico">${Icons.get('vest', { class: 'ico-svg' })}</div><h3>Pakaian Keterlihatan Tinggi</h3><p>Rompi atau pakaian reflektif agar terlihat operator alat berat, siang dan malam. Ganti bila reflektor pudar atau terkontaminasi oli — rompi kusam sama dengan tidak memakai rompi.</p></article>
-            <article class="card"><div class="ico">${Icons.get('glove', { class: 'ico-svg' })}</div><h3>Sarung Tangan</h3><p>Sesuai tugas: tahan sayatan untuk material tajam, tahan kimia (nitril/butil) untuk B3, antivibrasi untuk alat genggam, atau umum untuk material biasa. Periksa robekan sebelum dipakai.</p></article>
+            <article class="card"><div class="ico is3d anim-float">${Icons.get3d('helmet', { class: 'ico3d-svg', size: 38 })}</div><h3>Helm Keselamatan</h3><p>Standar SNI, ANSI, atau EN; tali dagu (<i>chinstrap</i>) terpasang bila bekerja di ketinggian atau area berangin. <b>Ganti setelah benturan</b>, walau terlihat utuh — struktur dalam sudah rusak. Masa pakai umumnya 3–5 tahun.</p></article>
+            <article class="card b"><div class="ico is3d anim-float anim-d1">${Icons.get3d('glasses', { class: 'ico3d-svg', size: 38 })}</div><h3>Kacamata Keselamatan</h3><p>Wajib di seluruh area operasional; pelindung samping (<i>side shield</i>) untuk percikan dari arah samping. Pilih lensa sesuai tugas: bening untuk umum, gelap untuk area terang, dan kedap debu untuk area berdebu.</p></article>
+            <article class="card t"><div class="ico is3d anim-float anim-d2">${Icons.get3d('boots', { class: 'ico3d-svg', size: 38 })}</div><h3>Sepatu Keselamatan</h3><p>Pelindung jari baja atau komposit, sol antitergelincir dan tahan tusukan. Wajib di area operasional; pastikan ukuran pas — sepatu longgar menyebabkan tersandung di <i>haul road</i> tidak rata.</p></article>
+            <article class="card g"><div class="ico is3d anim-float anim-d1">${Icons.get3d('vest', { class: 'ico3d-svg', size: 38 })}</div><h3>Pakaian Keterlihatan Tinggi</h3><p>Rompi atau pakaian reflektif agar terlihat operator alat berat, siang dan malam. Ganti bila reflektor pudar atau terkontaminasi oli — rompi kusam sama dengan tidak memakai rompi.</p></article>
+            <article class="card"><div class="ico is3d anim-float anim-d2">${Icons.get3d('glove', { class: 'ico3d-svg', size: 38 })}</div><h3>Sarung Tangan</h3><p>Sesuai tugas: tahan sayatan untuk material tajam, tahan kimia (nitril/butil) untuk B3, antivibrasi untuk alat genggam, atau umum untuk material biasa. Periksa robekan sebelum dipakai.</p></article>
           </div>
           <div class="footnote">APD adalah pertahanan terakhir dalam hierarki pengendalian. Jika APD saja tidak cukup mengendalikan risiko, pekerjaan tidak boleh dimulai — minta pengendalian rekayasa atau administratif tambahan.</div>
         </div>
@@ -1249,6 +1258,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
         <div class="inner">
           <div class="kicker">APD & Kesehatan</div>
           <h2>Bahaya <em>Kesehatan</em> Khas Nikel</h2>
+          ${Illustrations.kesehatan()}
           <div class="cards stagger">
             <article class="card"><div class="ico">${Icons.get('mask', { class: 'ico-svg' })}</div><h3>Debu Logam & Silika</h3><p>Debu <b>Ni, Co, Cr + silika respirabel</b> dari galian/hauling/stockpile/crushing dapat <b>melebihi NAB</b> (OSHA/MSHA memperketat PEL silika). Risiko: silikosis fatal, PPOK, sensitisasi. Kendali: <b>water spraying + dust collector/ventilasi</b> dulu, lalu <b>respirator N95/P100 fit-tested</b> — cek kebocoran & rawat benar.</p></article>
             <article class="card b"><div class="ico">${Icons.get('earp', { class: 'ico-svg' })}</div><h3>Kebisingan</h3><p>Alat berat, crusher, genset, furnace. Area ≥ 85 dBA = wajib pelindung telinga + program konservasi pendengaran (audiometri berkala).</p></article>
@@ -1317,6 +1327,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
         <div class="inner">
           <div class="kicker">Risiko Kritikal Area — Dari PDF p.20</div>
           <h2>Keselamatan <em>Traffic & Haul Road</em></h2>
+          ${Illustrations.traffic()}
           <ul class="checks cols">
             <li><b>Hirarki prioritas 8 level:</b> 1. Ambulance sirene → 2. Pemadam → 3. Pengangkut bahan peledak → 4. LV escort → 5. HE bermuatan → 6. HE kosong → 7. Truck bermuatan/kosong → 8. LV/Bus/Manhaul (PDF p.20)</li>
             <li><b>Batas kecepatan</b> sesuai Rencana Manajemen Lalu Lintas (TMP): kendaraan ringan ± 40 km/jam di <i>haul road</i>, lebih rendah saat hujan atau malam hari. Hak utama jalan: alat berat &gt; kendaraan ringan &gt; pejalan kaki; kendaraan menanjak diprioritaskan.</li>
@@ -1729,6 +1740,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <div class="kicker">Risiko Kritikal Area</div>
           <h2>Geoteknik & <em>Open Pit Laterit</em></h2>
           <p class="lead">Laterit (saprolit & limonit) berkekuatan seperti <b>tanah</b> — bukan batuan padat. Hujan tropis menurunkan <b>kuat geser</b> signifikan. Jenuh air = lumpur cair yang menelan alat. Ini bahaya nomor satu pit nikel.</p>
+          ${Illustrations.geotek()}
           <ul class="checks danger cols">
             <li><b>Highwall/lowwall:</b> dilarang bekerja/parkir di bawah material menggantung atau lereng tanpa inspeksi geotek.</li>
             <li><b>Tanda awal kegagalan (wajib hafal):</b> retakan crest (tension crack), <b>gelembung/pergerakan material</b>, perubahan bentuk lereng, <b>mata air baru</b>, rembesan, suara tanah, amblasan.</li>
@@ -1756,6 +1768,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
         <div class="inner">
           <div class="kicker">Pekerjaan Berbahaya — PDF p.46</div>
           <h2><em>LOTO</em> — Lock Out Tag Out</h2>
+          ${Illustrations.loto()}
           <div class="flow">
             <div class="step">1 · PERSIAPAN</div><div class="arr">➜</div>
             <div class="step">2 · SHUTDOWN</div><div class="arr">➜</div>
@@ -1878,6 +1891,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
         <div class="inner">
           <div class="kicker">Pekerjaan Berbahaya</div>
           <h2><em>Hot Work</em> & Pencegahan Kebakaran</h2>
+          ${Illustrations.hotwork()}
           <div class="two">
             <div class="panelbox warn">
               <h3><i></i>Aturan Hot Work</h3>
@@ -2144,6 +2158,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <div class="kicker">Fasilitas & Lingkungan — TPS B3 Berizin</div>
           <h2>Tabel <em>Limbah B3</em> — Kenali & Buang Benar</h2>
           <p class="lead">Limbah B3 <b>dilarang dibuang sembarangan, dibakar terbuka atau dikubur</b>. Hanya di <b>TPS B3 berizin</b>. Pelanggaran = sanksi berat perusahaan & individu.</p>
+          ${Illustrations.b3()}
           <div class="panelbox" style="margin-top:6px">
             <div class="waste-table">
               <div class="waste-row waste-head"><span>Jenis</span><span>Contoh di Site Nikel</span><span>Prosedur Benar</span></div>
@@ -2288,6 +2303,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <div class="kicker k-teal">Lingkungan — Tata Kelola Air & Lahan</div>
           <h2>Air, <em>Reklamasi</em> & Siklus Hidup Tambang</h2>
           <p class="lead">Lingkungan bukan domain ahli saja — melainkan <b>tanggung jawab bersama</b> setiap pekerja. Dua pilar yang wajib Anda kuasai: manajemen air & reklamasi progresif.</p>
+          ${Illustrations.air()}
           <div class="two">
             <div class="panelbox">
               <h3><i></i>Manajemen Air & Drainase</h3>
@@ -2365,6 +2381,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
         <div class="inner">
           <div class="kicker">Darurat & Medis — PDF p.57-58</div>
           <h2><em>Tanggap Darurat</em> & Evakuasi</h2>
+          ${Illustrations.darurat()}
           <div class="two">
             <div class="panelbox danger">
               <h3><i></i>Bila Mengetahui Darurat (p.57)</h3>
@@ -2433,19 +2450,19 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <p class="lead">Tekan tombol di bawah untuk mendengarkan bunyi sirene (TTS Web Speech). Hafalkan polanya — ini bisa menyelamatkan nyawa.</p>
           <div class="siren-demo">
             <button class="siren-btn danger" data-sirene="darurat">
-              <span>🚨 DARURAT — 3× panjang</span>
+              <span class="sbtn-label"><span class="anim-pulse-soft" style="display:inline-flex">${Icons.get3d('siren', { class: 'ico3d-svg', size: 26 })}</span><span>DARURAT — 3× panjang</span></span>
               <span class="icon">▶</span>
             </button>
             <button class="siren-btn warn" data-sirene="siaga">
-              <span>⚠ SIAGA — putus-putus pendek</span>
+              <span class="sbtn-label"><span class="anim-blink-soft" style="display:inline-flex">${Icons.get3d('alert', { class: 'ico3d-svg', size: 26 })}</span><span>SIAGA — putus-putus pendek</span></span>
               <span class="icon">▶</span>
             </button>
             <button class="siren-btn ok" data-sirene="allclear">
-              <span>✅ ALL CLEAR — 1× panjang</span>
+              <span class="sbtn-label"><span style="display:inline-flex">${Icons.get3d('shield', { class: 'ico3d-svg', size: 26 })}</span><span>ALL CLEAR — 1× panjang</span></span>
               <span class="icon">▶</span>
             </button>
             <button class="siren-btn" data-sirene="blasting">
-              <span>💥 BLASTING — pola peledakan</span>
+              <span class="sbtn-label"><span class="anim-bob" style="display:inline-flex">${Icons.get3d('fire', { class: 'ico3d-svg', size: 26 })}</span><span>BLASTING — pola peledakan</span></span>
               <span class="icon">▶</span>
             </button>
           </div>
