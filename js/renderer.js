@@ -39,8 +39,9 @@ const Renderer = (() => {
       next.classList.add('active');
       const s = slides[i];
       if (s && typeof s.afterRender === 'function') {
-        try { s.afterRender(); } catch (e) { console.warn('afterRender fail', e); }
+        try { s.afterRender(); } catch (e) { /* afterRender opsional — abaikan agar slide tetap tampil */ }
       }
+      try { if (typeof I18n !== 'undefined') I18n.applyTo(next, I18n.lang()); } catch (e) { /* i18n opsional */ }
     }, prev && prev !== next ? 60 : 0);
 
     const stage = document.getElementById('stage');

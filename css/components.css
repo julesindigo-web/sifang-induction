@@ -741,3 +741,13 @@ button:focus-visible {
   margin-bottom: 10px;
   text-transform: uppercase;
 }
+
+/* ---------- LANGUAGE TOGGLE ---------- */
+.iconbtn.langbtn {
+  width: auto;
+  padding: 0 13px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+}

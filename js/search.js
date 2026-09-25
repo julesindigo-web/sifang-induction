@@ -7,9 +7,9 @@ const Search = (() => {
     const overlay = ensureOverlay();
     overlay.innerHTML = `
       <div class="overlay-header">
-        <div class="overlay-title">🔎 Pencarian Materi</div>
+        <div class="overlay-title">🔎 ${I18n.t('search_h')}</div>
         <div class="overlay-actions">
-          <button class="iconbtn" id="searchClose" aria-label="Tutup">
+          <button class="iconbtn" id="searchClose" aria-label="${I18n.t('aria_close')}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
         </div>
@@ -17,7 +17,7 @@ const Search = (() => {
       <div style="max-width:var(--menu-max); margin:0 auto;">
         <div class="gloss-search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg>
-          <input id="searchQ" type="search" placeholder="Cari kata kunci (mis. LOTO, APD, longsor, hot work)" autocomplete="off"/>
+          <input id="searchQ" type="search" placeholder="${I18n.t('search_ph')}" autocomplete="off"/>
         </div>
         <div id="searchResults" class="bm-grid"></div>
       </div>
@@ -33,7 +33,7 @@ const Search = (() => {
   function doSearch(slides, term) {
     const r = document.getElementById('searchResults');
     term = term.trim().toLowerCase();
-    if (!term) { r.innerHTML = '<div style="padding:30px; text-align:center; color:var(--muted)">Ketik untuk mencari…</div>'; return; }
+    if (!term) { r.innerHTML = `<div style="padding:30px; text-align:center; color:var(--muted)">${I18n.t('search_type')}</div>`; return; }
 
     const matches = slides.map((s, i) => {
       const title = (s.title || '').toLowerCase();
@@ -51,7 +51,7 @@ const Search = (() => {
     }).filter(x => x.score > 0).sort((a, b) => b.score - a.score).slice(0, 25);
 
     if (!matches.length) {
-      r.innerHTML = '<div style="padding:30px; text-align:center; color:var(--muted)">Tidak ditemukan. Coba kata kunci lain.</div>';
+      r.innerHTML = `<div style="padding:30px; text-align:center; color:var(--muted)">${I18n.t('search_none')}</div>`;
       return;
     }
 
@@ -59,10 +59,12 @@ const Search = (() => {
       const idx = m.i;
       const slide = m.s;
       const preview = highlight(snippet(stripTags(slide.render ? slide.render() : ''), term), term);
+      const dispT = (typeof I18n !== 'undefined' ? I18n.title(slide) : slide.title) || '—';
+      const dispM = (typeof I18n !== 'undefined' ? I18n.mod(slide.mod || '') : slide.mod) || '';
       return `
         <button class="bm-item" data-i="${idx}">
           <span class="no">${pad(idx+1)}</span>
-          <span class="tt">${escapeHtml(slide.title || '—')}<small style="display:block; color:var(--dim); font-size:10px; letter-spacing:.14em; margin-top:2px; text-transform:uppercase">${escapeHtml(slide.mod || '')}</small>
+          <span class="tt">${escapeHtml(dispT)}<small style="display:block; color:var(--dim); font-size:10px; letter-spacing:.14em; margin-top:2px; text-transform:uppercase">${escapeHtml(dispM)}</small>
           <div style="font-size:11.5px; color:var(--muted); margin-top:4px; font-weight:400">${preview}</div></span>
         </button>
       `;

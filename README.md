@@ -47,17 +47,23 @@ Mining Indonesia.
 - 📜 **Sertifikat otomatis** dengan nomor unik, masa berlaku 12 bulan
 - 📊 **Progress tracking** otomatis (tersimpan di browser)
 - � **Bookmark** slide untuk review ulang
-- 📝 **Notes** per slide (planned)
 - 🔍 **Full-text search** seluruh materi
 - 📖 **Glosarium K3L** 100+ istilah dengan pencarian (baru: K3L Seimbang, PP 22/2021, Permen 33/2021, Air Asam Tambang, Topsoil/Subsoil, Reklamasi Progresif, TPS B3, N95/P100, PEL Silika, TSF Exclusion Zone, IBPR, Pelaporan 24 Jam)
+
+### 🌐 Dual Bahasa (Indonesia ↔ 中文)
+- **Tombol 中文/ID** di topbar (pintasan `L`) — swap seluruh tampilan tanpa reload, pilihan tersimpan
+- **Chrome UI 100% bilingual**: menu, pencarian, glosarium, bookmark, bantuan, kuis, tanda tangan, sertifikat
+- **82 judul slide + heading + lead + agenda + label modul** beralih bahasa otomatis
+- **Bank soal penuh dua bahasa** (`quiz.json` + `quiz-zh.json`, 5+5+26 soal, jawaban tersimpan tetap valid)
+- **Narasi TTS mengikuti bahasa** (id-ID / zh-CN) termasuk demo sirene
 
 ### 🎨 Visual & UX
 - 🌗 **Dark/Light theme** toggle (data-theme)
 - 🔤 **Premium typography** (Space Grotesk + Manrope + JetBrains Mono)
 - 📱 **Responsive** (mobile-first; swipe gesture)
 - 🖨 **Print-ready** (handout + sertifikat A4)
-- 🔊 **Audio narasi** Bahasa Indonesia (Web Speech API)
-- ⌨ **Keyboard shortcuts** lengkap
+- 🔊 **Audio narasi** Indonesia / 中文 (Web Speech API)
+- ⌨ **Keyboard shortcuts** lengkap (termasuk `L` ganti bahasa)
 
 ---
 
@@ -88,6 +94,7 @@ Mining Indonesia.
 │   ├── illustrations.js     ← 10 ilustrasi SVG interaktif (neraca, risiko, respirator, jalan angkut, lereng, LOTO, APAR, B3, reklamasi, evakuasi)
 │   ├── storage.js           ← LocalStorage wrapper
 │   ├── state.js             ← Centralized app state
+│   ├── i18n.js              ← Dual bahasa ID/中文 (kamus 82 judul + chrome UI + quiz-zh loader)
 │   ├── effects.js           ← Particles, confetti, counters, toast
 │   ├── progress.js          ← Progress tracking
 │   ├── theme.js             ← Dark/light mode
@@ -107,6 +114,7 @@ Mining Indonesia.
 │
 └── data/
     ├── quiz.json            ← Bank soal pretest (5) + posttest LSR (5, wajib 100%) + umum (26, ≥80%)
+    ├── quiz-zh.json         ← Bank soal mirror Bahasa China (struktur & kunci identik)
     └── glossary.json        ← 100+ HSE terms (incl. K3L Seimbang, PP 22/2021, B3, TSF, IBPR)
 ```
 

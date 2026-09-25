@@ -15,12 +15,13 @@ const Menu = (() => {
       if (!groups[m]) groups[m] = [];
       groups[m].push({ s, i });
     });
+    const T = (typeof I18n !== 'undefined') ? I18n : null;
     Object.entries(groups).forEach(([mod, items]) => {
       const g = document.createElement('div');
       g.className = 'mod-group';
       const label = document.createElement('div');
       label.className = 'mod-group-label';
-      label.textContent = mod;
+      label.textContent = T ? T.mod(mod) : mod;
       g.appendChild(label);
       const grid2 = document.createElement('div');
       grid2.style.display = 'grid';
@@ -30,7 +31,9 @@ const Menu = (() => {
         const btn = document.createElement('button');
         btn.className = 'mitem';
         btn.setAttribute('data-idx', i);
-        btn.innerHTML = `<span class="no">${pad(i+1)}</span><span class="tt">${escapeHtml(s.title || '—')}<small>${escapeHtml(mod)}</small></span>`;
+        const dispTitle = T ? T.title(s) : (s.title || '—');
+        const dispMod = T ? T.mod(mod) : mod;
+        btn.innerHTML = `<span class="no">${pad(i+1)}</span><span class="tt">${escapeHtml(dispTitle)}<small>${escapeHtml(dispMod)}</small></span>`;
         btn.addEventListener('click', () => {
           Navigation.go(i);
           close();

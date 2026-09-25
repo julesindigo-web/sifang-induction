@@ -74,6 +74,8 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
       </button>
 
+      <button class="iconbtn langbtn" id="btnLang" aria-label="Ganti ke bahasa China" title="Ganti bahasa (L)">中文</button>
+
       <button class="iconbtn" id="btnHelp" aria-label="Panduan" title="Panduan (?)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.5 1.5c-1 .8-2 1.2-2 2.5M12 17v.01"/></svg>
       </button>
@@ -98,7 +100,7 @@
     <button class="iconbtn" id="btnClose" aria-label="Tutup">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
-    <h3 style="max-width:var(--menu-max); margin:6px auto 16px; color:var(--amber); letter-spacing:.1em;">DAFTAR MATERI INDUKSI</h3>
+    <h3 id="menuTitle" style="max-width:var(--menu-max); margin:6px auto 16px; color:var(--amber); letter-spacing:.1em;">DAFTAR MATERI INDUKSI</h3>
     <div id="menuGrid"></div>
   </div>
 
@@ -123,6 +125,7 @@
   <script src="js/icons.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/state.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/effects.js"></script>
   <script src="js/progress.js"></script>
   <script src="js/theme.js"></script>

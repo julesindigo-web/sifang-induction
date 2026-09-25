@@ -14,16 +14,16 @@ const Certificate = (() => {
     if (!passed) {
       c.innerHTML = `
         <div class="inner">
-          <div class="kicker">Sertifikat</div>
-          <h2>Sertifikat <em>Belum Tersedia</em></h2>
+          <div class="kicker">${I18n.t('cert_k1')}</div>
+          <h2>Sertifikat <em>${I18n.t('cert_un_h').replace('Sertifikat ', '')}</em></h2>
           <div class="panelbox danger" style="margin-top:14px">
-            <h3><i></i>Belum Memenuhi Syarat</h3>
+            <h3><i></i>${I18n.t('cert_un_box')}</h3>
             <p style="color:var(--text); line-height:1.7">
-              Untuk menerbitkan sertifikat induksi, Anda harus lulus <b>Post-Test</b> dengan skor ≥ 80% (dan 100% pada bagian Life-Saving Rules).<br/>
-              Status post-test saat ini: <b>${post.submitted ? (post.score + '%') : 'belum dikerjakan'}</b>.
+              ${I18n.t('cert_un_p')}<br/>
+              ${I18n.t('cert_un_st')}<b>${post.submitted ? (post.score + '%') : I18n.t('cert_un_none')}</b>.
             </p>
           </div>
-          <p class="lead" style="margin-top:14px">Silakan kembali ke slide sebelumnya dan selesaikan post-test terlebih dahulu.</p>
+          <p class="lead" style="margin-top:14px">${I18n.t('cert_un_lead')}</p>
         </div>
       `;
       return;
@@ -32,15 +32,15 @@ const Certificate = (() => {
     if (!sig) {
       c.innerHTML = `
         <div class="inner">
-          <div class="kicker">Sertifikat</div>
-          <h2>Sertifikat <em>Menunggu Tanda Tangan</em></h2>
+          <div class="kicker">${I18n.t('cert_k1')}</div>
+          <h2>Sertifikat <em>${I18n.t('cert_w_h').replace(/^Sertifikat /, '').replace(/^证书/, '')}</em></h2>
           <div class="panelbox warn" style="margin-top:14px">
-            <h3><i></i>Belum Ditandatangani</h3>
+            <h3><i></i>${I18n.t('cert_w_box')}</h3>
             <p style="color:var(--text); line-height:1.7">
-              Anda lulus post-test, tetapi belum menandatangani komitmen K3L. Sertifikat baru diterbitkan setelah tanda tangan digital tersimpan.
+              ${I18n.t('cert_w_p')}
             </p>
           </div>
-          <p class="lead" style="margin-top:14px">Silakan kembali ke slide Tanda Tangan Komitmen.</p>
+          <p class="lead" style="margin-top:14px">${I18n.t('cert_w_lead')}</p>
         </div>
       `;
       return;
@@ -59,58 +59,57 @@ const Certificate = (() => {
 
     c.innerHTML = `
       <div class="inner">
-        <div class="kicker">Penutup</div>
-        <h2>Sertifikat <em>Induksi K3L</em></h2>
-        <p class="lead">Selamat! Anda telah lulus program induksi K3L. Sertifikat ini sah sebagai bukti kompetensi awal masuk site.</p>
+        <div class="kicker">${I18n.t('cert_k2')}</div>
+        <h2>${I18n.t('cert_h_full')}</h2>
+        <p class="lead">${I18n.t('cert_lead')}</p>
 
         <div class="cert" id="certPrint">
           <div class="cert-header">
             <div class="left">
               <div class="logo-mark">${Icons.get('shield', { size: 32, stroke: '#2b3990', sw: 1.5 })}</div>
-              <h3>PT. Sifang Mining Indonesia<small>Occupational Safety, Health & Environment Induction Program</small></h3>
+              <h3>PT. Sifang Mining Indonesia<small>${I18n.lang() === 'zh' ? '职业安全、健康与环境入职培训' : 'Occupational Safety, Health & Environment Induction Program'}</small></h3>
             </div>
             <div class="right">
-              <b style="color:#1e293b">No. Sertifikat</b><br/>
+              <b style="color:#1e293b">${I18n.t('cert_no')}</b><br/>
               ${certId}
             </div>
           </div>
           <div class="cert-body">
-            <div class="cert-sub">Sertifikat Kelulusan</div>
-            <div class="cert-title">Program Induksi K3L</div>
-            <p class="cert-statement">Dengan ini menyatakan bahwa:</p>
-            <div class="cert-name">${escapeHtml(u.name || '— Nama Peserta —')}</div>
+            <div class="cert-sub">${I18n.t('cert_sub')}</div>
+            <div class="cert-title">${I18n.t('cert_title')}</div>
+            <p class="cert-statement">${I18n.t('cert_stmt0')}</p>
+            <div class="cert-name">${escapeHtml(u.name || I18n.t('cert_name_ph'))}</div>
             <p class="cert-id">NIK: ${escapeHtml(u.nik || '—')} · ${escapeHtml(u.position || '—')} · ${escapeHtml(u.department || '—')}</p>
 
             <p class="cert-statement" style="margin-top:14px">
-              telah menyelesaikan dan lulus Program Induksi Keselamatan, Kesehatan Kerja, dan Lingkungan (K3L)
-              untuk operasional pertambangan nikel open pit, dengan skor post-test:
+              ${I18n.t('cert_stmt1')}
               <b style="color:var(--brand-indigo)">${post.score}%</b>
             </p>
 
             <div class="cert-details">
-              <div class="cert-detail"><div class="lbl">Tanggal Terbit</div><div class="val">${formatDate(date)}</div></div>
-              <div class="cert-detail"><div class="lbl">Berlaku Sampai</div><div class="val">${formatDate(expiry)}</div></div>
-              <div class="cert-detail"><div class="lbl">Status</div><div class="val">AKTIF · ZERO HARM</div></div>
+              <div class="cert-detail"><div class="lbl">${I18n.t('cert_d1')}</div><div class="val">${formatDate(date)}</div></div>
+              <div class="cert-detail"><div class="lbl">${I18n.t('cert_d2')}</div><div class="val">${formatDate(expiry)}</div></div>
+              <div class="cert-detail"><div class="lbl">${I18n.t('cert_d3')}</div><div class="val">${I18n.t('cert_active')}</div></div>
             </div>
           </div>
           <div class="cert-footer">
             <div class="cert-sig">
               <div class="line">${u.name || ''}</div>
-              <small>Peserta Induksi</small>
+              <small>${I18n.t('cert_part')}</small>
             </div>
             <div class="cert-sig">
               <div class="line">HSE Department</div>
-              <small>Disahkan oleh</small>
+              <small>${I18n.t('cert_by')}</small>
             </div>
           </div>
         </div>
 
         <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px">
-          <button class="navbtn primary" id="certDownload">⬇ Unduh / Cetak Sertifikat</button>
-          <button class="navbtn" id="certShare">📤 Bagikan</button>
+          <button class="navbtn primary" id="certDownload">${I18n.t('cert_dl')}</button>
+          <button class="navbtn" id="certShare">${I18n.t('cert_share')}</button>
         </div>
 
-        <div class="footnote" style="margin-top:14px">Sertifikat ini wajib diperlihatkan saat memasuki site. Masa berlaku 12 bulan — penyegaran wajib setelahnya.</div>
+        <div class="footnote" style="margin-top:14px">${I18n.t('cert_foot')}</div>
       </div>
     `;
 
@@ -119,7 +118,7 @@ const Certificate = (() => {
     // Only fire confetti + toast on first issuance
     if (!wasCertified) {
       Effects.confetti({ count: 100 });
-      Effects.toast('🎉 Sertifikat diterbitkan!', 'ok');
+      Effects.toast(I18n.t('cert_new'), 'ok');
     }
   }
 
@@ -139,7 +138,7 @@ const Certificate = (() => {
   function formatDate(s) {
     if (!s) return '—';
     const d = new Date(s);
-    const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+    const months = I18n.t('months');
     return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
   }
 
@@ -153,17 +152,18 @@ const Certificate = (() => {
 
   async function share() {
     const u = State.get('user') || {};
-    const text = `Saya ${u.name || ''} (${u.nik || ''}) telah lulus Program Induksi K3L PT. Sifang Mining Indonesia! Skor post-test: ${State.get('posttest').score}%. #ZeroHarm #SafetyFirst`;
+    const post = State.get('posttest') || {};
+    const text = I18n.t('cert_share_t', { name: u.name || '', nik: u.nik || '', score: post.score || 0 });
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'Sertifikat Induksi K3L', text });
+        await navigator.share({ title: I18n.t('cert_h'), text });
       } catch (e) {}
     } else {
       try {
         await navigator.clipboard.writeText(text);
-        Effects.toast('Teks disalin ke clipboard', 'ok');
+        Effects.toast(I18n.t('cert_copied'), 'ok');
       } catch (e) {
-        Effects.toast('Salin manual: ' + text, 'warn');
+        Effects.toast(I18n.t('cert_copy_man') + text, 'warn');
       }
     }
   }

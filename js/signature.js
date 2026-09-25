@@ -86,7 +86,7 @@ const Signature = (() => {
   function clear() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     State.set('signature', null);
-    Effects.toast('Tanda tangan dihapus', 'warn');
+    Effects.toast(I18n.t('sig_t_clear'), 'warn');
   }
 
   function save() {
@@ -95,19 +95,19 @@ const Signature = (() => {
     const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
     let hasInk = false;
     for (let i = 3; i < data.length; i += 4) { if (data[i] > 0) { hasInk = true; break; } }
-    if (!hasInk) { Effects.toast('Tanda tangan kosong — silakan tanda tangani dulu', 'warn'); Effects.shake(canvas); return; }
+    if (!hasInk) { Effects.toast(I18n.t('sig_t_empty'), 'warn'); Effects.shake(canvas); return; }
 
     const dataURL = canvas.toDataURL('image/png');
     State.set('signature', dataURL);
 
     const u = State.get('user') || {};
     if (!u.name || !u.nik) {
-      Effects.toast('Lengkapi nama & NIK sebelum simpan', 'warn');
+      Effects.toast(I18n.t('sig_t_id'), 'warn');
       return;
     }
 
     State.set('user.date', new Date().toISOString().slice(0, 10));
-    Effects.toast('✓ Tanda tangan disimpan', 'ok');
+    Effects.toast(I18n.t('sig_t_saved'), 'ok');
     Effects.pulse(canvas);
     setTimeout(() => Navigation.next(), 700);
   }

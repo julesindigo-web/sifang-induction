@@ -57,7 +57,7 @@
     // 10. Welcome toast (first time only)
     if (!Storage.get('welcomed')) {
       setTimeout(() => {
-        Effects.toast('Tekan ? untuk panduan atau M untuk daftar materi', 'ok');
+        Effects.toast(I18n.t('app_welcome'), 'ok');
         Storage.set('welcomed', true);
       }, 1200);
     }

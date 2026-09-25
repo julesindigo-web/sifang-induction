@@ -57,6 +57,8 @@ const Navigation = (() => {
       document.getElementById('btnAudio')?.click();
     } else if (e.key === '?') {
       document.getElementById('btnHelp')?.click();
+    } else if (e.key === 'l' || e.key === 'L') {
+      document.getElementById('btnLang')?.click();
     }
   }
 
@@ -79,7 +81,8 @@ const Navigation = (() => {
     if (bar) bar.style.width = (total > 1 ? (idx / (total - 1)) * 100 : 100) + '%';
     const modLabel = document.getElementById('modLabel');
     if (modLabel) {
-      modLabel.textContent = slides[idx]?.mod || '';
+      const rawMod = slides[idx]?.mod || '';
+      modLabel.textContent = (typeof I18n !== 'undefined' ? I18n.mod(rawMod) : rawMod);
       modLabel.style.animation = 'none';
       requestAnimationFrame(() => modLabel.style.animation = '');
     }
@@ -107,5 +110,7 @@ const Navigation = (() => {
 
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
-  return { init, next, prev, go, get idx() { return idx; }, get total() { return total; } };
+  function refresh() { render(); }
+
+  return { init, next, prev, go, refresh, get idx() { return idx; }, get total() { return total; } };
 })();

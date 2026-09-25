@@ -235,10 +235,10 @@
               "Klakson panjang"
             ],
             "a": 2,
-            "fb": "PDF p.21: 1× nyalakan mesin, 2× maju, 3× mundur, panjang = darurat."
+            "fb": "1× nyalakan mesin, 2× maju, 3× mundur, panjang = darurat."
           },
           {
-            "q": "Jarak aman beriringan pada kecepatan 40 km/jam menurut PDF adalah…",
+            "q": "Jarak aman beriringan pada kecepatan 40 km/jam yang benar adalah…",
             "opts": [
               "10 meter",
               "25 meter",
@@ -246,10 +246,10 @@
               "100 meter"
             ],
             "a": 2,
-            "fb": "PDF p.22: pada 40 km/jam dibutuhkan ± 50 m dengan kaidah 3 detik."
+            "fb": "Pada 40 km/jam dibutuhkan ± 50 m dengan kaidah 3 detik."
           },
           {
-            "q": "Proporsi penyebab kecelakaan versi PDF (Heinrich) adalah…",
+            "q": "Proporsi penyebab kecelakaan (Heinrich) adalah…",
             "opts": [
               "70% tindakan / 20% kondisi / 10% nasib",
               "88% tindakan tidak aman / 10% kondisi tidak aman / 2% di luar kemampuan",
@@ -257,7 +257,7 @@
               "90% / 5% / 5%"
             ],
             "a": 1,
-            "fb": "PDF p.25: 88% tindakan, 10% kondisi, 2% nasib."
+            "fb": "88% tindakan, 10% kondisi, 2% nasib."
           },
           {
             "q": "Perbedaan JSEA, SOP, IK yang BENAR…",
@@ -268,7 +268,7 @@
               "IK=risiko, SOP=petunjuk"
             ],
             "a": 1,
-            "fb": "PDF p.42 tabel: JSEA umum-risiko, SOP spesifik, IK sangat spesifik."
+            "fb": "JSEA umum-risiko, SOP spesifik, IK sangat spesifik."
           },
           {
             "q": "Teknik manual handling yang BENAR…",
@@ -279,7 +279,7 @@
               "Angkat satu tangan"
             ],
             "a": 1,
-            "fb": "PDF p.51: jaga punggung lurus, pakai kaki, dekatkan beban."
+            "fb": "Jaga punggung lurus, pakai kaki, dekatkan beban."
           },
           {
             "q": "Saat mendengar 'EMERGENCY' 3×, Anda…",
@@ -290,7 +290,7 @@
               "Tunggu di tempat"
             ],
             "a": 1,
-            "fb": "PDF p.57: teriak EMERGENCY 3× = darurat nyata."
+            "fb": "Teriak EMERGENCY 3× = darurat nyata."
           },
           {
             "q": "5R yang BENAR adalah…",
@@ -301,10 +301,10 @@
               "Rajin, Rajin, Rajin, Rajin, Rajin"
             ],
             "a": 0,
-            "fb": "PDF p.65: Ringkas, Rapi, Resik, Rawat, Rajin."
+            "fb": "Ringkas, Rapi, Resik, Rawat, Rajin."
           },
           {
-            "q": "Larangan di area Fuel Storage menurut PDF adalah…",
+            "q": "Manakah larangan yang berlaku di area Fuel Storage?",
             "opts": [
               "Boleh merokok",
               "Dilarang merokok dan hanya di area bertanda khusus",
@@ -312,7 +312,7 @@
               "Boleh merokok dekat BBM"
             ],
             "a": 1,
-            "fb": "PDF p.55: merokok hanya di area bertanda; Fuel/BBM dilarang mutlak."
+            "fb": "Merokok hanya di area bertanda; Fuel/BBM dilarang mutlak."
           },
           {
             "q": "Filosofi Fondasi K3L Seimbang yang BENAR adalah…",

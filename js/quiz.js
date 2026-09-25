@@ -6,14 +6,19 @@ const Quiz = (() => {
   let data = null;
 
   async function load() {
-    if (data) return data;
-    try {
-      const r = await fetch('data/quiz.json');
-      data = await r.json();
-    } catch (e) {
-      // Fallback minimal data
-      data = { pretest: [], posttest: { sections: { lsr: { questions: [] }, umum: { questions: [] } } } };
+    const lang = (typeof I18n !== 'undefined' ? I18n.lang() : 'id');
+    if (data && data._lang === lang) return data;
+    const files = lang === 'zh' ? ['data/quiz-zh.json', 'data/quiz.json'] : ['data/quiz.json'];
+    data = null;
+    for (const f of files) {
+      try {
+        const r = await fetch(f);
+        data = await r.json();
+        data._lang = (f.indexOf('-zh') >= 0) ? 'zh' : 'id';
+        break;
+      } catch (e) { /* coba berkas berikut / fallback minimal */ }
     }
+    if (!data) data = { _lang: lang, pretest: [], posttest: { sections: { lsr: { questions: [] }, umum: { questions: [] } } } };
     return data;
   }
 
@@ -25,14 +30,14 @@ const Quiz = (() => {
       const submitted = saved.submitted;
       c.innerHTML = `
         <div class="inner">
-          <div class="kicker k-teal">Evaluasi Awal</div>
-          <h2><em>Pre-test</em> — Cek Pemahaman Awal</h2>
-          <p class="lead">Lima pertanyaan singkat. Hasilnya tidak menggagalkan kelulusan, tetapi membantu memetakan pengetahuan awal Anda.</p>
+          <div class="kicker k-teal">${I18n.t('q_eval_awal')}</div>
+          <h2><em>${I18n.t('q_pre_h')}</em> — ${I18n.t('q_pre_h_sub')}</h2>
+          <p class="lead">${I18n.t('q_pre_lead')}</p>
           <div class="quiz" id="pretestList"></div>
           <div id="pretestSummary" class="quiz-summary" style="display:${submitted ? 'block' : 'none'}">
             <div class="score">${saved.score || 0}%</div>
-            <div class="verdict">Pre-test selesai — lanjutkan ke materi inti.</div>
-            <button class="navbtn primary" id="pretestContinue" style="margin-top:14px">Lanjut ke Materi</button>
+            <div class="verdict">${I18n.t('q_pre_done')}</div>
+            <button class="navbtn primary" id="pretestContinue" style="margin-top:14px">${I18n.t('q_go_next')}</button>
           </div>
         </div>
       `;
@@ -44,7 +49,7 @@ const Quiz = (() => {
         const submit = document.createElement('button');
         submit.className = 'navbtn primary';
         submit.style.marginTop = '18px';
-        submit.textContent = 'Kirim Jawaban';
+        submit.textContent = I18n.t('q_send');
         submit.onclick = () => gradePretest(d);
         c.querySelector('.inner').appendChild(submit);
       } else {
@@ -64,7 +69,7 @@ const Quiz = (() => {
     });
     const score = Math.round((correct / d.pretest.length) * 100);
     State.set('pretest', { answers, submitted: true, score });
-    Effects.toast('Pre-test selesai! Skor: ' + score + '%', 'ok');
+    Effects.toast(I18n.t('q_toast_pre') + score + '%', 'ok');
     renderPretest();
   }
 
@@ -79,22 +84,22 @@ const Quiz = (() => {
 
       c.innerHTML = `
         <div class="inner">
-          <div class="kicker">Evaluasi Akhir</div>
-          <h2><em>Post-test</em> — Sertifikasi Induksi</h2>
-          <p class="lead">Terdiri atas dua bagian. <b style="color:var(--amber)">Life-Saving Rules</b> harus dijawab benar 100%. Nilai pengetahuan umum minimal ${d.posttest.passing}%.</p>
+          <div class="kicker">${I18n.t('q_eval_akhir')}</div>
+          <h2><em>${I18n.t('q_post_h')}</em> — ${I18n.t('q_post_h_sub')}</h2>
+          <p class="lead">${I18n.t('q_post_lead_a')}<b style="color:var(--amber)">Life-Saving Rules</b>${I18n.t('q_post_lead_b')}${d.posttest.passing}%.</p>
 
-          <h3 style="margin-top:24px; font-size:14px; color:var(--amber); letter-spacing:.1em; text-transform:uppercase;">Bagian A — Life-Saving Rules</h3>
+          <h3 style="margin-top:24px; font-size:14px; color:var(--amber); letter-spacing:.1em; text-transform:uppercase;">${I18n.t('q_sec_a')}</h3>
           <div class="quiz" id="lsrList"></div>
 
-          <h3 style="margin-top:24px; font-size:14px; color:var(--teal); letter-spacing:.1em; text-transform:uppercase;">Bagian B — Pengetahuan Umum</h3>
+          <h3 style="margin-top:24px; font-size:14px; color:var(--teal); letter-spacing:.1em; text-transform:uppercase;">${I18n.t('q_sec_b')}</h3>
           <div class="quiz" id="umList"></div>
 
           <div id="posttestSummary" class="quiz-summary" style="display:${submitted ? 'block' : 'none'}">
             <div class="score">${saved.score || 0}%</div>
-            <div class="verdict">${saved.score >= 80 ? '✅ LULUS — lanjut ke tanda tangan & sertifikat.' : '❌ Belum lulus. Pelajari ulang materi & coba remedial.'}</div>
+            <div class="verdict">${saved.score >= 80 ? '✅ ' + I18n.t('q_pass_v') : '❌ ' + I18n.t('q_fail_v')}</div>
             ${saved.score >= 80
-              ? '<button class="navbtn primary" id="posttestContinue" style="margin-top:14px">Lanjut ke Tanda Tangan</button>'
-              : '<button class="navbtn" id="posttestRetry" style="margin-top:14px">Reset & Coba Lagi</button>'}
+              ? `<button class="navbtn primary" id="posttestContinue" style="margin-top:14px">${I18n.t('q_go_sign')}</button>`
+              : `<button class="navbtn" id="posttestRetry" style="margin-top:14px">${I18n.t('q_retry')}</button>`}
           </div>
         </div>
       `;
@@ -107,7 +112,7 @@ const Quiz = (() => {
         const submit = document.createElement('button');
         submit.className = 'navbtn primary';
         submit.style.marginTop = '18px';
-        submit.textContent = 'Kirim & Nilai';
+        submit.textContent = I18n.t('q_grade');
         submit.onclick = () => gradePosttest(d);
         c.querySelector('.inner').appendChild(submit);
       } else {
@@ -149,13 +154,13 @@ const Quiz = (() => {
 
     State.set('posttest', { answers, submitted: true, score, lsrPass, umPass });
     if (pass) {
-      Effects.toast('🎉 LULUS! Skor: ' + score + '%', 'ok');
+      Effects.toast('🎉 ' + I18n.t('q_toast_pass') + score + '%', 'ok');
       Effects.confetti({ count: 60 });
     } else {
       const reasons = [];
-      if (!lsrPass) reasons.push('Life-Saving Rules belum 100%');
-      if (!umPass) reasons.push('Pengetahuan umum ' + umScore + '% (< ' + d.posttest.passing + '%)');
-      Effects.toast('Belum lulus: ' + reasons.join('; '), 'bad');
+      if (!lsrPass) reasons.push(I18n.t('q_lsr_need'));
+      if (!umPass) reasons.push(I18n.t('q_umum_need') + umScore + '% (< ' + d.posttest.passing + '%)');
+      Effects.toast(I18n.t('q_fail_v').split('.')[0] + ': ' + reasons.join('; '), 'bad');
     }
     renderPosttest();
   }
@@ -165,7 +170,7 @@ const Quiz = (() => {
     wrap.className = 'quiz-q';
     const qno = document.createElement('div');
     qno.className = 'qno';
-    qno.textContent = 'Soal ' + (i + 1);
+    qno.textContent = I18n.t('q_qno') + (i + 1) + I18n.t('q_qno_b');
     wrap.appendChild(qno);
 
     const txt = document.createElement('div');
@@ -216,7 +221,7 @@ const Quiz = (() => {
       const ok = sel !== undefined && +sel === q.a;
       const fb = document.createElement('div');
       fb.className = 'quiz-feedback ' + (ok ? 'ok' : 'bad');
-      fb.innerHTML = `<b>${ok ? '✓ Benar.' : '✗ Kurang tepat.'}</b> ${q.fb}`;
+      fb.innerHTML = `<b>${ok ? I18n.t('q_ok') : I18n.t('q_bad')}</b> ${q.fb}`;
       wrap.appendChild(fb);
       wrap.classList.add(ok ? 'correct' : 'wrong');
     }
@@ -231,11 +236,11 @@ const Quiz = (() => {
     const matrix = document.getElementById('riskMatrix');
     if (!matrix) return;
     const examples = {
-      'l1': 'Risiko rendah. Contoh: berjalan di area pedestrian. APD standar cukup.',
-      'l2': 'Risiko rendah–sedang. Contoh: inspeksi visual area kerja.',
-      'l3': 'Risiko sedang. Contoh: bekerja di dekat alat berat dengan jarak aman.',
-      'l4': 'Risiko tinggi. Contoh: bekerja di atas 1,8 m tanpa harness, atau dekat highwall aktif.',
-      'l5': 'Risiko ekstrem. Contoh: confined space tanpa permit, hot work dekat bahan mudah terbakar, geoteknik hazard aktif. STOP WORK.',
+      'l1': I18n.t('risk_l1'),
+      'l2': I18n.t('risk_l2'),
+      'l3': I18n.t('risk_l3'),
+      'l4': I18n.t('risk_l4'),
+      'l5': I18n.t('risk_l5'),
     };
     matrix.querySelectorAll('.rm-cell').forEach(c => {
       c.addEventListener('click', () => {
@@ -252,34 +257,21 @@ const Quiz = (() => {
      ============================================================ */
   function bindAPDSelector() {
     const tasks = [
-      { id: 'las', name: 'Pengelasan (Welding)', items: ['helmet','glass','glove','boot','vest','leather-apron'] },
-      { id: 'chem', name: 'Penanganan Asam Sulfat', items: ['helmet','glass','chem-suit','chem-glove','chem-boot','vest'] },
-      { id: 'h', name: 'Kerja di Ketinggian', items: ['helmet','glass','harness','boot','vest'] },
-      { id: 'noise', name: 'Area Bising (Plant)', items: ['helmet','glass','earp','boot','vest'] },
-      { id: 'dust', name: 'Area Berdebu', items: ['helmet','glass','mask','boot','vest'] },
-      { id: 'weld-grind', name: 'Grinding / Cutting', items: ['helmet','face-shield','glass','glove','boot','vest'] },
-      { id: 'elec', name: 'Pekerjaan Listrik', items: ['helmet','glass','elec-glove','boot','arc-suit'] },
-      { id: 'water', name: 'Di Atas Air (Jetty)', items: ['helmet','glass','vest','boot','life-jacket'] },
+      { id: 'las', name: I18n.t('apd_t_las'), items: ['helmet','glass','glove','boot','vest','leather-apron'] },
+      { id: 'chem', name: I18n.t('apd_t_chem'), items: ['helmet','glass','chem-suit','chem-glove','chem-boot','vest'] },
+      { id: 'h', name: I18n.t('apd_t_h'), items: ['helmet','glass','harness','boot','vest'] },
+      { id: 'noise', name: I18n.t('apd_t_noise'), items: ['helmet','glass','earp','boot','vest'] },
+      { id: 'dust', name: I18n.t('apd_t_dust'), items: ['helmet','glass','mask','boot','vest'] },
+      { id: 'weld-grind', name: I18n.t('apd_t_grind'), items: ['helmet','face-shield','glass','glove','boot','vest'] },
+      { id: 'elec', name: I18n.t('apd_t_elec'), items: ['helmet','glass','elec-glove','boot','arc-suit'] },
+      { id: 'water', name: I18n.t('apd_t_water'), items: ['helmet','glass','vest','boot','life-jacket'] },
     ];
 
-    const apdLib = {
-      'helmet': { name: 'Helm Safety', sub: 'SNI/ANSI, chinstrap' },
-      'glass': { name: 'Kacamata Safety', sub: 'Side shield' },
-      'glove': { name: 'Sarung Tangan Umum', sub: 'Cut-resistant' },
-      'boot': { name: 'Safety Boots', sub: 'Steel toe + anti-slip' },
-      'vest': { name: 'High-Vis Vest', sub: 'Reflektif' },
-      'leather-apron': { name: 'Apron Kulit', sub: 'Tahan percikan api' },
-      'chem-suit': { name: 'Chemical Suit', sub: 'Tahan asam' },
-      'chem-glove': { name: 'Sarung Tangan Kimia', sub: 'Nitrile/butyl' },
-      'chem-boot': { name: 'Boots Tahan Kimia', sub: 'PVC/rubber' },
-      'harness': { name: 'Full Body Harness', sub: 'Double lanyard' },
-      'earp': { name: 'Earplug/Earmuff', sub: '≥85 dBA' },
-      'mask': { name: 'Respirator', sub: 'Fit-tested' },
-      'face-shield': { name: 'Face Shield', sub: 'Full face' },
-      'elec-glove': { name: 'Sarung Tangan Isolasi', sub: 'Class sesuai tegangan' },
-      'arc-suit': { name: 'Arc Flash Suit', sub: 'CAT 2+' },
-      'life-jacket': { name: 'Life Jacket', sub: 'Auto-inflate' },
-    };
+    const apdLib = {};
+    ['helmet','glass','glove','boot','vest','leather-apron','chem-suit','chem-glove','chem-boot','harness','earp','mask','face-shield','elec-glove','arc-suit','life-jacket'].forEach(id => {
+      const k = id.replace(/-/g, '_');
+      apdLib[id] = { name: I18n.t('apd_n_' + k), sub: I18n.t('apd_s_' + k) };
+    });
 
     const btns = document.getElementById('apdTaskBtns');
     const list = document.getElementById('apdList');
@@ -322,13 +314,13 @@ const Quiz = (() => {
       let cls = 'ok', icon = '✓', txt = '';
       if (missing.length > 0) {
         cls = 'fail'; icon = '✗';
-        txt = `<b style="color:var(--red)">APD belum lengkap.</b> Anda masih perlu: ${missing.map(x => `<code>${apdLib[x]?.name || x}</code>`).join(', ')}.`;
+        txt = `<b style="color:var(--red)">${I18n.t('apd_need')}</b> ${I18n.t('apd_still')}${missing.map(x => `<code>${apdLib[x]?.name || x}</code>`).join(', ')}.`;
       } else {
         cls = 'ok'; icon = '✓';
-        txt = `<b style="color:var(--green)">APD lengkap.</b> Anda siap bekerja untuk tugas <b>${activeTask.name}</b>.`;
+        txt = `<b style="color:var(--green)">${I18n.t('apd_ready')}</b> ${I18n.t('apd_ready_for')} <b>${activeTask.name}</b>.`;
       }
       if (extra.length > 0) {
-        txt += `<br><span style="color:var(--amber)">⚠ Anda memilih APD ekstra: ${extra.map(x => apdLib[x]?.name || x).join(', ')}.</span>`;
+        txt += `<br><span style="color:var(--amber)">⚠ ${I18n.t('apd_extra')}${extra.map(x => apdLib[x]?.name || x).join(', ')}.</span>`;
       }
       res.innerHTML = `<div class="apd-result ${cls}"><span style="font-size:18px">${icon}</span> ${txt}</div>`;
     }

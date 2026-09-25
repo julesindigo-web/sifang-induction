@@ -1,5 +1,5 @@
 /* ============================================================
-   AUDIO — Web Speech API narration (Indonesian)
+   AUDIO — Web Speech API narration (Indonesia / 中文)
    ============================================================ */
 
 const Audio = (() => {
@@ -8,12 +8,20 @@ const Audio = (() => {
   let lastUtter = null;
   let voicesLoaded = false;
   let idVoice = null;
+  let zhVoice = null;
+
+  function speechLang() {
+    return (typeof I18n !== 'undefined' && I18n.lang() === 'zh') ? 'zh-CN' : 'id-ID';
+  }
 
   function loadVoices() {
     if (!('speechSynthesis' in window)) return;
     const voices = window.speechSynthesis.getVoices();
     if (!voices.length) return;
     idVoice = voices.find(v => v.lang === 'id-ID' || v.lang.startsWith('id'))
+           || voices.find(v => v.lang.startsWith('en'))
+           || voices[0];
+    zhVoice = voices.find(v => v.lang === 'zh-CN' || v.lang.startsWith('zh'))
            || voices.find(v => v.lang.startsWith('en'))
            || voices[0];
     voicesLoaded = true;
@@ -37,7 +45,7 @@ const Audio = (() => {
       enabled = !enabled;
       State.set('settings.audio', enabled);
       syncButton();
-      Effects.toast(enabled ? '🔊 Narasi aktif' : '🔇 Narasi nonaktif', enabled ? 'ok' : '');
+      Effects.toast(enabled ? I18n.t('audio_on') : I18n.t('audio_off'), enabled ? 'ok' : '');
       if (!enabled) stop();
     });
   }
@@ -54,10 +62,12 @@ const Audio = (() => {
     if (!enabled || !('speechSynthesis' in window)) return;
     stop();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'id-ID';
+    const zh = speechLang() === 'zh-CN';
+    u.lang = zh ? 'zh-CN' : 'id-ID';
     u.rate = rate;
     u.pitch = 1;
-    if (idVoice) u.voice = idVoice;
+    const v = zh ? zhVoice : idVoice;
+    if (v) u.voice = v;
     lastUtter = u;
     window.speechSynthesis.speak(u);
   }
@@ -68,8 +78,11 @@ const Audio = (() => {
 
   function narrateSlide(idx, slide) {
     if (!enabled || !slide) return;
+    const zh = speechLang() === 'zh-CN';
+    const title = (typeof I18n !== 'undefined' ? I18n.title(slide) : slide.title) || '';
+    if (zh) { speak(title + '。'); return; }
     const lines = [];
-    if (slide.title) lines.push(slide.title + '.');
+    if (title) lines.push(title + '.');
     if (slide.render) {
       const html = slide.render();
       const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -79,26 +92,38 @@ const Audio = (() => {
     speak(lines.join(' '));
   }
 
+  const SIREN_ID = {
+    darurat: 'Tanda bahaya! Tanda bahaya! Tanda bahaya! Hentikan semua pekerjaan. Menuju muster point. Mengulang, menuju muster point.',
+    siaga: 'Siaga. Bersiaplah. Dengarkan instruksi selanjutnya.',
+    allclear: 'All clear. Situasi terkendali. Kembali bekerja atas instruksi supervisor.',
+    blasting: 'Tanda peledakan. Peledakan. All clear.',
+  };
+  const SIREN_ZH = {
+    darurat: '危险！危险！危险！停止一切作业，前往集合点。重复，前往集合点。',
+    siaga: '戒备，请做好准备，听候进一步指示。',
+    allclear: '警报解除，情况受控，请按主管指示复工。',
+    blasting: '爆破信号，爆破，警报解除。',
+  };
+
   function bindSirene() {
-    const lines = {
-      darurat: 'Tanda bahaya! Tanda bahaya! Tanda bahaya! Hentikan semua pekerjaan. Menuju muster point. Mengulang, menuju muster point.',
-      siaga: 'Siaga. Bersiaplah. Dengarkan instruksi selanjutnya.',
-      allclear: 'All clear. Situasi terkendali. Kembali bekerja atas instruksi supervisor.',
-      blasting: 'Tanda peledakan. Peledakan. All clear.',
-    };
     document.querySelectorAll('[data-sirene]').forEach(btn => {
+      if (btn.dataset.sireneBound) return;
+      btn.dataset.sireneBound = '1';
       btn.addEventListener('click', () => {
         const k = btn.dataset.sirene;
-        if (!lines[k]) return;
+        const zh = speechLang() === 'zh-CN';
+        const text = (zh ? SIREN_ZH : SIREN_ID)[k];
+        if (!text) return;
         btn.classList.add('playing');
         // Use direct speech (independent of narration toggle) — sirene demo is standalone
         if ('speechSynthesis' in window) {
           window.speechSynthesis.cancel();
-          const u = new SpeechSynthesisUtterance(lines[k]);
-          u.lang = 'id-ID';
+          const u = new SpeechSynthesisUtterance(text);
+          u.lang = zh ? 'zh-CN' : 'id-ID';
           u.rate = rate;
           u.pitch = 1;
-          if (idVoice) u.voice = idVoice;
+          const v = zh ? zhVoice : idVoice;
+          if (v) u.voice = v;
           window.speechSynthesis.speak(u);
         }
         setTimeout(() => btn.classList.remove('playing'), 2200);
