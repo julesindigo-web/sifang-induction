@@ -220,7 +220,7 @@ const SLIDES_DATA = [
           <div class="cards stagger" style="margin-top:18px">
             <article class="card b"><div class="ico">${Icons.get('shield', { class: 'ico-svg' })}</div><h3>K3 Bukan Beban</h3><p>K3 adalah <b>investasi produktivitas</b>: zero harm = zero downtime = reputasi & keberlanjutan operasi nikel open pit.</p></article>
             <article class="card t"><div class="ico">${Icons.get('refresh', { class: 'ico-svg' })}</div><h3>11 Bab UU No. 1 Tahun 1970</h3><p>Syarat K3, pengawasan, pembinaan, P2K3, kecelakaan, dan sanksi — semuanya terangkum dalam 11 gerigi roda.</p></article>
-            <article class="card g"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>Budaya TMS → SMI</h3><p>PDF TMS menggunakan filosofi sama. <b>PT Sifang Mining Indonesia</b> mengadopsi makna lambang identik — diselaraskan untuk site nikel open pit SMI.</p></article>
+            <article class="card g"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>Budaya SMI</h3><p><b>PT Sifang Mining Indonesia</b> mengadopsi makna lambang K3 sepenuhnya — berlaku untuk seluruh site nikel open pit SMI.</p></article>
           </div>
           <div class="footnote">Lambang K3 dimaknai sesuai ketentuan Permenaker.</div>
         </div>
@@ -487,7 +487,7 @@ const SLIDES_DATA = [
               <ul>
                 <li><b>Presiden Direktur</b> — Penanggung jawab kebijakan K3L dan persetujuan akhir.</li>
                 <li><b>Asisten Presiden Direktur</b> — Koordinasi strategis.</li>
-                <li><b>Manajer Umum (<i>General Manager</i>)</b> — Pengendali operasional site.</li>
+                <li><b>Manajer Umum</b> — Pengendali operasional site.</li>
                 <li><b>PJO (Penanggung Jawab Operasional)</b> — Otoritas K3 tambang dan pelaporan kepada KTT.</li>
               </ul>
             </div>
@@ -500,8 +500,8 @@ const SLIDES_DATA = [
               </ul>
             </div>
           </div>
-          <div class="panelbox" style="margin-top:16px">
-            <h3><i></i>Dokumen Kontrol — No. STD-SO-SMI-001 (adaptasi)</h3>
+            <div class="panelbox" style="margin-top:16px">
+              <h3><i></i>Dokumen Kontrol — STD-SO-SMI-001</h3>
             <ul>
               <li><b>Dokumen:</b> STD-SO-SMI-001 • <b>Departemen:</b> HRGA • <b>Mengetahui:</b> Presiden Direktur</li>
               <li>Setiap perubahan struktur = wajib MOC & sosialisasi ulang (lihat modul SIMOPS & MOC).</li>
@@ -832,7 +832,7 @@ const SLIDES_DATA = [
                         <article class="card r"><div class="ico">${Icons.get('search', { class: 'ico-svg' })}</div><h3>Lapor 
 Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke atasan/SHE.</p></article>
             <article class="card"><div class="ico">${Icons.get('shield', { class: 'ico-svg' })}</div><h3>Cek Stiker & P2H</h3><p>Pastikan <b>P2H</b> & cek masa berlaku <b>komisioning</b> sebelum unit dioperasikan.</p></article>
-            <article class="card b"><div class="ico">${Icons.get('hand', { class: 'ico-svg' })}</div><h3>Patuh Aturan</h3><p>Matuhi semua <b>peraturan lalu lintas</b> berlaku di PT SMI.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('hand', { class: 'ico-svg' })}</div><h3>Patuh Aturan</h3><p>Mematuhi semua <b>peraturan lalu lintas</b> berlaku di PT SMI.</p></article>
             <article class="card t"><div class="ico">${Icons.get('cert', { class: 'ico-svg' })}</div><h3>Accident Report</h3><p><b>Laporkan segera kecelakaan</b> di jalan — jangan menunda.</p></article>
             <article class="card g"><div class="ico">${Icons.get('refresh', { class: 'ico-svg' })}</div><h3>Fit To Work</h3><p>Pastikan <b>kondisi tubuh fit</b> sebelum bekerja.</p></article>
             <article class="card"><div class="ico">${Icons.get('doc', { class: 'ico-svg' })}</div><h3>Jaga Komisioning</h3><p>Menjaga hasil <b>komisioning unit</b> & melapor masa berlakunya.</p></article>
@@ -997,7 +997,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
             ].map(row => `
               <div class="rm-row">
                 <span class="rm-label-y">${row.k}</span>
-                ${row.cells.map(c => `<div class="rm-cell ${c}" data-level="${c}">${c === 'l5' ? 'STOP' : c === 'l4' ? 'TINGGI' : c === 'l3' ? 'SEDANG' : c === 'l2' ? 'RENDAH' : 'R'}"></div>`).join('')}
+                ${row.cells.map(c => `<div class="rm-cell ${c}" data-level="${c}">${c === 'l5' ? 'STOP' : c === 'l4' ? 'TINGGI' : c === 'l3' ? 'SEDANG' : c === 'l2' ? 'RENDAH' : 'R'}</div>`).join('')}
               </div>`).join('')}
             <div class="rm-axis-x">
               <span style="font-size:10px;color:var(--muted);text-align:right;padding-right:8px">→ Kemungkinan (L)</span>
@@ -1063,7 +1063,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
               <h3><i></i>SIMOPS — Operasi Simultan</h3>
               <ul>
                 <li>Beberapa pekerjaan di satu area = risiko saling membahayakan (crane + hot work + traffic).</li>
-                <li>Wajib <b>koordinasi antar-penanggung jawab</b>, pembagian zona, dan komunikasi bersama.</li>
+                <li><b>Wajib koordinasi antar-penanggung jawab</b>, pembagian zona, dan komunikasi bersama.</li>
                 <li>Tetapkan urutan kerja dan batas zona eksklusi yang disepakati.</li>
                 <li>Hentikan SIMOPS bila komunikasi terputus atau kondisi berubah.</li>
               </ul>
@@ -1281,25 +1281,25 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <h2>Kesehatan <em>Umum</em> — Fatigue & Heat Stress</h2>
           <div class="two">
             <div class="panelbox">
-              <h3><i></i>Kesehatan Umum (p.62)</h3>
+              <h3><i></i>Kesehatan Umum</h3>
               <ul>
                 <li>Sakit / konsumsi obat → <b>lapor atasan/pengawas</b></li>
                 <li><b>Zero tolerance alkohol & obat terlarang</b>: di bawah pengaruh = dikeluarkan dari site</li>
                 <li>Dukung program <b>ALKOHOL & OBAT — ZERO TOLERANCE</b></li>
               </ul>
-              <h3 style="margin-top:14px"><i></i>Fatigue (p.63)</h3>
+              <h3 style="margin-top:14px"><i></i>Fatigue</h3>
               <ul>
                 <li><b>Gejala:</b> sulit konsentrasi, mood berubah, sensitif suara/cahaya, sakit kepala, lelah ekstrem</li>
                 <li><b>Atasi:</b> tidur berkualitas, manajemen stres (meditasi/yoga), olahraga, rotasi, hidrasi, istirahat cukup</li>
               </ul>
             </div>
             <div class="panelbox danger">
-              <h3><i></i>Heat Stress (p.64)</h3>
+              <h3><i></i>Heat Stress</h3>
               <ul>
                 <li>Serangkaian kondisi <b>tekanan panas berlebihan</b> di lingkungan kerja</li>
                 <li><b>Awali hari dengan minum air putih</b> cukup; hindari alkohol & kafein (dehidrasi)</li>
                 <li>Gunakan pakaian <b>cerah, ringan, tipis, katun</b> menyerap keringat; hindari sintetis</li>
-                <li><b>Konsumsi elektrolit</b> seimbang; work-rest cycle; area teduh (sumber p.64 lengkap)</li>
+                <li><b>Konsumsi elektrolit</b> seimbang; work-rest cycle; area teduh</li>
                 <li>Kenali heat cramps → exhaustion → stroke</li>
               </ul>
             </div>
@@ -1325,11 +1325,11 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <ul class="checks cols">
             <li><b>Hirarki prioritas 8 level:</b> 1. Ambulance sirene → 2. Pemadam → 3. Pengangkut bahan peledak → 4. LV escort → 5. HE bermuatan → 6. HE kosong → 7. Truck bermuatan/kosong → 8. LV/Bus/Manhaul</li>
             <li><b>Batas kecepatan</b> sesuai Rencana Manajemen Lalu Lintas (TMP): kendaraan ringan ± 40 km/jam di <i>haul road</i>, lebih rendah saat hujan atau malam hari. Hak utama jalan: alat berat &gt; kendaraan ringan &gt; pejalan kaki; kendaraan menanjak diprioritaskan.</li>
-            <li><b>Sabuk pengaman (<i>seatbelt</i>)</b> wajib bagi seluruh penumpang; dilarang menggunakan ponsel saat mengemudi; dilarang menumpang di bak terbuka.</li>
-            <li><b>Titik buta (<i>blind spot</i>):</b> jangan pernah berada di zona buta alat berat; kontak mata dan komunikasi positif wajib dilakukan.</li>
+            <li><b>Sabuk pengaman</b> wajib bagi seluruh penumpang; dilarang menggunakan ponsel saat mengemudi; dilarang menumpang di bak terbuka.</li>
+            <li><b>Titik buta:</b> jangan pernah berada di zona buta alat berat; kontak mata dan komunikasi positif wajib dilakukan.</li>
             <li><b>Radio dan komunikasi positif</b> wajib digunakan sebelum memasuki atau melintasi jalur operasional.</li>
-            <li><b>Pemeriksaan awal (<i>pre-start check</i>)</b> harian: rem, ban, lampu, wiper, klakson, radio, APAR, dan sabuk pengaman.</li>
-            <li><b>Parkir aman:</b> di tanah datar, rem parkir aktif, ganjal roda (<i>wheel chock</i>) terpasang, hindari tepi lereng dan <i>sump</i>.</li>
+            <li><b>Pemeriksaan awal harian</b>: rem, ban, lampu, wiper, klakson, radio, APAR, dan sabuk pengaman.</li>
+            <li><b>Parkir aman:</b> di tanah datar, rem parkir aktif, ganjal roda terpasang, hindari tepi lereng dan <i>sump</i>.</li>
             <li><b>Pejalan kaki:</b> hanya melalui jalur pejalan kaki; menyeberang di titik yang telah ditetapkan.</li>
           </ul>
           <div class="panelbox danger" style="margin-top:16px">
@@ -1457,7 +1457,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
               <h3><i></i>Bahaya (Hazard)</h3>
               <p style="color:var(--muted); font-size:13.5px; line-height:1.7">Suatu kondisi/situasi berpotensi menyebabkan kecelakaan, cedera, kerusakan, dampak negatif. Sifat: <b>fisik</b> (benda tajam, listrik), <b>kimia</b>, <b>biologis</b> (virus), <b>psikologis</b> (stres, kekerasan).</p>
               <div style="margin-top:12px; padding:10px; border:1px dashed var(--line-2); border-radius:10px; background:var(--surface)">
-                <p style="margin:0; font-size:12.5px; color:var(--amber); text-align:center"><b>Studi Kasus Gambar (p.27):</b> High Pressure Air + Heavy Equipment — Temukan 5 bahaya pada foto pit!</p>
+                <p style="margin:0; font-size:12.5px; color:var(--amber); text-align:center"><b>Studi Kasus Gambar:</b> High Pressure Air + Heavy Equipment — Temukan 5 bahaya pada gambar pit!</p>
               </div>
             </div>
             <div class="panelbox warn">

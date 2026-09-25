@@ -215,6 +215,8 @@ const I18n = (() => {
     'Tekan tombol di bawah untuk mendengarkan bunyi sirene (TTS Web Speech). Hafalkan polanya — ini bisa menyelamatkan nyawa.': '点击下方按钮收听警笛声（语音合成）。记住信号——关键时刻能救命。',
     'Sanksi konsisten menunjukkan aturan berlaku untuk semua. Penghargaan terbuka menunjukkan perilaku apa yang dihargai. Keduanya membangun budaya matang jangka panjang.': '一致的处罚表明规则人人平等，<b>公开表彰</b>表明公司推崇何种行为，两者共同营造成熟的安全文化。',
     'Selamat datang, Rekrutan Baru. Keselamatan Anda adalah prioritas utama kami. Ikuti seluruh materi ini hingga tuntas sebelum memasuki area site.': '欢迎，新同事。您的安全是我们的首要任务。进入现场前请学完所有课程。',
+    'Selamat bergabung di keluarga besar PT. Sifang Mining Indonesia. Selamat bekerja — dan pulang dengan selamat, setiap hari. 🤝': '欢迎加入印尼四方矿业大家庭。祝工作顺利——每天平安回家。🤝',
+    'Anda telah menyelesaikan induksi K3L. Bawa pulang tiga hal: Komitmen, Kompetensi, dan Kewaspadaan.': '你已完成K3L入职培训，带走三样东西：承诺、能力和警觉。',
   };
 
   /* Simpul teks eksak -> terjemahan (hanya yang struktural) */
@@ -345,8 +347,7 @@ const I18n = (() => {
     'TTD Peserta': '学员签名',
     'Identitas Peserta': '参训人员信息',
     'Tanda Tangan Digital': '电子签名',
-    '"Saya berkomitmen: bekerja selamat, menjaga rekan saya, dan tidak pernah mengabaikan bahaya.': '“我承诺：安全作业，守护工友，绝不忽视危险。',
-    'Tidak ada target produksi yang sebanding dengan nyawa manusia."': '任何生产目标都抵不上一条生命。”',
+    '"Saya berkomitmen: bekerja selamat, menjaga rekan saya, dan tidak pernah mengabaikan bahaya. Tidak ada target produksi yang sebanding dengan nyawa manusia."': '“我承诺：安全作业，守护工友，绝不忽视危险。任何生产目标都抵不上一条生命。”',
     '— Ikrar Rekrutan Baru PT. Sifang Mining Indonesia': '——印尼四方矿业新员工誓词',
     'Selamat bergabung di keluarga besar PT. Sifang Mining Indonesia.': '欢迎加入印尼四方矿业大家庭。',
     'Selamat bekerja — dan pulang dengan selamat, setiap hari. 🤝': '祝工作顺利——每天平安回家。🤝',
@@ -355,7 +356,6 @@ const I18n = (() => {
     'Kewaspadaan': '警觉',
     'ZERO HARM': '零伤害',
     'SAFETY FIRST': '安全第一',
-    'LIFE-SAVING RULES': '救命规则',
     'INDUKSI LULUS': '培训合格',
     '“Pulang selamat hari ini, kembali bekerja besok hari. Itu satu-satunya target yang benar.”': '“今天平安回家，明天再来上班。这才是唯一正确的目标。”',
     '— HSE Departemen, PT. Sifang Mining Indonesia': '——印尼四方矿业HSE部',
@@ -365,7 +365,7 @@ const I18n = (() => {
     'Lanjut': '继续',
     ' atau gunakan tombol panah keyboard untuk memulai ▸': '或使用键盘方向键开始 ▸',
     'APD': '劳保',
-    'Lingkungan': '环境',
+    'Lingkungan': '环保',
     'LOTO': '上锁挂牌',
     'Induksi umum tidak menggantikan induksi area spesifik dan toolbox meeting harian. Pekerjaan hanya dimulai setelah seluruh lapisan induksi selesai.': '通用入职不能代替区域专项入职和每日班前会。只有完成各层培训后方可开工。',
     'Lambang K3 dimaknai sesuai ketentuan Permenaker.': 'K3标志含义遵循人力部条例。',
@@ -390,6 +390,14 @@ const I18n = (() => {
     'Api membesar? Jangan heroik. Evakuasi, bunyikan alarm, hubungi ERT.': '火势扩大？不要蛮干。疏散、拉响警报、联系ERT。',
     'APD adalah pertahanan terakhir dalam hierarki pengendalian. Jika APD saja tidak cukup mengendalikan risiko, pekerjaan tidak boleh dimulai — minta pengendalian rekayasa atau administratif tambahan.': '劳保是控制层级中的最后一道防线。若仅靠劳保不足以控制风险，不得开工——要求工程或管理措施。',
   };
+
+  /* Normalisasi kunci kamus (samakan dengan norm() saat lookup) */
+  [ZH_TEXT, ZH_H, ZH_LEAD].forEach(map => {
+    for (const k in map) {
+      const nk = norm(k);
+      if (nk !== k && map[nk] === undefined) { map[nk] = map[k]; delete map[k]; }
+    }
+  });
 
   /* String chrome UI: id = sumber Indonesia, zh = China */
   const T = {
@@ -587,7 +595,22 @@ const I18n = (() => {
     }
     return out;
   }
-  const REV_TEXT = invert(ZH_TEXT), REV_H = invert(ZH_H), REV_LEAD = invert(ZH_LEAD);
+  let REV_TEXT = invert(ZH_TEXT), REV_H = invert(ZH_H), REV_LEAD = invert(ZH_LEAD);
+
+  function extend(obj, target) {
+    if (!obj || typeof obj !== 'object') return 0;
+    const map = target === 'LEAD' ? ZH_LEAD : (target === 'H' ? ZH_H : ZH_TEXT);
+    let n = 0;
+    for (const k in obj) {
+      if (typeof obj[k] !== 'string' || map[k] !== undefined) continue;
+      map[k] = obj[k];
+      n++;
+    }
+    if (target === 'LEAD') REV_LEAD = invert(ZH_LEAD);
+    else if (target === 'H') REV_H = invert(ZH_H);
+    else REV_TEXT = invert(ZH_TEXT);
+    return n;
+  }
 
   function applyTo(root, toLang) {
     if (!root) return;
@@ -695,7 +718,7 @@ const I18n = (() => {
     });
   }
 
-  return { lang, setLang, toggle, t, title, mod, applyTo, retranslate, syncChrome, init };
+  return { lang, setLang, toggle, t, title, mod, applyTo, retranslate, syncChrome, init, extend };
 })();
 
 I18n.init();
