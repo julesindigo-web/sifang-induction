@@ -6,11 +6,19 @@ const Glossary = (() => {
   let data = null;
 
   async function load() {
-    if (data) return data;
-    try {
-      const r = await fetch('data/glossary.json');
-      data = await r.json();
-    } catch (e) { data = { items: [] }; }
+    const lang = (typeof I18n !== 'undefined' ? I18n.lang() : 'id');
+    if (data && data._lang === lang) return data;
+    const files = lang === 'zh' ? ['data/glossary-zh.json', 'data/glossary.json'] : ['data/glossary.json'];
+    data = null;
+    for (const f of files) {
+      try {
+        const r = await fetch(f);
+        data = await r.json();
+        data._lang = (f.indexOf('-zh') >= 0) ? 'zh' : 'id';
+        break;
+      } catch (e) { /* coba berkas berikut */ }
+    }
+    if (!data) data = { _lang: lang, items: [] };
     return data;
   }
 

@@ -34,7 +34,7 @@
     },
     {
       "t": "Confined Space",
-      "d": "Ruang terbatas: cukup untuk masuk pekerja,进出 terbatas, bukan untuk kerja terus-menerus, bisa punya atmosfer berbahaya."
+      "d": "Ruang terbatas: cukup untuk masuk pekerja, keluar-masuk terbatas, bukan untuk kerja terus-menerus, bisa punya atmosfer berbahaya."
     },
     {
       "t": "Callsign",
@@ -114,7 +114,7 @@
     },
     {
       "t": "Incident",
-      "d": "Peristiwa yang menyebabkan (atau berpotensi) cedera, illness, atau kerugian."
+      "d": "Peristiwa yang menyebabkan (atau berpotensi) cedera, penyakit, atau kerugian."
     },
     {
       "t": "ISO 45001",
@@ -322,7 +322,7 @@
     },
     {
       "t": "Windrow",
-      "d": "Timbunan tanah/material di tepi disposal atau jalur untuk阻挡 erosi atau tanda batas."
+      "d": "Timbunan tanah/material di tepi disposal atau jalur untuk menahan erosi atau tanda batas."
     },
     {
       "t": "Work at Height",
@@ -338,11 +338,11 @@
     },
     {
       "t": "C.A.R.R.A",
-      "d": "C-A-R-R-A — langkah darurat kebakaran versi PDF TMS p.60: Cek/Alarm, Atasi jika mampu, Report, Retreat, Assembly. Dipadankan dengan PASS."
+      "d": "C-A-R-R-A — langkah darurat kebakaran: Cek/Alarm, Atasi jika mampu, Report, Retreat, Assembly. Dipadankan dengan PASS."
     },
     {
       "t": "SPDK / Golden Rules",
-      "d": "Surat Pernyataan Disiplin Karyawan — Golden Rules TMS. Komitmen K3LH + penegakan SP1-SP3 hingga PHK untuk pelanggaran berat. Adaptasi SMI p.10-11."
+      "d": "Surat Pernyataan Disiplin Karyawan — Golden Rules SMI. Komitmen K3LH + penegakan SP1-SP3 hingga PHK untuk pelanggaran berat."
     },
     {
       "t": "SIMPER / KIMPER",
@@ -390,7 +390,7 @@
     },
     {
       "t": "Trauma Suspensi",
-      "d": "Gangguan sirkulasi akibat tergantung lama di harness setelah jatuh; bisa gagal ginjal/kematian. Need rescue plan."
+      "d": "Gangguan sirkulasi akibat tergantung lama di harness setelah jatuh; bisa gagal ginjal/kematian. Butuh rencana penyelamatan."
     },
     {
       "t": "BRIMOB",

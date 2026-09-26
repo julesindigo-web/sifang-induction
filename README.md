@@ -50,12 +50,14 @@ Mining Indonesia.
 - 🔍 **Full-text search** seluruh materi
 - 📖 **Glosarium K3L** 100+ istilah dengan pencarian (baru: K3L Seimbang, PP 22/2021, Permen 33/2021, Air Asam Tambang, Topsoil/Subsoil, Reklamasi Progresif, TPS B3, N95/P100, PEL Silika, TSF Exclusion Zone, IBPR, Pelaporan 24 Jam)
 
-### 🌐 Dual Bahasa (Indonesia ↔ 中文)
-- **Tombol 中文/ID** di topbar (pintasan `L`) — swap seluruh tampilan tanpa reload, pilihan tersimpan
-- **Chrome UI 100% bilingual**: menu, pencarian, glosarium, bookmark, bantuan, kuis, tanda tangan, sertifikat
-- **82 judul slide + heading + lead + agenda + label modul** beralih bahasa otomatis
+### 🌐 Dual Bahasa (Indonesia ↔ 中文) — cakupan 100%
+- **Tombol 中文/ID** di topbar (pintasan `L`, atau `?lang=zh`) — swap seluruh tampilan tanpa reload, pilihan tersimpan
+- **Chrome UI 100% bilingual**: menu, pencarian, glosarium, bookmark, bantuan, kuis, tanda tangan, sertifikat, aria-label, placeholder, brand, `<html lang>`
+- **Seluruh isi slide bilingual**: 82 judul + heading + lead + 1.800+ simpul teks (kartu, panel, tabel, footnote, caption & tombol ilustrasi, studi kasus) — terverifikasi skrip cakupan
 - **Bank soal penuh dua bahasa** (`quiz.json` + `quiz-zh.json`, 5+5+26 soal, jawaban tersimpan tetap valid)
-- **Narasi TTS mengikuti bahasa** (id-ID / zh-CN) termasuk demo sirene
+- **Glosarium dua bahasa** (`glossary.json` + `glossary-zh.json`, 111 istilah)
+- **Narasi TTS mengikuti bahasa** (id-ID / zh-CN) termasuk demo sirene; `bindSirene` anti-duplikat
+- **Aman toggle bolak-balik**: peta balik + `Renderer.show soft` (tanpa render ulang perusak listener/kanvas)
 
 ### 🎨 Visual & UX
 - 🌗 **Dark/Light theme** toggle (data-theme)

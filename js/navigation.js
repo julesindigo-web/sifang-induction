@@ -73,8 +73,8 @@ const Navigation = (() => {
     render();
   }
 
-  function render() {
-    Renderer.show(idx, slides);
+  function render(soft) {
+    Renderer.show(idx, slides, soft);
     const counter = document.getElementById('counter');
     if (counter) counter.textContent = pad(idx + 1) + ' / ' + pad(total);
     const bar = document.getElementById('bar');
@@ -110,7 +110,7 @@ const Navigation = (() => {
 
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
-  function refresh() { render(); }
+  function refresh() { render(true); }
 
   return { init, next, prev, go, refresh, get idx() { return idx; }, get total() { return total; } };
 })();

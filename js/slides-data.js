@@ -1658,13 +1658,13 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <h2><em>Training, Rambu & Bahan Kimia</em></h2>
           <div class="two">
             <div class="panelbox">
-              <h3><i></i>Training & Awareness (p.43)</h3>
+              <h3><i></i>Training & Awareness</h3>
               <ul>
                 <li><b>Induksi Keselamatan:</b> lingkungan, bahaya, darurat, APD</li>
                 <li><b>Pelatihan keterampilan:</b> peralatan, mesin, proses kerja</li>
                 <li>Tujuan: tingkatkan pengetahuan & bangun kesadaran K3</li>
               </ul>
-              <h3 style="margin-top:14px"><i></i>Kontrol Bahan Kimia (p.47)</h3>
+              <h3 style="margin-top:14px"><i></i>Kontrol Bahan Kimia</h3>
               <ul>
                 <li>Semua bahan kimia <b>harus didaftar & punya SDS</b> (LDK)</li>
                 <li><b>How to Read SDS:</b> 16 bagian — identifikasi, bahaya, komposisi, P3K, kebakaran, penyimpanan, toksikologi</li>
@@ -1672,7 +1672,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
               </ul>
             </div>
             <div class="panelbox warn">
-              <h3><i></i>Rambu / Sign Pertambangan (p.44-45)</h3>
+              <h3><i></i>Rambu / Sign Pertambangan</h3>
               <ul>
                 <li><b>Larangan:</b> dilarang merokok, masuk tanpa izin, pakai HP saat mengemudi</li>
                 <li><b>Peringatan:</b> bahaya jatuh, longsor, listrik</li>
@@ -1823,7 +1823,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
             <li>MEWP/scissor lift: operator kompeten, harness terikat, permukaan stabil.</li>
             <li>Tangga: 3 titik kontak, dikaitkan, sudut benar, inspeksi rutin.</li>
             <li>Cegah <b>falling object</b>: tool lanyard, toe board, barricade area bawah.</li>
-            <li>Wajib <b>rescue plan</b> (evakuasi korban tergantung — cegah suspension trauma).</li>
+            <li><b>Wajib rescue plan</b> (evakuasi korban tergantung — cegah suspension trauma).</li>
             <li>Berhenti saat angin kencang, hujan licin, atau petir.</li>
           </ul>
         </div>
@@ -2256,17 +2256,17 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
             <div class="panelbox">
               <h3><i></i>Prinsip & Regulasi</h3>
               <ul>
-                <li><b>UU 32/2009 PPLH</b> + <b>UU 1/2004 Minerba</b>: keberlanjutan & lindungi lingkungan; sanksi hukum & reputasi bila tidak patuh (p.66)</li>
+                <li><b>UU 32/2009 PPLH</b> + <b>UU 1/2004 Minerba</b>: keberlanjutan & lindungi lingkungan; sanksi hukum & reputasi bila tidak patuh</li>
                 <li><b>Zero uncontrolled spill:</b> cegah & laporkan tumpahan BBM/oli/kimia sekecil apa pun</li>
                 <li>Hormati <b>settling pond & drainase</b>; jangan ubah aliran air tanpa izin; kendalikan erosi</li>
                 <li><b>Satwa & flora dilindungi:</b> larang berburu/memetik; situs budaya = stop kerja & lapor</li>
               </ul>
             </div>
             <div class="panelbox warn">
-              <h3><i></i>Pengelolaan Sampah (p.67)</h3>
+              <h3><i></i>Pengelolaan Sampah</h3>
               <ul>
                 <li><b>Setiap orang tanggung jawab kebersihan lingkungan</b></li>
-                <li><b>Pisahkan sampah:</b> <b>PLASTIC</b> (anorganik) vs <b>ORGANIC</b> (organik) — sesuai poster PDF</li>
+                <li><b>Pisahkan sampah:</b> <b>PLASTIC</b> (anorganik) vs <b>ORGANIC</b> (organik)</li>
                 <li>Pilah: domestik, scrap, <b>limbah B3</b> ke wadah berlabel</li>
                 <li>Dilarang buang limbah/oli ke tanah/drainase/badan air; keluhan debu/bising/air → fungsi lingkungan</li>
               </ul>
@@ -2332,7 +2332,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <h2><em>5R</em> & Inspeksi Rutin</h2>
           <div class="two">
             <div class="panelbox">
-              <h3><i></i>5R — Budaya Kerja (p.65)</h3>
+              <h3><i></i>5R — Budaya Kerja</h3>
               <ul>
                 <li><b>1. Ringkas:</b> hapus barang tak perlu</li>
                 <li><b>2. Rapi:</b> letak pada tempat ditentukan</li>
@@ -2342,7 +2342,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
               </ul>
             </div>
             <div class="panelbox warn">
-              <h3><i></i>Inspeksi Rutin — Contoh (p.56)</h3>
+              <h3><i></i>Inspeksi Rutin — Contoh</h3>
               <ul>
                 <li><b>Alat berat:</b> ban, rem, hidrolik, komponen (excavator, dozer, dump truck)</li>
                 <li><b>Listrik:</b> kabel, sambungan, panel</li>
@@ -2371,7 +2371,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           ${Illustrations.darurat()}
           <div class="two">
             <div class="panelbox danger">
-              <h3><i></i>Bila Mengetahui Darurat (p.57)</h3>
+              <h3><i></i>Bila Mengetahui Darurat</h3>
               <ul>
                 <li><b>Jangan panik — teriakkan “EMERGENCY” 3×</b></li>
                 <li>Jika terjadi kebakaran dan Anda mampu: gunakan APAR; bila tidak, segera evakuasi.</li>
@@ -2381,7 +2381,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
               </ul>
             </div>
             <div class="panelbox">
-              <h3><i></i>Evakuasi dan Titik Kumpul (p.58)</h3>
+              <h3><i></i>Evakuasi dan Titik Kumpul</h3>
               <ul>
                 <li><b>Jangan panik, tetap tenang</b></li>
                 <li><b>Muster Point</b> terdekat sesuai rambu — ikuti jalur evakuasi</li>
@@ -2481,7 +2481,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
               </ul>
             </div>
             <div class="panelbox danger">
-              <h3><i></i>Jika Terjadi Cedera Personil (p.59)</h3>
+              <h3><i></i>Jika Terjadi Cedera Personil</h3>
               <ul>
                 <li><b>Wajib hentikan aktivitas</b></li>
                 <li>P3K oleh personel terlatih → bawa ke klinik/RS</li>
@@ -2510,7 +2510,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
           <h2>Jika Terjadi <em>Kebakaran — C.A.R.R.A & PASS</em></h2>
           <div class="two">
             <div class="panelbox danger">
-              <h3><i></i>C.A.R.R.A (p.60)</h3>
+              <h3><i></i>C.A.R.R.A</h3>
               <ul>
                 <li><b>C</b> — Cabut pin pengaman? / <b>A</b> — Bunyikan alarm / Lapor ERT</li>
                 <li>Lakukan <b>pemadaman dengan APAR jika mampu</b></li>
@@ -2649,7 +2649,7 @@ Bahaya</h3><p>Aktif <b>mengidentifikasi bahaya</b>, mengendalikan, & melapor ke 
               <ul>
                 <li>Perjalanan di site hanya menggunakan kendaraan yang telah diinspeksi dan pengemudi yang berwenang.</li>
                 <li>Sabuk pengaman wajib digunakan; dilarang menggunakan ponsel; susun rencana rute serta lapor berangkat dan tiba (<i>check-in/check-out</i>).</li>
-                <li>Perjalanan laut: <b>jaket pelampung (<i>life jacket</i>)</b> wajib digunakan dan cuaca harus diperhatikan; perjalanan malam dibatasi sesuai aturan site.</li>
+                <li>Perjalanan laut: <b>jaket pelampung</b> wajib digunakan dan cuaca harus diperhatikan; perjalanan malam dibatasi sesuai aturan site.</li>
                 <li>Kendaraan dilengkapi kotak P3K, APAR, dan alat komunikasi.</li>
               </ul>
             </div>

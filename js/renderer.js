@@ -26,23 +26,26 @@ const Renderer = (() => {
     stage.appendChild(frag);
   }
 
-  function show(i, slides) {
+  function show(i, slides, soft) {
     const all = document.querySelectorAll('.slide');
     const prev = document.querySelector('.slide.active');
     const next = all[i];
     if (!next) return;
-    if (prev && prev !== next) {
+    const same = !!(prev && prev === next);
+    if (prev && !same) {
       prev.classList.add('leaving');
       setTimeout(() => prev.classList.remove('leaving', 'active'), 240);
     }
     setTimeout(() => {
       next.classList.add('active');
       const s = slides[i];
-      if (s && typeof s.afterRender === 'function') {
-        try { s.afterRender(); } catch (e) { /* afterRender opsional — abaikan agar slide tetap tampil */ }
+      if (!soft || !same) {
+        if (s && typeof s.afterRender === 'function') {
+          try { s.afterRender(); } catch (e) { /* afterRender opsional — abaikan agar slide tetap tampil */ }
+        }
       }
       try { if (typeof I18n !== 'undefined') I18n.applyTo(next, I18n.lang()); } catch (e) { /* i18n opsional */ }
-    }, prev && prev !== next ? 60 : 0);
+    }, prev && !same ? 60 : 0);
 
     const stage = document.getElementById('stage');
     if (stage) stage.scrollTop = 0;

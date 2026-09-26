@@ -645,6 +645,10 @@ const I18n = (() => {
       const el = root.querySelector('#' + id) || document.getElementById(id);
       if (el) el.placeholder = toLang === 'zh' ? zhPh : idPh;
     });
+    root.querySelectorAll('[aria-label]').forEach(el => {
+      const v = F.TXT[norm(el.getAttribute('aria-label'))];
+      if (v !== undefined) el.setAttribute('aria-label', v);
+    });
   }
 
   function syncChrome() {
@@ -675,6 +679,12 @@ const I18n = (() => {
     if (bl) bl.textContent = zh ? 'ID' : '中文';
     const mt = document.getElementById('menuTitle');
     if (mt) mt.textContent = t('menu_h');
+    const bs = document.getElementById('brandSub');
+    if (bs) bs.textContent = zh ? 'K3L入职培训 • 镍露天矿' : 'Program Induksi K3L • Nikel Open Pit';
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', zh
+      ? '印尼四方矿业K3L平衡入职培训——镍露天矿互动课程、考试、电子签名与证书。'
+      : 'Program Induksi K3L Seimbang PT. Sifang Mining Indonesia — Nikel Open Pit Terpadu (Keselamatan + Lingkungan, PP 22/2021 & Permen 33/2021). 82 slide interaktif, kuis LSR 100%, TTD digital, sertifikat.');
     const pv = document.querySelector('#btnPrev .label-full');
     if (pv) pv.textContent = zh ? '上一页' : 'Sebelumnya';
     const nx = document.querySelector('#btnNext .label-full');
@@ -686,6 +696,7 @@ const I18n = (() => {
   }
 
   function retranslate() {
+    document.querySelectorAll('.overlay.open').forEach(o => o.classList.remove('open'));
     if (typeof Menu !== 'undefined' && typeof SLIDES_DATA !== 'undefined') Menu.build(SLIDES_DATA);
     syncChrome();
     if (typeof Navigation !== 'undefined' && typeof Renderer !== 'undefined' && typeof SLIDES_DATA !== 'undefined') {
@@ -710,6 +721,10 @@ const I18n = (() => {
   }
 
   function init() {
+    try {
+      const q = new URLSearchParams(window.location.search).get('lang');
+      if (q === 'zh' || q === 'id') State.set('settings.lang', q);
+    } catch (e) { /* abaikan parameter URL tak valid */ }
     setLang(lang(), { sync: false });
     document.addEventListener('DOMContentLoaded', () => {
       const btn = document.getElementById('btnLang');
@@ -718,7 +733,18 @@ const I18n = (() => {
     });
   }
 
-  return { lang, setLang, toggle, t, title, mod, applyTo, retranslate, syncChrome, init, extend };
+  function stats() {
+    return {
+      lang: lang(),
+      titles: Object.keys(TITLE_ZH).length,
+      heads: Object.keys(ZH_H).length,
+      leads: Object.keys(ZH_LEAD).length,
+      texts: Object.keys(ZH_TEXT).length,
+      chrome: Object.keys(T.id).length,
+    };
+  }
+
+  return { lang, setLang, toggle, t, title, mod, applyTo, retranslate, syncChrome, init, extend, stats };
 })();
 
 I18n.init();
