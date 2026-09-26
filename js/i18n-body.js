@@ -582,10 +582,7 @@
   };
 
   let added3 = 0;
-  if (typeof I18n !== 'undefined' && I18n.extend) {
-    added3 += I18n.extend(BATCH2);
-    added3 += I18n.extend(BATCH2L, 'LEAD');
-  }
+  if (typeof I18n !== 'undefined' && I18n.extend) added3 = I18n.extend(BATCH3);
   void added3;
 
   const BATCH4 = {

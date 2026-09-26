@@ -70,6 +70,7 @@ const Search = (() => {
       `;
     }).join('');
 
+    try { if (typeof I18n !== 'undefined') I18n.applyTo(r, I18n.lang()); } catch (e) { /* i18n opsional */ }
     r.querySelectorAll('.bm-item').forEach(b => {
       b.addEventListener('click', () => {
         Navigation.go(+b.dataset.i);

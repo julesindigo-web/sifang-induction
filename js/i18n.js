@@ -630,6 +630,7 @@ const I18n = (() => {
         if (!p) return NodeFilter.FILTER_REJECT;
         const tag = p.tagName;
         if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'CODE' || tag === 'INPUT' || tag === 'TEXTAREA') return NodeFilter.FILTER_REJECT;
+        if (p.closest && p.closest('.quiz,.cert')) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       },
     });

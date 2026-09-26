@@ -27,10 +27,9 @@
     Navigation.init({
       slides: SLIDES_DATA,
       onChange(idx, slide) {
-        // Audio narration
+        // Audio narration (mengikuti bahasa aktif via Audio.narrateSlide)
         if (State.get('settings.audio')) {
-          const title = (slide.title || '') + '. ';
-          Audio.speak(title);
+          Audio.narrateSlide(idx, slide);
         }
         // Bookmark sync
         Bookmarks.syncButton(idx);
